@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Simulacro Beca 18</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet"> <!-- Lemon Milk Font -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+            --color-azul: #015989;
+            --color-amarillo: #F9B52B;
+            --color-amarillo-opaco: #f8a90b;
+            --color-rojo: #E64F41;
+            --color-gris: #E8E8E8;
+            --color-blanco: #FFFFFF;
+            --color-negro: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        body {
+            margin: 0; 
+            padding: 0;
+            box-sizing: border-box; 
+        }
+
+        .header {
+            background-color: var(--color-azul);
+            padding: 20px 30px;
+            color: var(--color-blanco);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw; /* Asegura que el ancho sea igual al ancho total de la ventana */
+            box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+        }
+
+        .header img {
+            height: 100px;
+            margin-bottom: 10px;
+            transition: height 0.3s ease-in-out;
+        }
+
+        .header h1 {
+            font-family: 'Lemon Milk', sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            transition: font-size 0.3s ease-in-out;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            transition: font-size 0.3s ease-in-out;
+        }
+
+        .results-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: var(--color-gris);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .results-container h2 {
+            font-family: 'Lemon Milk', sans-serif;
+            font-size: 1.8rem;
+            color: var(--color-azul);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .results-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .results-details div {
+            font-size: 1.2rem;
+        }
+
+        .results-summary {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .results-summary span {
+            color: var(--color-amarillo);
+        }
+
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .details-table th,
+        .details-table td {
+            border: 1px solid var(--color-azul);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .details-table th {
+            background-color: var(--color-azul);
+            color: var(--color-blanco);
+        }
+
+        .details-table tr:nth-child(even) {
+            background-color: var(--color-blanco);
+        }
+
+        .details-table tr:nth-child(odd) {
+            background-color: var(--color-gris);
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            background-color: var(--color-amarillo);
+            color: var(--color-blanco);
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-action:hover {
+            background-color: var(--color-amarillo-opaco);
+        }
+
+        @media (max-width: 768px) {
+            .header img {
+                height: 70px;
+            }
+
+            .header h1 {
+                font-size: 1.5rem; 
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+            .results-container h2 {
+                font-size: 1.5rem;
+            }
+
+            .results-details {
+                font-size: 1rem;
+                text-align: center;
+            }
+            .results-details div {
+                font-size: 1rem;
+            }
+
+            .results-summary {
+                font-size: 1.2rem;
+            }
+            .details-table {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .header img {
+                height: 50px; 
+            }
+
+            .header h1 {
+                font-size: 1.2rem;
+            }
+
+            .header p {
+                font-size: 0.9rem; 
+            }
+            .results-container h2 {
+                font-size: 1rem;
+            }
+
+            .results-details {
+                font-size: 10px;
+                text-align: center;
+            }
+            .results-details div {
+                font-size: 0.9rem;
+            }
+
+            .results-summary {
+                font-size: 1.2rem;
+            }
+            .details-table {
+                font-size: 0.8rem;
+            }
+            .btn-action {
+                font-size: 0.8rem;
+                padding: 10px 25px;
+                margin-bottom: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="media/logo_principal_amarillo.png" alt="Logo">
+        <h1>Resultados del Simulacro</h1>
+        <p>¡Gracias por completar el simulacro! Aquí están tus resultados.</p>
+    </header>
+
+    <main class="results-container">
+        <h2>Tu Desempeño</h2>
+
+        <div class="results-details">
+            <div>Total de preguntas: <strong>30</strong></div>
+            <div>Preguntas correctas: <strong id="correct-answers">0</strong></div>
+            <div>Preguntas incorrectas: <strong id="incorrect-answers">0</strong></div>
+        </div>
+
+        <div class="results-summary">
+            ¡Tu puntaje es <span id="score">0%</span>!
+        </div>
+
+        
+        <div style="max-width: 600px; margin: 20px auto;">
+            <canvas id="resultsChart"></canvas>
+        </div>
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Pregunta</th>
+                    <th>Tu Respuesta</th>
+                    <th>Respuesta Correcta</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody id="results-table-body">
+            </tbody>
+        </table>
+
+        <div class="btn-container">
+            <a href="test.html" class="btn-action">Intentar de nuevo</a>
+        </div>
+    </main>
+
+    <script>
+        const userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
+
+        const correctAnswers = Array(30).fill("A");
+
+        let correctCount = 0;
+
+        const resultsTableBody = document.getElementById("results-table-body");
+        correctAnswers.forEach((correctAnswer, index) => {
+            const questionNumber = (index + 1).toString();
+            const userAnswer = userAnswers[questionNumber] || "No respondida";
+            const isCorrect = userAnswer === correctAnswer;
+
+            if (isCorrect) correctCount++;
+
+            resultsTableBody.innerHTML += `
+                <tr>
+                    <td>${questionNumber}</td>
+                    <td>Pregunta ${questionNumber}</td>
+                    <td>${userAnswer}</td>
+                    <td>${correctAnswer}</td>
+                    <td style="color: ${isCorrect ? "green" : "red"};">${isCorrect ? "Correcta" : "Incorrecta"}</td>
+                </tr>
+            `;
+        });
+
+        document.getElementById("correct-answers").textContent = correctCount;
+        document.getElementById("incorrect-answers").textContent = correctAnswers.length - correctCount;
+        document.getElementById("score").textContent = `${Math.round((correctCount / correctAnswers.length) * 100)}%`;
+    </script>
+    <script>
+        const verbalCorrect = correctAnswers.slice(0, 15).filter((correctAnswer, index) => userAnswers[index + 1] === correctAnswer).length;
+        const mathCorrect = correctAnswers.slice(15).filter((correctAnswer, index) => userAnswers[index + 16] === correctAnswer).length;
+
+        const verbalPercentage = Math.round((verbalCorrect / 15) * 100);
+        const mathPercentage = Math.round((mathCorrect / 15) * 100);
+
+        // Crear el gráfico de barras
+        const ctx = document.getElementById('resultsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Razonamiento Verbal', 'Razonamiento Matemático'],
+                datasets: [
+                    {
+                        label: 'Tu Puntaje (%)',
+                        data: [verbalPercentage, mathPercentage],
+                        backgroundColor: 'rgba(1, 89, 137, 0.8)',
+                        borderColor: 'rgba(1, 89, 137, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Promedio General (%)',
+                        data: [54, 68],
+                        backgroundColor: 'rgba(249, 181, 43, 0.8)',
+                        borderColor: 'rgba(249, 181, 43, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => `${context.dataset.label}: ${context.raw}%`
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: 'Porcentaje (%)'
+                        }
+                    }
+                }
+            }
+        });
+    </script> 
+</body>
+</html>

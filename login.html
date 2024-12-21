@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet"> <!-- Lemon Milk Font -->
+
+    <style>
+        :root {
+            --color-azul: #015989;
+            --color-amarillo: #F9B52B;
+            --color-amarillo-opaco: #f8a90b;
+            --color-rojo: #E64F41;
+            --color-gris: #E8E8E8;
+            --color-blanco: #FFFFFF;
+            --color-negro: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-azul);
+            color: var(--color-blanco);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: var(--color-blanco);
+            color: var(--color-negro);
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .login-header {
+            margin-bottom: 20px;
+        }
+
+        .login-header img {
+            height: 80px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .login-header h1 {
+            font-family: 'Lemon Milk', sans-serif;
+            font-size: 1.5rem;
+            color: var(--color-azul);
+            text-transform: uppercase;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .login-form input {
+            padding: 10px;
+            border: 1px solid var(--color-gris);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .login-form input:focus {
+            border-color: var(--color-azul);
+            box-shadow: 0 0 5px var(--color-azul);
+        }
+
+        .login-btn {
+            background-color: var(--color-amarillo);
+            color: var(--color-blanco);
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .login-btn:hover {
+            background-color: var(--color-amarillo-opaco);
+        }
+
+        .error-message {
+            color: var(--color-rojo);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .login-footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .login-footer a {
+            color: var(--color-azul);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .login-footer a:hover {
+            color: var(--color-rojo);
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 20px;
+            }
+
+            .login-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .login-form input {
+                font-size: 0.9rem;
+            }
+
+            .login-btn {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="media/logo_secundario_normal.png" alt="Logo">
+            <h1>Inicia Sesión</h1>
+        </div>
+        <form class="login-form" id="loginForm">
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit" class="login-btn">Ingresar</button>
+        </form>
+        <p class="error-message" id="errorMessage">Usuario o contraseña incorrectos</p>
+        <div class="login-footer">
+            <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+        </div>
+    </div>
+
+    <script>
+        const validUser = "jose";
+        const validPassword = "jose123";
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita que la página se recargue
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === validUser && password === validPassword) {
+                alert("Inicio de sesión exitoso");
+                window.location.href = "test.html";
+            } else {
+                document.getElementById("errorMessage").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
