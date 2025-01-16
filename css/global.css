@@ -247,7 +247,7 @@ body {
     text-decoration: none;
     background-color: var(--color-rojo);
     color: var(--color-blanco);
-    padding: 24px 30px 18px;
+    padding: 18px 23px 13px;
     margin-left: 10px;
     font-size: 28px;
     font-weight: bold;
@@ -257,9 +257,9 @@ body {
 
     display: block;
     width: auto;
+    margin: 0 120px 0 80px;
     text-align: center;
     line-height: 1.2;
-    margin: 0;
 }
 
 .btn-cta-hero:hover {

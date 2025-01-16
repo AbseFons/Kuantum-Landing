@@ -83,9 +83,11 @@
 
 .filter-header h3 {
     font-family: 'Lemon Milk', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--color-azul);
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .progress-section p {
@@ -93,6 +95,8 @@
     font-size: 0.9rem;
     color: var(--color-negro);
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .progress-bar {
@@ -181,11 +185,11 @@
 .question-header {
     display: flex;
     justify-content: space-between;
-    font-family: 'Lemon Milk', sans-serif;
     color: var(--color-azul);
 }
 
 .question-number {
+    font-family: 'Lato', sans-serif;
     font-size: 1.2rem;
 }
 
@@ -196,7 +200,7 @@
 }
 
 .question-body .question-text {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 1rem;
     color: var(--color-negro);
     margin-bottom: 10px;
@@ -206,7 +210,7 @@
     display: block;
     margin-bottom: 10px;
     margin-left: 20px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 1rem;
     color: var(--color-negro);
     cursor: pointer;
@@ -279,7 +283,7 @@
 }
 
 .text-body p {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 1rem;
     color: var(--color-negro);
     text-align: justify;

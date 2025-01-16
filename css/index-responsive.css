@@ -8,7 +8,7 @@
         margin-bottom: 40px;
     }
     .btn-cta-hero {
-        padding: 20px 25px 15px;
+        padding: 18px 23px 13px;
         font-size: 25px;
     }
 }
@@ -24,6 +24,7 @@
     }
     .btn-cta-hero {
         padding: 14px 20px 10px;
+        margin: 0 100px 0 60px;
         font-size: 20px;
     }
     .about-section {
@@ -37,7 +38,11 @@
     .hero-section{
         max-height: 650px;
     }
+    .btn-cta-hero {
+        margin: 0 70px 0 40px;
+    }
 }
+
 
 /* === Responsividad para Pantallas Medianas === */
 
@@ -54,6 +59,7 @@
     .btn-cta-hero {
         padding: 15px 20px 10px;
         font-size: 18px;
+        margin: 0 20px;
     }
     .cabecera-contenido{
         padding: 0 20px;
@@ -92,6 +98,7 @@
     .btn-cta-hero {
         padding: 12px 15px 8px;
         font-size: 15px;
+        margin: 0 10px;
     }
     .cabecera-contenido{
         padding: 0 10px;
@@ -191,12 +198,13 @@
         margin-bottom: 30px;
     }
     .hero-content{
-        max-width: 55%;
+        max-width: 45%;
     }
     .btn-cta-hero {
         padding: 12px 15px 8px;
-        font-size: 13px;
-        margin-left: 0px;
+        font-size: 0.7rem;
+        width: auto;
+        margin: 0 auto;
     }
     .menu {
         display: none;
@@ -323,5 +331,10 @@
     .hero-section{
         width: 90%;
         max-height: 350px;
+    }
+    .btn-cta-hero {
+        padding: 7px 9px 5px;
+        font-size: 0.6rem;
+        margin-left: 0px;
     }            
 }
