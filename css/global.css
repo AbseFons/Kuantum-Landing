@@ -111,6 +111,10 @@ body {
     z-index: 1000;
 }
 
+.off-canvas.show{
+    right: 0;
+}
+
 .off-canvas-header {
     display: flex;
     justify-content: space-between;

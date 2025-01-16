@@ -104,12 +104,17 @@
     <script>
         function toggleMenu() {
             const offCanvas = document.getElementById('offCanvas');
-            if (offCanvas.style.right === "0px") {
-                offCanvas.style.right = "-300px"; 
-            } else {
-                offCanvas.style.right = "0px"; 
-            }
+            offCanvas.classList.toggle('show');
         }
+
+        document.addEventListener('click', (e) => {
+            const offCanvas = document.getElementById('offCanvas');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!offCanvas.contains(e.target) && !menuToggle.contains(e.target)) {
+                offCanvas.classList.remove('show');
+            }
+        })
     </script>
 </body>
 </html>
