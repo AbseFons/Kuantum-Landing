@@ -93,6 +93,7 @@ body {
     font-size: 30px;
     cursor: pointer;
     color: var(--color-azul);
+    z-index: 1100;
 }
 
 .btn-container {
@@ -111,7 +112,7 @@ body {
     z-index: 1000;
 }
 
-.off-canvas.show{
+.off-canvas.show {
     right: 0;
 }
 
