@@ -1,6 +1,7 @@
 const content = [
     {
         type: "text-card",
+        category: "Razonamiento Verbal",
         title: "Texto 1",
         label: "Lee el siguiente texto y responde las preguntas 1-5",
         content: 'En el Perú, 78% de los estudiantes universitarios escogen carreras de derecho, contabilidad, economía, educación y en general, humanidades, y tan solo 22% escogen carreras de ciencias, ingeniería y afines. Exactamente al revés de lo que ocurre en el mundo desarrollado y también cada vez más de lo que demanda el mercado laboral peruano. Una de las razones es que desde tempranas edades escolares los alumnos se sienten “inútiles para las ciencias” porque no disfrutan del aprendizaje de las matemáticas y las ciencias, por lo que al elegir sus carreras profesionales piensan en “cualquier cosa que no tenga ciencias”. Con ello el Perú se condena a la dependencia científica y tecnológica extranjera, pero además a la incompetencia de sus ciudadanos para tomar posiciones políticas o sociales en temas que demandan un entendimiento científico básico. Si a los niños no se les enseña a observar, investigar, explorar y descubrir, sino a aprobar exámenes estandarizados escritos, no se abre el espacio y el tiempo necesario para el trabajo creativo e innovador. Esto es esencial para cultivar las capacidades científicas y el interés por la investigación que se expresará posteriormente en las carreras que elijan para su educación superior. En una típica clase escolar de ciencias hay unos 30 alumnos de la misma edad que se sientan en un formato cuadriculado rígido y así, por 11 años escolares los niños escuchan, apuntan datos, memorizan textos, dan exámenes repitiendo al anotado. Se asume que hay una y solo una manera de llegar a la única respuesta correcta. Quien llega es premiado. Quien se equivoca, es sancionado, matando la esencia de la investigación. Los alumnos son obligados a aprender religiosamente el catecismo de la ciencia y a tener fe en las verdades que transmite el profesor. Esto contradice la docencia orientada a abrir la mente de los alumnos y permitirles navegar hacia los infinitos horizontes a los que esta pudiera llegar, para lo cual experimentar, ensayar, especular y cometer errores son aspectos que no deberían ser sancionables durante el aprendizaje.'
@@ -67,6 +68,7 @@ const content = [
     },
     {
         type: "text-card",
+        category: "Razonamiento Verbal",
         title: "Texto 2",
         label: "Lee el siguiente texto y responde las preguntas 6-10",
         content: `La tuberculosis es causada por Mycobacterium tuberculosis, una bacteria que casi siempre afecta a los pulmones. Se trata de una afección curable y que se puede prevenir. La infección se transmite de persona a persona a través del aire. Cuando un enfermo de tuberculosis pulmonar tose, estornuda o escupe, expulsa bacilos tuberculosos al aire. Basta con que una persona inhale unos pocos bacilos para quedar infectada (Gráfico 1). Se calcula que una tercera parte de la población mundial tiene tuberculosis latente, término aplicado a las personas infectadas por el bacilo, pero que aún no han enfermado ni pueden transmitir la infección. Las personas infectadas con el bacilo tuberculoso tienen un riesgo a lo largo de la vida de enfermar de tuberculosis de un 10%. En cambio, las personas inmunodeprimidas, por ejemplo, las que padecen VIH, desnutrición o diabetes, y los consumidores de tabaco corren un riesgo mucho mayor de enfermar. Cuando alguien desarrolla tuberculosis activa, los síntomas (tos, fiebre, sudores nocturnos, pérdida de peso, etc.) pueden ser leves durante muchos meses. Esto puede hacer que la persona afectada tarde en buscar atención médica, con el consiguiente riesgo de que la bacteria se transmita a otros sujetos.`,
@@ -135,6 +137,7 @@ const content = [
     },
     {
         type: "text-card",
+        category: "Razonamiento Verbal",
         title: "Texto 3",
         label: "Lee el siguiente texto y responde las preguntas 6-10",
         content: 'Enjambre es el libro donde Byung-Chul Han se ocupa a fondo del mundo digital. En esta obra, su autor vuelve a los temas tratados en sus otros ensayos, desde la excesiva velocidad de la vida social hasta la interconectividad informática y la positividad que definen a la sociedad contemporánea. Estas características se expresan en ciertos objetos. El siguiente párrafo es un buen ejemplo de su visión anti-gadget: «El smartphone es un aparato digital que trabaja con un input-output pobre en complejidad. Borra toda forma de negatividad. Con ello se olvida de pensar de una manera compleja. Y deja atrofiar formas de conducta que exigen una amplitud temporal o una amplitud de mirada. Fomenta la visión a corto plazo. Fomenta el corto plazo y ofusca la larga duración y lo lento. El me gusta sin lagunas engendra un espacio de positividad». Los dispositivos de silicio no le caen bien a Byung-Chul Han: «Los aparatos digitales traen una nueva coacción, una nueva esclavitud. Nos explotan de manera más eficiente, por cuanto, en virtud de su movilidad, transforman todo lugar en un puesto de trabajo y todo tiempo es un tiempo de trabajo. La libertad de la movilidad se trueca en la coacción fatal de tener que trabajar en todas partes» (p. 59). El pensamiento negativo de Byung-Chul Han no perdona: «La comunicación digital hace que se erosione fuertemente la comunidad, el nosotros. Destruye el espacio público y agudiza el aislamiento del hombre» (p. 75). Y culmina: «El exceso de información hace que se atrofie el pensamiento» (p. 88-89). Como se puede observar, algunas ideas de Byung-Chul Han resultan interesantes; sin embargo, considero que su mirada es unidireccional, pues solo ilumina una dimensión de las tecnologías digitales —la negativa— y termina generando una fuerza que se anula con la de los discursos positivos sobre las «nuevas tecnologías» digitales.'
@@ -400,6 +403,7 @@ content.forEach((item) => {
     if (item.type === "text-card") {
         const textCard = document.createElement('div');
         textCard.classList.add('text-card');
+        textCard.setAttribute('data-category', item.category); // Agrega la categoría al atributo personalizado
         textCard.innerHTML = `
             <div class="text-header">
                 <span class="text-title">${item.title}:</span>
@@ -512,145 +516,36 @@ updateTimer();
 
 
 
-// Variables globales
-let currentCourseFilter = "all"; // Filtro actual: all, verbal, math
-let viewFilter = "all"; // Filtro de vista: all, unanswered
-const userAnswers = {}; // Almacena las respuestas seleccionadas por el usuario
 
-// Selección de elementos del DOM
-const coursesFilter = document.getElementById("courses");
-const viewFilterElement = document.getElementById("view");
 
-// Función para renderizar preguntas dinámicamente según el filtro
-function renderQuestions() {
-    // Limpiar el área de preguntas
-    questionsArea.innerHTML = "";
+// Filtrado por categoría
+document.querySelectorAll('input[name="course-filter"]').forEach((radio) => {
+    radio.addEventListener('change', () => {
+        const selectedCategory = document.querySelector('input[name="course-filter"]:checked').value;
+        filterContent(selectedCategory);
+    });
+});
 
-    // Filtrar preguntas según el curso seleccionado y filtro de vista
-    const filteredQuestions = content.filter((item) => {
-        // Filtro de curso
-        if (item.type === "question") {
-            if (currentCourseFilter === "verbal") {
-                if (item.number >= 1 && item.number <= 15) return true;
-                return false;
-            } else if (currentCourseFilter === "math") {
-                if (item.number > 15 && item.number <= 30) return true;
-                return false;
-            }
-        } else if (item.type === "text-card") {
-            return currentCourseFilter !== "math"; // Excluir text cards en Razonamiento Matemático
-        }
+// Función para filtrar preguntas y textos por categoría
+function filterContent(category) {
+    const questionCards = document.querySelectorAll('.question-card');
+    const textCards = document.querySelectorAll('.text-card');
 
-        return true; // Mostrar todas si no hay un curso específico
-    }).filter((item) => {
-        // Filtro de preguntas no respondidas
-        if (viewFilter === "unanswered" && item.type === "question") {
-            return !userAnswers[item.number]; // Mostrar solo preguntas sin respuesta
-        }
-        return true; // Mostrar todas si no se aplica el filtro
+    // Filtrar preguntas
+    questionCards.forEach((card) => {
+        const cardCategory = card.querySelector('.question-category').textContent.trim();
+        card.style.display = category === 'all' || cardCategory === category ? 'block' : 'none';
     });
 
-    // Renderizar preguntas filtradas
-    filteredQuestions.forEach((item) => {
-        if (item.type === "text-card") {
-            const textCard = document.createElement("div");
-            textCard.classList.add("text-card");
-            textCard.innerHTML = `
-                <div class="text-header">
-                    <span class="text-title">${item.title}:</span>
-                    <span class="text-label">${item.label}</span>
-                </div>
-                <div class="text-body">
-                    <p>${item.content}</p>
-                    ${
-                        item.image
-                            ? `
-                                <figure>
-                                    <img src="${item.image}" alt="Imagen relacionada con el texto" class="graphic-img">
-                                    ${item.caption ? `<figcaption>${item.caption}</figcaption>` : ""}
-                                </figure>
-                            `
-                            : ""
-                    }
-                </div>
-            `;
-            questionsArea.appendChild(textCard);
-        } else if (item.type === "question") {
-            const questionCard = document.createElement("div");
-            questionCard.classList.add("question-card");
-            questionCard.innerHTML = `
-                <div class="question-header">
-                    <span class="question-number">Pregunta ${item.number}</span>
-                    <span class="question-category">${item.category}</span>
-                </div>
-                <div class="question-body">
-                    <p class="question-text">${item.text}</p>
-                    <div class="question-options">
-                        ${item.options
-                            .map(
-                                (option, index) => `
-                                <label>
-                                    <input type="radio" name="question${item.number}" value="${String.fromCharCode(
-                                        65 + index
-                                    )}">
-                                    ${String.fromCharCode(65 + index)}. ${option}
-                                </label>
-                            `
-                            )
-                            .join("")}
-                    </div>
-                </div>
-                <div class="question-footer">
-                    <a href="#" class="report-link">Reportar pregunta</a>
-                </div>
-            `;
-            questionsArea.appendChild(questionCard);
-        }
+    // Filtrar textos
+    textCards.forEach((card) => {
+        const cardCategory = card.getAttribute('data-category'); // Obtener la categoría del atributo personalizado
+        card.style.display = category === 'all' || cardCategory === category ? 'block' : 'none';
     });
-
-    // Restaurar respuestas seleccionadas
-    Object.keys(userAnswers).forEach((questionNumber) => {
-        const selectedOption = document.querySelector(
-            `input[name="question${questionNumber}"][value="${userAnswers[questionNumber]}"]`
-        );
-        if (selectedOption) {
-            selectedOption.checked = true;
-        }
-    });
-
-    // Añadir eventos a los inputs después de renderizar
-    document.querySelectorAll('.question-options input[type="radio"]').forEach((input) => {
-        input.addEventListener("change", (e) => {
-            const questionNumber = e.target.name.replace("question", "");
-            userAnswers[questionNumber] = e.target.value; // Almacenar respuesta seleccionada
-            updateProgress(); // Actualizar progreso
-        });
-    });
-
-    // Re-renderizar contenido de MathJax
-    if (window.MathJax) {
-        MathJax.typesetPromise().catch((err) => console.error("MathJax Error: ", err));
-    }
 }
 
-// Event Listener para el filtro de cursos
-coursesFilter.addEventListener("change", (e) => {
-    currentCourseFilter = e.target.value; // Actualizar el filtro actual
-    renderQuestions(); // Actualizar preguntas
-});
-
-// Event Listener para el filtro de vista
-viewFilterElement.addEventListener("change", (e) => {
-    viewFilter = e.target.value; // Actualizar el filtro de vista
-    renderQuestions(); // Actualizar preguntas
-});
-
-// Renderizar todas las preguntas al cargar la página
-renderQuestions();
-
-
-
-
+// Inicializar mostrando todo el contenido al cargar la página
+filterContent('all');
 
 
 
@@ -692,7 +587,6 @@ finishButton.addEventListener("click", showConfirmationModal);
 confirmFinishButton.addEventListener("click", confirmFinish);
 cancelFinishButton.addEventListener("click", hideConfirmationModal);
 
-// Actualiza la respuesta seleccionada en tiempo real
 document.querySelectorAll('.question-options input[type="radio"]').forEach((input) => {
     input.addEventListener('change', (e) => {
         const questionNumber = e.target.name.replace('question', ''); // Obtener el número de la pregunta
@@ -701,7 +595,6 @@ document.querySelectorAll('.question-options input[type="radio"]').forEach((inpu
     });
 });
 
-// Seleccionamos el header y el sidebar
 const header = document.querySelector('.header');
 const sidebar = document.querySelector('.sidebar');
 

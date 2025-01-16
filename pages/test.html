@@ -9,6 +9,7 @@
     <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="../css/test-responsive.css">
 
 </head>
 <body>
@@ -36,19 +37,25 @@
         <div class="filter-header">
             <h3>Filtrar Examen</h3>
         </div>
-        <div class="dropdown-section">
-            <select name="courses" id="courses">
-                <option value="all" class="option_dd">Todos los cursos</option>
-                <option value="verbal" class="option_dd">Razonamiento Verbal</option>
-                <option value="math" class="option_dd">Razonamiento Matemático</option>
-            </select>
-            <select name="view" id="view">
-                <option value="all" class="option_dd">Mostrar todas</option>
-                <option value="unanswered" class="option_dd">Solo no respondidas</option>
-            </select>
-        </div>
-        <div class="finish-section">
-            <button class="btn-finish">Finalizar</button>
+        <div class="filter-section">
+            <h3>Filtrar por curso:</h3>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="course-filter" value="all" checked>
+                    Todos los cursos
+                </label>
+                <label>
+                    <input type="radio" name="course-filter" value="Razonamiento Verbal">
+                    Razonamiento Verbal
+                </label>
+                <label>
+                    <input type="radio" name="course-filter" value="Razonamiento Matematico">
+                    Razonamiento Matemático
+                </label>
+            </div>
+            <div class="finish-section">
+                <button class="btn-finish">Finalizar</button>
+            </div>
         </div>
 
         <div class="modal-overlay" id="timeUpModal" style="display: none;">
