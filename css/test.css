@@ -24,10 +24,15 @@
 
 .header-container {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative; /* Necesario para centrar el título */
+}
+
+.header-logo {
+    flex: 0 0 auto; /* Mantiene el tamaño del logo */
 }
 
 .header-img {
@@ -36,19 +41,24 @@
     width: auto;
 }
 
-.header-title h1 {
-    font-family: 'Lemon Milk', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 5px;
-    text-transform: uppercase;
+.header-title {
+    position: absolute;
+    left: 50%; /* Posición horizontal centrada */
+    transform: translateX(-50%); /* Compensar el ancho del div para centrarlo */
+    text-align: center;
 }
 
 .header-title h2 {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    padding-left: 1px;
+    font-size: 1.5rem;
+    font-weight: 600;
     margin: 0;
+    text-transform: uppercase;
+}
+
+.header-user {
+    flex: 0 0 auto; /* Mantiene el tamaño del saludo */
+    text-align: right;
 }
 
 .header-user p {
@@ -58,7 +68,7 @@
 }
 
 .header-user span {
-    color: var(--color-amarillo); 
+    color: var(--color-amarillo);
 }
 
 /*Side Bar*/
@@ -171,6 +181,9 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    display: block;
+    margin: 60px auto;
+    width: 80%;
 }
 
 .btn-finish:hover {
@@ -219,7 +232,7 @@
 .question-category {
     font-size: 0.9rem;
     color: var(--color-amarillo);
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .question-body .question-text {
@@ -255,7 +268,7 @@
     text-decoration: none;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
-    opacity: 0.4;
+    opacity: 1;
 }
 
 .report-link:hover {
@@ -293,7 +306,7 @@
     font-size: 1rem;
     padding-top: 5px;
     color: var(--color-azul);
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .text-body {
@@ -352,87 +365,91 @@ figcaption {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out; /* Animación de aparición */
 }
 
 .modal-content {
     background-color: var(--color-blanco);
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
     max-width: 600px;
-    min-height: 200px;
-    line-height: 2;
+    min-height: 220px;
+    line-height: 1.8;
     width: 90%;
+    animation: slideIn 0.4s ease-in-out; /* Animación de entrada */
 }
 
-.modal-content h2 {
+.modal-header h2 {
     font-family: 'Lemon Milk', sans-serif;
     color: var(--color-rojo);
-    margin-bottom: 5px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
 }
 
-.modal-content p {
+.modal-body p {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--color-negro);
-    font-size: 18px;
-    width: 70%;
+    font-size: 1rem;
+    width: 80%;
     margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+.modal-actions {
+    margin-top: 20px;
 }
 
 .btn-results {
     background-color: var(--color-amarillo);
-    color: var(--color-blanco);
-    padding: 10px 20px;
-    font-size: 1.2rem;
+    color: var(--color-negro);
+    padding: 12px 25px;
+    font-size: 1rem;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: transform 0.3s ease, background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.2);
+    display: block;
+    margin: 10px auto;
+    width: 80%;
 }
 
 .btn-results:hover {
     background-color: var(--color-amarillo-opaco);
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
 }
 
-.pagination {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    margin: 20px auto;
-    width: 80%;
-    gap: 10px;
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.pagination-btn {
-    background-color: var(--color-azul);
-    color: var(--color-blanco);
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
-.pagination-btn:hover {
-    background-color: var(--color-amarillo);
-}
 
-.pagination-display {
-    font-size: 1rem;
-    font-family: 'Josefin Sans', sans-serif;
-    color: var(--color-negro);
-    font-weight: bold;
-}
 
 /* Modal de Confirmación */
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -440,64 +457,218 @@ figcaption {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out; /* Animación de aparición */
+}
+
+.modal-overlay.show {
+    display: flex;
 }
 
 .modal-content {
-    background-color: var(--color-blanco);
-    padding: 50px;
-    border-radius: 10px;
-    width: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 450px;
     text-align: center;
+    animation: slideIn 0.4s ease-in-out; /* Animación de entrada */
 }
 
-.modal-content h2 {
+.modal-header h2 {
     font-family: 'Lemon Milk', sans-serif;
     color: var(--color-azul);
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
-.modal-content p {
+.modal-body p {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--color-negro);
     font-size: 1rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .modal-actions {
     display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
+    justify-content: space-between; /* Alineación más uniforme */
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.btn-finish, .btn-cancel {
-    padding: 10px 20px;
-    border-radius: 5px;
+.btn-finish-modal, .btn-cancel-modal {
+    padding: 12px 20px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease-in-out;
+    border: none;
+    font-size: 1rem;
 }
 
-.btn-finish {
+.btn-finish-modal {
     background-color: var(--color-rojo);
     color: var(--color-blanco);
-    transition: background-color 0.3s ease-in-out;
+    flex: 1; /* Hacer que ambos botones tengan el mismo tamaño */
+    max-width: 45%;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
 }
 
-.btn-finish:hover {
+.btn-finish-modal:hover {
     background-color: #be0606;
+    transform: scale(1.05); /* Agregar efecto de escala */
 }
 
-.btn-cancel {
+.btn-cancel-modal {
     background-color: var(--color-amarillo);
-    color: var(--color-blanco);
-    transition: background-color 0.3s ease-in-out;
+    color: var(--color-negro);
+    flex: 1;
+    max-width: 45%;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.2);
 }
 
-.btn-cancel:hover {
+.btn-cancel-modal:hover {
     background-color: var(--color-amarillo-opaco);
+    transform: scale(1.05); /* Agregar efecto de escala */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: var(--color-blanco);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    animation: slideIn 0.4s ease-in-out;
+}
+
+.modal-header h2 {
+    font-family: 'Lemon Milk', sans-serif;
+    color: var(--color-rojo);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.modal-body p {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--color-negro);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: var(--color-negro);
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    border: 1px solid var(--color-gris);
+    border-radius: 8px;
+    resize: none;
+}
+
+textarea:focus {
+    border-color: var(--color-azul);
+    outline: none;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.btn-finish-modal, .btn-cancel-modal {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease-in-out;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-finish-modal {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    flex: 1;
+    max-width: 45%;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+}
+
+.btn-finish-modal:hover {
+    background-color: #be0606;
+    transform: scale(1.05);
+}
+
+.btn-cancel-modal {
+    background-color: var(--color-amarillo);
+    color: var(--color-negro);
+    flex: 1;
+    max-width: 45%;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.2);
+}
+
+.btn-cancel-modal:hover {
+    background-color: var(--color-amarillo-opaco);
+    transform: scale(1.05);
 }

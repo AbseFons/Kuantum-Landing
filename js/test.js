@@ -479,24 +479,29 @@ document.querySelectorAll('.question-options input[type="radio"]').forEach(input
 updateProgress();
 
 // Variable global para temporizador
-let totalTimeInMinutes = 5; 
-let remainingTimeInSeconds = totalTimeInMinutes * 60; 
+let totalTimeInMinutes = 10; 
+let remainingTimeInSeconds = totalTimeInMinutes * 60;
+
+let timerStopped = false; 
 
 function showTimeUpModal() {
     const modal = document.getElementById('timeUpModal');
     modal.style.display = 'flex';
+    document.querySelector('.timer').textContent = "00:00:00";
+    timerStopped = true;
 }
 
 function goToResults() {
-    window.location.href = "resultados.html";
+    window.location.href = "resultados.html"; 
 }
 
 function updateTimer() {
+    if (timerStopped) return; 
+
     if (remainingTimeInSeconds <= 0) {
         remainingTimeInSeconds = 0; 
-        clearInterval(timerInterval);
-        document.querySelector('.timer').textContent = "00:00:00";
-        showTimeUpModal();
+        clearInterval(timerInterval); 
+        showTimeUpModal(); 
         return;
     }
 
@@ -508,7 +513,7 @@ function updateTimer() {
 
     document.querySelector('.timer').textContent = formattedTime;
 
-    remainingTimeInSeconds--;
+    remainingTimeInSeconds--; 
 }
 
 const timerInterval = setInterval(updateTimer, 1000);
@@ -516,9 +521,6 @@ updateTimer();
 
 
 
-
-
-// Filtrado por categoría
 document.querySelectorAll('input[name="course-filter"]').forEach((radio) => {
     radio.addEventListener('change', () => {
         const selectedCategory = document.querySelector('input[name="course-filter"]:checked').value;
@@ -526,32 +528,25 @@ document.querySelectorAll('input[name="course-filter"]').forEach((radio) => {
     });
 });
 
-// Función para filtrar preguntas y textos por categoría
 function filterContent(category) {
     const questionCards = document.querySelectorAll('.question-card');
     const textCards = document.querySelectorAll('.text-card');
 
-    // Filtrar preguntas
     questionCards.forEach((card) => {
         const cardCategory = card.querySelector('.question-category').textContent.trim();
         card.style.display = category === 'all' || cardCategory === category ? 'block' : 'none';
     });
 
-    // Filtrar textos
     textCards.forEach((card) => {
-        const cardCategory = card.getAttribute('data-category'); // Obtener la categoría del atributo personalizado
+        const cardCategory = card.getAttribute('data-category');
         card.style.display = category === 'all' || cardCategory === category ? 'block' : 'none';
     });
 }
 
-// Inicializar mostrando todo el contenido al cargar la página
 filterContent('all');
 
 
-
-
-
-
+let userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
 
 const confirmationModal = document.getElementById("confirmationModal");
 const timeUpModal = document.getElementById("timeUpModal");
@@ -595,6 +590,8 @@ document.querySelectorAll('.question-options input[type="radio"]').forEach((inpu
     });
 });
 
+
+
 const header = document.querySelector('.header');
 const sidebar = document.querySelector('.sidebar');
 
@@ -618,3 +615,4 @@ function handleScroll() {
 
 // Agrega el Event Listener para el evento scroll
 window.addEventListener('scroll', handleScroll);
+

@@ -49,10 +49,10 @@
             <tbody id="results-table-body">
             </tbody>
         </table>
-
         <div class="btn-container">
-            <a href="test.html" class="btn-action">Intentar de nuevo</a>
-        </div>
+            <a href="test.html" class="btn-retry">Intentar de nuevo</a>
+            <button id="downloadPDF" class="btn-download">Descargar PDF</button>
+        </div>      
     </main>
 
     <script>
@@ -139,6 +139,42 @@
                 }
             }
         });
-    </script> 
+    </script>
+    <script>
+        document.getElementById("downloadPDF").addEventListener("click", () => {
+            const resultsContainer = document.querySelector(".results-container");
+
+            html2canvas(resultsContainer, { scale: 2 }).then((canvas) => {
+                const imgData = canvas.toDataURL("image/png");
+
+                const pdf = new jspdf.jsPDF("p", "mm", "a4"); // Formato A4
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+
+                const canvasWidth = canvas.width;
+                const canvasHeight = canvas.height;
+                const imgHeight = (pdfWidth / canvasWidth) * canvasHeight; // Escalar imagen proporcionalmente al ancho del PDF
+                let heightLeft = imgHeight;
+
+                let position = 0;
+
+                // Agregar imagen a las páginas del PDF
+                pdf.addImage(imgData, "PNG", 0, position, pdfWidth, imgHeight);
+                heightLeft -= pdfHeight;
+
+                while (heightLeft > 0) {
+                    position = position - pdfHeight; // Nueva posición para la siguiente página
+                    pdf.addPage(); // Agregar una nueva página
+                    pdf.addImage(imgData, "PNG", 0, position, pdfWidth, imgHeight);
+                    heightLeft -= pdfHeight;
+                }
+
+                pdf.save("Resultados_Simulacro.pdf"); // Descargar el PDF
+            });
+        });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>     
 </body>
 </html>
