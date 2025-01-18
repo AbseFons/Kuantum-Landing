@@ -24,10 +24,12 @@
                 <nav>
                     <ul class="menu">
                         <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#benefits">Beneficios</a></li>
                         <li class="nav-item"><a class="nav-link" href="#simulationExam">Simulacro</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     </ul>
+                </nav>
+                
                 </nav>
 
                 <div class="btn-container">
@@ -48,9 +50,9 @@
                 <div class="off-canvas-content">
                     <ul class="menu-offcanvas">
                         <li><a href="#home">Inicio</a></li>
-                        <li><a href="#about">Nosotros</a></li>
-                        <li><a href="#simulationExam">Simulacro</a></li>
-                        <li><a href="#contact">Contáctanos</a></li>
+                        <li><a href="#benefits">Beneficios</a></li>
+                        <li><a href="#simulationExam">Simulacro Destacado</a></li>
+                        <li><a href="#blog">Blog & Consejos</a></li>
                     </ul>
                     <div class="off-canvas-cta">
                         <a href="./pages/login.html" class="btn-cta">Iniciar Sesión</a>
@@ -59,14 +61,14 @@
             </div>
         </header>
 
-        <section class="hero-section">
+        <section class="hero-section" id="home">
             <div class="hero-content">
                 <h1 class="hero-title">Domina tu Examen de Beca 18 con <span>KUANTUM</span></h1>
                 <a href="#simulationExam" class="btn-cta-hero">Accede al Simulacro</a>
             </div>
         </section>
 
-        <section class="benefits-section">
+        <section class="benefits-section" id="benefits">
             <div class="benefits-header">
                 <h2 class="benefits-title">¿Por qué elegir Kuantum?</h2>
                 <p class="benefits-subtitle">Te preparamos para lograr resultados excepcionales con recursos diseñados para ti.</p>
@@ -95,40 +97,87 @@
             </div>
         </section>        
 
-        <section id="about" class="about-section">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="./media/logo_principal.png" alt="Logo Principal">
-                </div>
-                <div class="about-content">
-                    <h2>Sobre Nosotros</h2>
-                    <p>
-                        En <strong>Kuantum</strong>, nuestra misión es ofrecer herramientas innovadoras y prácticas para que 
-                        los estudiantes alcancen su máximo potencial en exámenes como Beca 18. Nos comprometemos a 
-                        proporcionar recursos accesibles y efectivos que fomenten el aprendizaje, la preparación y el éxito 
-                        académico.
+        <section class="featured-simulation" id="simulationExam">
+            <div class="simulation-image">
+                <img src="./media/simulacro.jpg" alt="Simulacro en acción">
+            </div>
+            <div class="simulation-content">
+                <h2 class="simulation-title">¡Prepárate para el Éxito!</h2>
+                <p class="simulation-subtitle">Simulacro diseñado para maximizar tu rendimiento y lograr resultados excepcionales.</p>
+                <ul class="simulation-benefits">
+                    <li>🎯 Preguntas alineadas con el examen oficial.</li>
+                    <li>📊 Análisis detallado de tu rendimiento.</li>
+                    <li>💻 Accede desde cualquier dispositivo.</li>
+                </ul>
+                <a href="#simulationExam" class="btn-simulation">¡Realiza el Simulacro Ahora!</a>
+            </div>
+        </section>        
+
+        <section class="blog-section" id="blog">
+            <div class="blog-layout">
+                <div class="blog-text">
+                    <h3 class="blog-subtitle">Descubre Nuestra Biblioteca</h3>
+                    <p class="blog-description">
+                        Aprende con nuestros videos educativos diseñados para ayudarte a dominar cada aspecto de tu examen. Con explicaciones claras y prácticas, podrás prepararte de manera eficiente. ¡Mira nuestro video destacado y explora más contenido en nuestro canal!
                     </p>
+                    <a href="https://www.youtube.com/@Kuantumeduca" target="_blank" class="btn-channel">Visita nuestro canal</a>
+                </div>
+                <div class="blog-video">
+                    <iframe 
+                        src="https://www.youtube.com/embed/7-CMb7Q8pbU" 
+                        title="Desarrollo de un examen de Beca 18"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </section>
-
-        <section class="simulation-section" id="simulationExam">
-            <div class="simulation-container">
-                <div class="simulation-content">
-                    <h2>¡Prepárate para tu futuro!</h2>
-                    <p class="simulation-text-large">
-                        En <strong>Kuantum</strong>, creemos que cada oportunidad es un paso hacia tus sueños. Nuestro simulacro está diseñado para acercarte al examen de <strong>Beca 18</strong>, brindándote una experiencia realista, preguntas desafiantes y un ambiente ideal para medir tus habilidades.
+        
+        <footer class="footer" id="footer">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h4>Sobre Kuantum</h4>
+                    <p>
+                        En Kuantum te ayudamos a prepararte para tus metas académicas. Con recursos innovadores y un enfoque en tu desarrollo, estamos comprometidos con tu éxito en el examen Beca 18 y mucho más.
                     </p>
-                    <p class="simulation-text-small">
-                        En <strong>Kuantum</strong>, creemos que cada oportunidad es un paso hacia tus sueños.
-                    </p>
-                    <a href="./pages/test.html" class="btn-simulation">Realiza el Simulacro Aquí</a>
                 </div>
-                <div class="simulation-image">
-                    <img src="./media/simulacro.jpg" alt="Simulacro">
+                
+                <div class="footer-links">
+                    <h4>Links útiles</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#simulationExam">Simulacro</a></li>
+                        <li><a href="#contact">Contáctanos</a></li>
+                        <li><a href="https://www.youtube.com/@Kuantumeduca" target="_blank">Canal de YouTube</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📍 Dirección: Av. Principal 123, Lima, Perú</li>
+                        <li>📧 Correo: <a href="mailto:contacto@kuantum.com">contacto@kuantum.com</a></li>
+                        <li>📞 Teléfono: +51 987 654 321</li>
+                    </ul>
+                </div>
+        
+                <div class="footer-socials">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><img src="./media/icons/facebook_blanco.png" alt="Facebook"></a>
+                        <a href="#" target="_blank"><img src="./media/icons/instagram_blanco.png" alt="Instagram"></a>
+                        <a href="#" target="_blank"><img src="./media/icons/tiktok_blanco.png" alt="TikTok"></a>
+                        <a href="https://wa.me/51987654321" target="_blank"><img src="./media/icons/whatsapp_blanco.png" alt="WhatsApp"></a>
+                    </div>
                 </div>
             </div>
-        </section>    
+            <div class="footer-bottom">
+                <p>© 2025 Kuantum. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        
 
         <script>
             function toggleMenu() {

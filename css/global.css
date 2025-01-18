@@ -265,129 +265,7 @@ body {
 .btn-cta-hero:hover {
     background-color: var(--color-amarillo-opaco);
 }
-.about-section {
-    background-color: var(--color-gris);
-    padding: 50px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 20px;
-    margin: 40px auto;
-    max-width: 1800px;
-    width: 96%;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
 
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    max-width: 1000px;
-    flex-wrap: wrap;
-}
-
-.about-image img {
-    max-width: 300px;
-    width: 100%;
-    border-radius: 10px;
-    padding-right: 50px;
-}
-
-.about-content {
-    flex: 1;
-    font-family: 'Josefin Sans', sans-serif;
-    color: var(--color-negro);
-}
-
-.about-content h2 {
-    font-family: 'Lemon Milk', sans-serif;
-    color: var(--color-azul);
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.about-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--color-negro);
-    text-align: justify;
-}
-
-.about-content strong {
-    color: var(--color-amarillo);
-}
-.simulation-section {
-    background-color: var(--color-amarillo);
-    padding: 60px 0;
-    display: flex;
-    justify-content: center;
-}
-
-.simulation-container {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    max-width: 1200px;
-    width: 90%;
-    flex-wrap: wrap;
-    color: var(--color-blanco);
-}
-
-.simulation-content {
-    flex: 1;
-    text-align: left;
-}
-
-.simulation-content h2 {
-    font-family: 'Lemon Milk', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    color: var(--color-azul);
-}
-
-.simulation-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 50px;
-    color: var(--color-blanco);
-}
-
-.simulation-text-large {
-    display: block;
-}
-.simulation-text-small {
-    display: none;
-}
-
-.simulation-content strong {
-    color: var(--color-rojo);
-}
-
-.btn-simulation {
-    text-decoration: none;
-    background-color: var(--color-rojo);
-    color: var(--color-blanco);
-    padding: 15px 30px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 10px;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.btn-simulation:hover {
-    background-color: var(--color-azul);
-}
-
-.simulation-image img {
-    max-width: 400px;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 .benefits-section {
     background-color: var(--color-blanco);
@@ -413,7 +291,7 @@ body {
 
 .benefits-subtitle {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: var(--color-negro);
     text-align: right;
     max-width: 50%;
@@ -474,3 +352,397 @@ body {
     width: 80%; /* Limitar ancho del texto */
 }
 
+
+
+.featured-simulation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    max-width: 1700px;
+    width: 88%;
+    margin: 0 auto;
+    background-color: var(--color-blanco);
+}
+
+.simulation-image {
+    flex: 0 0 42%; /* Imagen ocupa el 42% del ancho */
+    margin-left: 1%; /* Ajusta el margen desde el borde izquierdo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.simulation-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 40px; /* Elimina bordes redondeados */
+}
+
+.simulation-content {
+    flex: 1;
+    color: var(--color-negro); /* Texto en negro */
+    padding-left: 10%; /* Espaciado entre la imagen y el texto */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.simulation-title {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: var(--color-azul);
+}
+
+.simulation-subtitle {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--color-negro);
+}
+
+.simulation-benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 60px;
+}
+
+.simulation-benefits li {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--color-negro);
+}
+
+.btn-simulation {
+    text-decoration: none;
+    background-color: var(--color-amarillo);
+    color: var(--color-blanco);
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-simulation:hover {
+    background-color: var(--color-rojo);
+}
+
+/* Responsividad */
+@media (max-width: 1200px) {
+    .simulation-image {
+        flex: 0 0 45%; /* Ajusta el ancho de la imagen */
+    }
+
+    .simulation-content {
+        padding-left: 3%;
+    }
+
+    .simulation-title {
+        font-size: 1.8rem;
+    }
+
+    .simulation-subtitle {
+        font-size: 1rem;
+    }
+
+    .btn-simulation {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-simulation {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .simulation-image {
+        margin: 0 auto 20px;
+        flex: 0 0 auto; /* Permite que la imagen ocupe todo su contenido */
+        width: 80%;
+    }
+
+    .simulation-content {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    .simulation-title {
+        font-size: 1.6rem;
+    }
+
+    .simulation-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .btn-simulation {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .simulation-benefits li {
+        font-size: 0.9rem;
+    }
+
+    .simulation-content p {
+        font-size: 0.9rem;
+    }
+
+    .simulation-image img {
+        display: none; /* Ocultar imagen en pantallas más pequeñas */
+    }
+
+    .simulation-title {
+        font-size: 1.4rem;
+    }
+}
+
+.blog-section {
+    background-color: #f5f5f5; /* Fondo gris claro */
+    padding: 60px;
+    max-width: 1700px;
+    width: 95%;
+    margin: 40px auto;
+    border-radius: 12px; /* Bordes redondeados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.blog-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    width: 100%;
+}
+
+.blog-text {
+    flex: 1 1 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 20px 0;
+}
+
+.blog-subtitle {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-amarillo-opaco); /* Azul para destacar el título */
+    margin-bottom: 20px;
+}
+
+.blog-description {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-negro);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.btn-channel {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--color-rojo); /* Botón rojo */
+    color: var(--color-blanco);
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    max-width: 200px; /* Limita el ancho del botón */
+}
+
+.btn-channel:hover {
+    background-color: #be0606; /* Oscurece el rojo al hacer hover */
+}
+
+.blog-video {
+    flex: 1 1 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-video iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px; /* Suaviza los bordes del video */
+}
+
+/* Responsividad */
+@media (max-width: 1200px) {
+    .blog-video iframe {
+        height: 250px;
+    }
+
+    .blog-description {
+        font-size: 1.1rem;
+    }
+
+    .blog-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .blog-text, .blog-video {
+        flex: 1 1 100%;
+    }
+
+    .blog-description {
+        font-size: 1rem;
+    }
+
+    .btn-channel {
+        margin: 0 auto; /* Centra el botón en pantallas pequeñas */
+    }
+}
+
+
+/* Footer general */
+.footer {
+    background-color: var(--color-amarillo); /* Fondo amarillo */
+    color: var(--color-blanco); /* Texto blanco */
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1700px;
+    width: 88%;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+/* Breve descripción */
+.footer-about {
+    flex: 1 1 25%;
+}
+
+.footer-about h4 {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-about p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Links útiles */
+.footer-links {
+    flex: 1 1 20%;
+}
+
+.footer-links h4 {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: var(--color-azul);
+}
+
+/* Contacto */
+.footer-contact {
+    flex: 1 1 25%;
+}
+
+.footer-contact h4 {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact li {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-contact a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-contact a:hover {
+    color: var(--color-azul);
+}
+
+/* Redes sociales */
+.footer-socials {
+    flex: 1 1 20%;
+    text-align: center;
+}
+
+.footer-socials h4 {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+/* Parte inferior */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
