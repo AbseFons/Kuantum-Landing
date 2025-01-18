@@ -30,6 +30,12 @@
     .about-section {
         width: 90%;
     }
+    .benefit-title {
+        font-size: 1.3rem;
+    }
+    .benefit-text {
+        font-size: 1.1rem;
+    }
 }
 
 /* === Responsividad para Pantallas Grandes === */
@@ -83,6 +89,26 @@
     .about-image img {
         max-width: 250px;
         padding: 20px;
+    }
+    /*Beneficios*/
+    .benefits-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefit-card {
+        min-height: 250px; /* Reducir altura mínima */
+    }
+
+    .benefit-icon {
+        font-size: 3rem; /* Ajustar tamaño del icono */
+    }
+
+    .benefit-title {
+        font-size: 1.5rem; /* Ajustar tamaño del título */
+    }
+
+    .benefit-text {
+        font-size: 1.2rem; /* Ajustar tamaño del texto */
     }
 }
 
@@ -181,6 +207,12 @@
         font-size: 13px;
         padding: 8px 10px 6px;
     }
+    .benefits-subtitle {
+        display: none;
+    }
+    .benefit-text{
+        font-size: 1rem;
+    }
 }
 
 /* === Responsividad para Pantallas Tipo Tablets === */
@@ -264,6 +296,33 @@
     }
     .simulation-text-small {
         display: block;
+    }
+    /*Beneficios*/
+    .benefits-title{
+        font-size: 1.5rem;
+    }
+
+    .benefits-subtitles {
+        show: none;
+    }
+    .benefits-container {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+        min-height: 200px; 
+    }
+
+    .benefit-icon {
+        font-size: 2.5rem;
+    }
+
+    .benefit-title {
+        font-size: 1.5rem;
+    }
+
+    .benefit-text {
+        font-size: 1.1rem;
     }
 }
 

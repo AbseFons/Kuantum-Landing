@@ -388,3 +388,89 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.benefits-section {
+    background-color: var(--color-blanco);
+    padding: 60px 30px;
+    max-width: 1700px;
+    width: 88%;
+    margin: 0 auto;
+}
+
+.benefits-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.benefits-title {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 2rem;
+    color: var(--color-azul);
+    text-align: left;
+}
+
+.benefits-subtitle {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.4rem;
+    color: var(--color-negro);
+    text-align: right;
+    max-width: 50%;
+}
+
+.benefits-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.benefit-card {
+    background-color: var(--color-blanco);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    min-height: 350px;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Icono */
+.benefit-icon {
+    font-size: 4rem;
+    color: var(--color-amarillo);
+    position: absolute;
+    top: 15%; /* Siempre empieza al 15% de la altura de la tarjeta */
+    left: 15%; /* Alineado a la izquierda */
+}
+
+/* Título */
+.benefit-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-azul);
+    position: absolute;
+    top: 50%; /* Posicionado al 35% de la altura */
+    left: 15%; /* Alineado a la izquierda */
+    text-align: left;
+}
+
+/* Texto */
+.benefit-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3rem;
+    color: var(--color-negro);
+    position: absolute;
+    top: 65%; /* Posicionado al 55% de la altura */
+    left: 15%; /* Alineado a la izquierda */
+    text-align: left; /* Texto justificado a la izquierda */
+    width: 80%; /* Limitar ancho del texto */
+}
+
