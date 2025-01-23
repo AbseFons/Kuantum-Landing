@@ -614,7 +614,7 @@ body {
 
 /* Footer general */
 .footer {
-    background-color: var(--color-amarillo); /* Fondo amarillo */
+    background-color: var(--color-azul); /* Fondo amarillo */
     color: var(--color-blanco); /* Texto blanco */
     padding: 40px 20px;
 }

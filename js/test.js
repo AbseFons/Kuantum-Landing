@@ -460,6 +460,41 @@ content.forEach((item) => {
 });
 
 
+// Seleccionar todos los enlaces "Reportar pregunta"
+document.querySelectorAll('.report-link').forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Evitar comportamiento predeterminado del enlace
+        showReportModal(); // Mostrar el modal de reporte
+    });
+});
+
+// Función para mostrar el modal
+function showReportModal() {
+    const reportModal = document.getElementById('reportModal');
+    if (reportModal) {
+        reportModal.style.display = 'flex'; // Mostrar el modal
+    } else {
+        console.error('Modal de reporte no encontrado.');
+    }
+}
+
+// Función para ocultar el modal
+function hideReportModal() {
+    const reportModal = document.getElementById('reportModal');
+    if (reportModal) {
+        reportModal.style.display = 'none'; // Ocultar el modal
+    }
+}
+
+// Agregar evento para cerrar el modal con un botón
+const cancelReportButton = document.getElementById('cancelReport');
+if (cancelReportButton) {
+    cancelReportButton.addEventListener('click', hideReportModal);
+}
+
+
+
+
 // Barra de Progreso
 const totalQuestions = content.filter(item => item.type === "question").length;
 let answeredQuestions = 0;
