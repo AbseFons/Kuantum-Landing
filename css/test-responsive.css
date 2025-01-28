@@ -112,11 +112,6 @@
     .radio-group {
         flex-direction: column;
     }
-    .modal-content {
-        max-width: 350px;
-        padding: 15px;
-    }
-
     .modal-header h2 {
         font-size: 1.05rem;
     }
@@ -133,7 +128,13 @@
         max-width: 90%;
         padding: 20px;
     }
-
+    .modal-content h2 {
+        margin: 20px 0px;
+    }
+    .modal-content p {
+        margin-top: -10px;
+        font-size: 1.1rem;
+    }
     .modal-header h2 {
         font-size: 1.5rem;
     }
@@ -141,6 +142,11 @@
     .modal-body p {
         font-size: 0.9rem;
         width: 90%;
+    }
+    .modal-buttons {
+        justify-content: space-evenly;
+        gap: 20%;
+        margin-top: 30px;
     }
 
     .btn-results {

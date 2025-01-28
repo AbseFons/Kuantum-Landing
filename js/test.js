@@ -651,3 +651,26 @@ function handleScroll() {
 // Agrega el Event Listener para el evento scroll
 window.addEventListener('scroll', handleScroll);
 
+document.addEventListener("DOMContentLoaded", function() {
+    const logoLink = document.getElementById("logo-link");
+    const modal = document.getElementById("modal-confirmation");
+    const confirmBtn = document.getElementById("confirm-return");
+    const cancelBtn = document.getElementById("cancel-return");
+
+    // Evita la redirección inmediata y muestra el modal
+    logoLink.addEventListener("click", function(event) {
+        event.preventDefault(); // Evita que el enlace funcione de inmediato
+        modal.style.display = "flex"; // Muestra el modal
+    });
+
+    // Si el usuario confirma, redirigir a index.html
+    confirmBtn.addEventListener("click", function() {
+        window.location.href = "../index.html"; // Redirige
+    });
+
+    // Si el usuario cancela, ocultar el modal
+    cancelBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+});
+

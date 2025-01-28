@@ -254,6 +254,33 @@
     .btn-simulation {
         font-size: 0.9rem;
     }
+    .modal-content {
+        width: 60%; 
+        padding: 40px; 
+    }
+
+    .modal-content h2 {
+        font-size: 1.2rem; 
+    }
+
+    .modal-content label {
+        font-size: 0.9rem; 
+    }
+
+    .modal-content input {
+        font-size: 0.9rem;
+        padding: 8px; 
+    }
+
+    .btn-confirm, .btn-cancel {
+        font-size: 0.9rem; 
+        padding: 8px 15px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 /* === Responsividad para Pantallas Tipo Tablets === */
@@ -333,6 +360,10 @@
     .benefit-text {
         font-size: 0.9rem;
         margin-top: -10px;
+    }
+    .modal-content {
+        width: 80%; 
+        padding: 30px; 
     }
 }
 
@@ -423,6 +454,25 @@
     }
     .simulation-benefits li {
         font-size: 1rem;
+    }
+    .modal-content {
+        width: 90%;
+        padding: 20px; 
+        border-radius: 10px;
+    }
+
+    .modal-content h2 {
+        font-size: 1rem;
+    }
+
+    .modal-content input {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+
+    .btn-confirm, .btn-cancel {
+        font-size: 0.85rem; 
+        padding: 6px 12px; 
     }
 }
 @media (max-width: 350px){

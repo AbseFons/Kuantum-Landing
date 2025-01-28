@@ -16,8 +16,10 @@
     <header class="header">
         <div class="header-container">
             <div class="header-logo">
-                <img src="../media/variable_amarillo.png" alt="Variable Amarillo" class="header-img">
-            </div>
+                <a href="#" id="logo-link">
+                    <img src="../media/variable_amarillo.png" alt="Variable Amarillo" class="header-img">
+                </a>    
+            </div>            
             <div class="header-title">
                 <h2>Simulacro para Beca 18</h2>
             </div>
@@ -90,6 +92,17 @@
             </div>
         </div>
     </aside>
+
+    <div id="modal-confirmation" class="modal-overlay">
+        <div class="modal-content">
+            <h2>¿Estás seguro de volver a la página principal?</h2>
+            <p>Si vuelves a la página principal, podrías perder el progreso actual.</p>
+            <div class="modal-buttons">
+                <button id="confirm-return" class="btn-confirm">Sí, volver</button>
+                <button id="cancel-return" class="btn-cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
 
     <div class="modal-overlay" id="reportModal" style="display: none;">
         <div class="modal-content">
