@@ -97,6 +97,34 @@
     .benefit-text {
         font-size: 1.2rem; /* Ajustar tamaño del texto */
     }
+    /*Simulación*/
+    .simulation-image {
+        flex: 0 0 45%; /* Ajusta el ancho de la imagen */
+    }
+
+    .simulation-content {
+        padding-left: 5%;
+    }
+
+    .simulation-title {
+        font-size: 1.8rem;
+    }
+
+    .simulation-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .btn-simulation {
+        font-size: 1.2rem;
+    }
+    .simulation-benefits li .benefit-list-icon {
+        width: 24px; 
+        height: 24px;
+    }
+
+    .simulation-benefits li {
+        font-size: 1.2rem; 
+    }
 }
 
 @media (max-width: 950px) {
@@ -129,16 +157,21 @@
         font-size: 14px;
         padding: 9px 12px 7px;
     }
+    /*Simulación*/
     .simulation-container {
         flex-direction: column;
         text-align: center;
     }
-
     .simulation-image {
         display: none; /* Oculta la imagen */
     }
     .simulation-content {
         text-align: center; 
+    }
+    .simulation-benefits{
+        text-align: center; 
+        justify-content: center;
+        display: grid;
     }
 
     .simulation-content h2 {
@@ -189,6 +222,37 @@
     }
     .benefit-text{
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-simulation {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .simulation-image {
+        margin: 0 auto 20px;
+        flex: 0 0 auto;
+        width: 80%;
+    }
+
+    .simulation-content {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    .simulation-title {
+        font-size: 1.6rem;
+    }
+
+    .simulation-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .btn-simulation {
+        font-size: 0.9rem;
     }
 }
 
@@ -247,32 +311,47 @@
     .simulation-text-small {
         display: block;
     }
+
     /*Beneficios*/
     .benefits-title{
         font-size: 1.5rem;
     }
-
     .benefits-subtitles {
         show: none;
     }
-    .benefits-container {
-        grid-template-columns: 1fr;
-    }
-
     .benefit-card {
+        padding: 0;
         min-height: 200px; 
     }
-
     .benefit-icon {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-
     .benefit-title {
-        font-size: 1.5rem;
-    }
-
-    .benefit-text {
         font-size: 1.1rem;
+        margin-top: -10px;
+    }
+    .benefit-text {
+        font-size: 0.9rem;
+        margin-top: -10px;
+    }
+}
+
+@media (max-width: 620px){
+    .benefit-card {
+        margin-left: -10px;
+    }
+    .benefit-icon {
+        font-size: 1.8rem;
+        margin-top: -10px;
+    }
+    .benefit-title {
+        font-size: 1rem;
+        margin-top: -20px;
+        padding-right: 20px;
+    }
+    .benefit-text {
+        font-size: 0.8rem;
+        padding-right: 20px;
     }
 }
 
