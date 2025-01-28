@@ -1,4 +1,7 @@
 @media (max-width:1200px){
+    .header-title h2 {
+        font-size: 1.2rem;
+    }
     .sidebar {
         width: 30%;
     }
@@ -25,6 +28,9 @@
         box-shadow: none;
         gap: 20px;
     }
+    .filter-header {
+        margin-bottom: 20px;
+    }
     .questions-area {
         margin-left: 0; 
         padding: 20px; 
@@ -32,7 +38,7 @@
     }
     .question-card {
         width: 100%;
-        margin: 20px 0;
+        margin: 0;
     }
     .text-card {
         width: 100%;
@@ -49,6 +55,7 @@
     }
     .radio-group {
         flex-direction: initial;
+        gap: 25px;
     }
     .modal-content {
         max-width: 400px;
@@ -69,7 +76,7 @@
     }
     .btn-finish {
         display: flex;
-        margin: 30px auto;
+        margin: 40px auto 10px;
         width: auto;
     }
     .btn-finish-modal, .btn-cancel-modal {
@@ -78,8 +85,22 @@
     }
 }
 @media (max-width: 770px) {
+    .header-user {
+        display: none;
+    }
+    .header-title {
+        position: static;  
+        left: auto;       
+        transform: none;   
+    }
+    .header-title h2 {
+        font-size: 1.1rem;
+    }
+    .progress-section {
+        margin-top: 10px;
+    }
     .text-body p {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
     }
     .text-title {
         font-size: 0.9rem;
@@ -97,7 +118,7 @@
     }
 
     .modal-header h2 {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
     }
 
     .modal-body p {
@@ -128,6 +149,15 @@
     }
 }
 @media (max-width: 465px) {
+    .header-title h2 {
+        font-size: 0.8rem;
+    }
+    .header-img {
+        height: 32px;
+    }
+    .text-card {
+        padding: 25px;
+    }
     .text-header,
     .question-header {
         gap: 10px;
@@ -167,6 +197,9 @@
     .btn-finish {
         font-size: 12px;
         margin-top: 30px;
+    }
+    .question-options label {
+        margin-left: 10px;
     }
     .report-link {
         font-size: 0.75rem;
@@ -214,9 +247,20 @@
     }
 }
 @media (max-width: 350px) {
+    .header-title h2 {
+        font-size: 0.7rem;
+        margin-right: -10px;
+    }
+    .header-img {
+        height: 30px;
+        margin-left: -10px;
+    }
+    .text-card {
+        padding: 15px;
+    }
     .text-body p,
     .question-options label,
     .question-body .question-text {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 }

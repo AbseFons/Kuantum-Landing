@@ -309,7 +309,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     position: relative;
-    padding: 20px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     min-height: 350px;
 }
@@ -334,6 +333,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--color-azul);
+    padding-right: 10px;
     position: absolute;
     top: 50%; /* Posicionado al 35% de la altura */
     left: 15%; /* Alineado a la izquierda */
@@ -345,11 +345,12 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.3rem;
     color: var(--color-negro);
+    padding-right: 10px;
     position: absolute;
-    top: 65%; /* Posicionado al 55% de la altura */
-    left: 15%; /* Alineado a la izquierda */
-    text-align: left; /* Texto justificado a la izquierda */
-    width: 80%; /* Limitar ancho del texto */
+    top: 65%; 
+    left: 15%; 
+    text-align: left; 
+    width: 80%; 
 }
 
 .featured-simulation {

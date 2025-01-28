@@ -337,8 +337,11 @@
 }
 
 @media (max-width: 620px){
-    .benefit-card {
-        margin-left: -10px;
+    .benefits-section {
+        padding: 30px 15px;
+    }
+    .benefits-header {
+        margin-bottom: 30px;
     }
     .benefit-icon {
         font-size: 1.8rem;
@@ -352,6 +355,9 @@
     .benefit-text {
         font-size: 0.8rem;
         padding-right: 20px;
+    }
+    .simulation-benefits li {
+        font-size: 1rem;
     }
 }
 
@@ -390,6 +396,34 @@
         padding: 13px 20px 10px;
         font-size: 1.2rem;
     }
+    .benefits-container{
+        gap: 15px;
+    }
+    .benefits-section {
+        padding: 30px 15px;
+    }
+    .benefits-header {
+        margin-bottom: 20px;
+    }
+    .benefits-title {
+        font-size: 1.2rem;
+    }
+    .benefit-icon {
+        font-size: 1.8rem;
+        margin-top: -10px;
+    }
+    .benefit-title {
+        font-size: 0.8rem;
+        margin-top: -20px;
+        padding-right: 20px;
+    }
+    .benefit-text {
+        font-size: 0.7rem;
+        padding-right: 10px;
+    }
+    .simulation-benefits li {
+        font-size: 1rem;
+    }
 }
 @media (max-width: 350px){
     .hero-section{
@@ -400,5 +434,17 @@
         padding: 7px 9px 5px;
         font-size: 0.6rem;
         margin-left: 0px;
-    }            
+    }    
+    .benefits-section{
+        padding: 15px 15px;
+    }
+    .benefit-title {
+        font-size: 0.8rem;
+        margin-top: -30px;
+    }       
+    .benefit-text {
+        font-size: 0.7rem;
+        padding-right: 5px;
+        margin-top: -20px;
+    } 
 }
