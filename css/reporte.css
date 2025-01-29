@@ -1,0 +1,118 @@
+/* Estilos generales */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #015989;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Contenedor principal */
+.report-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Sección de resumen */
+.summary-section {
+    margin-bottom: 30px;
+}
+
+.summary-section h2 {
+    color: #015989;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.summary-details p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+/* Gráficos */
+.charts-section {
+    margin-bottom: 30px;
+}
+
+.chart-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Recomendaciones */
+.recommendations-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recommendations-section ul li {
+    background-color: #f9b52b;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Tabla de detalles */
+.details-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1em;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+table th {
+    background-color: #015989;
+    color: white;
+    font-weight: bold;
+}
+
+/* Botón de descarga */
+.buttons-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.buttons-container button {
+    background-color: #015989;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons-container button:hover {
+    background-color: #013d62;
+}

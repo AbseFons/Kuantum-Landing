@@ -423,7 +423,7 @@ body {
 
 .btn-simulation {
     text-decoration: none;
-    background-color: var(--color-amarillo);
+    background-color: var(--color-rojo);
     color: var(--color-blanco);
     padding: 15px 30px;
     font-size: 1.5rem;
@@ -433,7 +433,7 @@ body {
 }
 
 .btn-simulation:hover {
-    background-color: var(--color-rojo);
+    background-color: var(--color-amarillo-opaco);
 }
 
 @media (max-width: 768px) {

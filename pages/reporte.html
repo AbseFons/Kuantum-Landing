@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte del Simulacro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reporte.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <img src="../media/logo_principal_amarillo.png" alt="Logo">
+        <h1>Reporte del Simulacro</h1>
+    </header>
+
+    <main class="report-container">
+        <section class="summary-section">
+            <h2>Resumen de tu Desempeño</h2>
+            <div class="summary-details">
+                <p><strong>Total de Preguntas:</strong> <span id="total-questions">30</span></p>
+                <p><strong>Preguntas Correctas:</strong> <span id="correct-answers">0</span></p>
+                <p><strong>Preguntas Incorrectas:</strong> <span id="incorrect-answers">0</span></p>
+                <p><strong>Puntaje Final:</strong> <span id="final-score">0%</span></p>
+            </div>
+        </section>
+
+        <section class="charts-section">
+            <h2>Gráficos de Desempeño</h2>
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="comparativeChart"></canvas>
+            </div>
+        </section>
+
+        <section class="recommendations-section">
+            <h2>Recomendaciones</h2>
+            <ul id="recommendations-list">
+                <!-- Se generarán dinámicamente -->
+            </ul>
+        </section>
+
+        <section class="details-section">
+            <h2>Detalles de tus Respuestas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Pregunta</th>
+                        <th>Tu Respuesta</th>
+                        <th>Respuesta Correcta</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody id="answers-details">
+                    <!-- Se generarán dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
+        <div class="buttons-container">
+            <button id="downloadReport">Descargar Reporte en PDF</button>
+        </div>
+    </main>
+
+    <script>
+        async function fetchReportData() {
+            try {
+                const response = await fetch("/scripts/generate_report.py");
+                if (!response.ok) {
+                    throw new Error("Error al generar el reporte");
+                }
+
+                const data = await response.json();
+
+                // Actualizar resumen de desempeño
+                document.getElementById("total-questions").textContent = data.total_questions;
+                document.getElementById("correct-answers").textContent = data.correct_answers;
+                document.getElementById("incorrect-answers").textContent = data.incorrect_answers;
+                document.getElementById("final-score").textContent = `${data.final_score}%`;
+
+                // Generar detalles de respuestas
+                const answersTableBody = document.getElementById("answers-details");
+                data.answers.forEach((answer, index) => {
+                    answersTableBody.innerHTML += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>Pregunta ${index + 1}</td>
+                            <td>${answer.user_answer || "No respondida"}</td>
+                            <td>${answer.correct_answer}</td>
+                            <td style="color: ${answer.is_correct ? "green" : "red"};">${answer.is_correct ? "Correcta" : "Incorrecta"}</td>
+                        </tr>
+                    `;
+                });
+
+                // Gráfico de desempeño
+                const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+                new Chart(performanceCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Correctas', 'Incorrectas'],
+                        datasets: [{
+                            label: 'Respuestas',
+                            data: [data.correct_answers, data.incorrect_answers],
+                            backgroundColor: ['green', 'red']
+                        }]
+                    },
+                    options: {
+                        responsive: true
+                    }
+                });
+
+                // Gráfico comparativo
+                const comparativeCtx = document.getElementById('comparativeChart').getContext('2d');
+                new Chart(comparativeCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['RV', 'RM', 'Álgebra', 'Geometría', 'Estadística'],
+                        datasets: [
+                            {
+                                label: 'Tus Resultados',
+                                data: data.user_scores,
+                                backgroundColor: 'rgba(1, 89, 137, 0.5)',
+                                borderColor: 'rgba(1, 89, 137, 1)',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Promedio General',
+                                data: data.average_scores,
+                                backgroundColor: 'rgba(249, 181, 43, 0.5)',
+                                borderColor: 'rgba(249, 181, 43, 1)',
+                                borderWidth: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true
+                    }
+                });
+
+                // Recomendaciones dinámicas
+                const recommendationsList = document.getElementById("recommendations-list");
+                data.recommendations.forEach(rec => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = rec;
+                    recommendationsList.appendChild(listItem);
+                });
+
+            } catch (error) {
+                console.error("Error al cargar los datos del reporte:", error);
+            }
+        }
+
+        fetchReportData();
+
+        // Descargar reporte en PDF
+        document.getElementById("downloadReport").addEventListener("click", () => {
+            window.location.href = "/scripts/download_report.py";
+        });
+    </script>
+</body>
+</html>
