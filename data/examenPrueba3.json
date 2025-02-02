@@ -1,0 +1,784 @@
+[
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 1",
+        "label": "Lee el siguiente texto y responde las preguntas 1-5",
+        "content": "Dos son los mecanismos que, en la sociedad democrática, han ido banalizando la literatura hasta convertirla únicamente en producto industrial. Uno es sociológico y cultural. La nivelación de los ciudadanos, la extinción de las élites, el arraigo de la tolerancia –del derecho \"a la diferencia y a la indiferencia\"– y el consiguiente desarrollo del individualismo y el narcisismo, han abolido el interés por el pasado y la preocupación por el futuro, centrado la atención en el presente y tornado en máximo ideal la satisfacción de las necesidades inmediatas. Víctima de este presentismo ha sido lo sagrado, realidad alternativa cuya razón de ser desaparece cuando una comunidad, contenta o descontenta con el mundo en el que vive, acepta a este como el único posible y renuncia a la \"alteridad\" de la que las creaciones literarias eran emblema y alimento. En una sociedad así puede haber libros, pero ha muerto la literatura.\nEl otro mecanismo es económico. \"No hay otra democracia, ay, que la del mercado\", dice Raczymow, lo que significa que el libro, despojado de su condición de objeto religioso o mítico, se vuelve una mera mercancía sometida al frenético vaivén –a la ley de hierro– de la oferta y la demanda, en la que \"un libro es un producto y un producto elimina a otro, incluso del mismo escritor\". La banalización es el resultado de esa vorágine en la que ningún libro permanece, en la que todos pasan y no vuelven, pues la literatura ya solo cuenta como producto de consumo inmediato, entretenimiento efímero o información que caduca en el instante de ser conocida.",
+        "referencia": "Extraído de: Academia ADUNI, Anual San Marcos - Semana 5. Primer Taller de Lectura, Comprensión Lectora."
+    },
+    {
+        "type": "question",
+        "number": 1,
+        "category": "Razonamiento Verbal",
+        "text": "¿Cuál es el tema central del texto?",
+        "options": [
+            "La inminente trivialización del quehacer literario en nuestro tiempo.",
+            "El mecanismo cultural en la sociedad democrática contemporánea.",
+            "El libro como herramienta sagrada en la sociedad moderna.",
+            "Los mecanismos responsables de la banalización de la literatura."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 2,
+        "category": "Razonamiento Verbal",
+        "text": "La palabra 'vorágine' significa:",
+        "options": [
+            "Violencia.",
+            "Tempestad.",
+            "Desorden.",
+            "Tenacidad."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 3,
+        "category": "Razonamiento Verbal",
+        "text": "De acuerdo con el texto, el mecanismo cultural:",
+        "options": [
+            "Permite la producción de libros.",
+            "Motiva el gran quehacer literario.",
+            "Expone obras literarias que admiramos.",
+            "No tiene relevancia en la sociedad actual."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 4,
+        "category": "Razonamiento Verbal",
+        "text": "De la expresión de Raczymow, es posible inferir que:",
+        "options": [
+            "La literatura debe solamente entretener.",
+            "El entretenimiento está reñido con el rigor intelectual.",
+            "La sociedad moderna trivializa la imagen del escritor.",
+            "No siempre hay lugar para los escritores estrellas."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 5,
+        "category": "Razonamiento Verbal",
+        "text": "Desde la perspectiva económica, es posible sostener que:",
+        "options": [
+            "Los intelectuales desestiman la literatura.",
+            "El libro desaparecerá indiscutiblemente.",
+            "Son irrelevantes los escritores guías.",
+            "La persona del escritor ha sido vejada."
+        ]
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 2",
+        "label": "Lee el siguiente texto y responde las preguntas 6-10",
+        "content": "El momento en que se inicia la desconfianza de Napoleón Bonaparte hacia Fouché puede precisarse exactamente hasta en el día y la hora, aunque el episodio quedó casi oculto en medio de la abundancia de acontecimientos de aquellos años tan activos.\nSolamente la aquilina mirada psicológica de Balzac, acostumbrada a reconocer en lo insignificante lo esencial, en el petit detail el golpe que le impulsa, ha podido advertirlo (aunque adornándolo un poco poéticamente). La pequeña escena se desarrolla durante la campaña italiana que ha de decidir entre Austria y Francia.\nEl 20 de enero de 1800 están reunidos en París los ministros y consejeros en extraña disposición de ánimo. Ha llegado un mensajero del campo de batalla de Marengo con malas noticias; trae el mensaje de que Bonaparte ha sido derrotado y el ejército francés se encuentra en plena retirada. Todos los reunidos piensan en secreto lo mismo: es imposible que siga como primer Cónsul un general derrotado y piensan en seguida en un sucesor. Hasta qué punto declararon todos esta necesidad, no se ha sabido nunca; pero hubo preparaciones para una subversión y hubo, sin duda, consultas en voz baja.\nLos hermanos de Napoleón se dieron cuenta de ello. Carnot fue seguramente quien más se adelantó, quien quiso restaurar rápidamente el viejo comité de seguridad. De Fouché se puede barruntar, conociendo su carácter, que en vez de ponerse de parte del cónsul derrotado, según las últimas noticias, permanecería cautelosamente mudo, para volver con el amo antiguo si fuera preciso, o para quedarse con el nuevo, según el caso.\nSin embargo, al día siguiente, llega una segunda estafeta y anuncia precisamente lo contrario: trae nuevas de la brillante victoria de Marengo. A última hora, el general Desaix, con genial intuición militar, llegó en ayuda de Bonaparte, convirtiendo la derrota en triunfo. Cien veces más fuerte de lo que salió, y completamente seguro de su poder, regresa Bonaparte, el primer Cónsul, a los pocos días. Sin duda alguna, se enteró en seguida de que todos sus ministros y confidentes, a la primera noticia, estaban dispuestos a darle de baja. Como primera víctima, paga Carnot, que fue quien se precipitó demasiado y pierde el ministerio. Los demás, incluso Fouché, permanecen en sus puestos; no se le puede probar a este, siempre cauto, su felonía, aunque, claro, tampoco su lealtad. No se ha comprometido, pero tampoco se ha distinguido en el cumplimiento de su deber; ha demostrado una vez más lo que siempre fue: fiel en el éxito, infiel en el fracaso. Bonaparte no lo despide ni le reprocha nada ni lo castiga, pero, desde ese momento, pierde la confianza en él.",
+        "referencia": "Extraído de: Stefan Zweig, Fouché: el genio tenebroso."
+    },
+    {
+        "type": "question",
+        "number": 6,
+        "category": "Razonamiento Verbal",
+        "text": "Entre FELONÍA y LEALTAD, se establece en el texto una:",
+        "options": [
+            "Denotación.",
+            "Connotación.",
+            "Sinonimia.",
+            "Antonimia."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 7,
+        "category": "Razonamiento Verbal",
+        "text": "Medularmente, el texto explica el origen:",
+        "options": [
+            "Del encumbramiento político de Napoleón.",
+            "Del profundo odio de Fouché hacia Napoleón.",
+            "Del distanciamiento entre Napoleón y Fouché.",
+            "De la rebeldía radical de Fouché en Francia."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 8,
+        "category": "Razonamiento Verbal",
+        "text": "Se infiere del texto que la restauración del comité de seguridad implicaba:",
+        "options": [
+            "El absoluto fracaso político de Fouché como ministro.",
+            "La pérdida de poder político por parte de Napoleón.",
+            "El desconocimiento del genio militar de Desaix.",
+            "Un severo castigo para todos los ministros de Estado."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 9,
+        "category": "Razonamiento Verbal",
+        "text": "Se infiere del texto que la característica más destacada de Fouché es la:",
+        "options": [
+            "Felonía.",
+            "Fidelidad.",
+            "Prevaricación.",
+            "Ambivalencia."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 10,
+        "category": "Razonamiento Verbal",
+        "text": "Respecto de la desconfianza de Bonaparte hacia Fouché, es incompatible aseverar que:",
+        "options": [
+            "Se manifestó de manera hermética y oblicua.",
+            "Se originó en la irreverente actitud de Carnot.",
+            "Surgió en un momento preciso de la historia.",
+            "Balzac la explicó de especial manera figurada."
+        ]
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 3",
+        "label": "Lee el siguiente texto y responde las preguntas 11-15",
+        "content": "A diferencia de hace unos años, el consumidor de hoy no se mantiene fiel a una marca. Hay tanta variedad y tantas maneras de enterarse de las novedades, que no vale la pena cerrarse a la posibilidad de una nueva experiencia.\nEl Índice de Satisfacción del Consumidor Peruano, presentado el último año por Indecopi, Centrum Católica y Arellano Marketing, reveló que los consumidores no se encuentran fidelizados. Esto lo comprueba un estudio del 2014 aplicado por Arellano Marketing, que indica que el 62% de los peruanos usa diferentes marcas, 7% más que en el 2007. Además, el 64% de los consultados sostiene que reclama más. Sobre este último punto, Carla Bernuy, docente de la carrera de Administración y Marketing de la Universidad ESAN, explica que el comprador de hoy conoce todos sus derechos y, al usar las redes sociales, las aprovecha para hacer reclamos. El consumidor de hoy \"trata de que la mayor cantidad de personas conozca su mala experiencia con determinada marca, dependiendo del nivel de indignación o malestar que tenga\".\n\n[Ver gráfico en la imagen adjunta]\n\nDe los datos presentados, se concluye que las formas de compra están modificándose, que en el perfil del nuevo consumidor está emplear la nueva tecnología ya sea para exigir una mejor atención, proponer una demanda o comprar un determinado artículo. No tomar en cuenta estas nuevas características podría ocasionar un severo revés a cualquier empresa.",
+        "image": "../media/Preguntas/grafico_1_tb.jpg",
+        "referencia": "Extraído de: https://larepublica.pe/impresa/economia/887669-ecommerce-perfil-del-consumidor-peruano."
+    },    
+    {
+        "type": "question",
+        "number": 11,
+        "category": "Razonamiento Verbal",
+        "text": "El propósito central del texto es",
+        "options": [
+            "Señalar las nuevas características del comprador peruano y la necesidad de tomarlas en consideración.",
+            "Delimitar las características del nuevo comprador, así como la urgencia de satisfacerlas en el más corto tiempo.",
+            "Explicar los motivos por los cuales los compradores peruanos modifican sus formas de consumo.",
+            "Difundir el perfil del nuevo comprador peruano, extraído de dos estudios económicos independientes."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 12,
+        "category": "Razonamiento Verbal",
+        "text": "El término 'REVÉS' se emplea en el sentido de",
+        "options": [
+            "Preocupación",
+            "Golpe",
+            "Contratiempo",
+            "Imprevisto"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 13,
+        "category": "Razonamiento Verbal",
+        "text": "A partir de la información proporcionada por el texto, es lógico sostener que buena parte del 15,7% de navegadores expertos:",
+        "options": [
+            "Hace compras entre una y ocho veces a lo largo del año.",
+            "Emplea las redes sociales para hacer algún reclamo.",
+            "Representa al consumidor más satisfecho de todos.",
+            "Viaja más que el consumidor tradicionalista y el explorador."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 14,
+        "category": "Razonamiento Verbal",
+        "text": "Del texto se deduce que la infidelidad del nuevo consumidor está asociada:",
+        "options": [
+            "Básicamente con las campañas publicitarias de las empresas.",
+            "Con un apetito creciente por nuevas experiencias empresariales.",
+            "Con la diversificación del mercado y el acceso a la información.",
+            "Con su necesidad de informar sobre sus malas experiencias."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 15,
+        "category": "Razonamiento Verbal",
+        "text": "A partir de los dos estudios sobre el perfil del consumidor peruano, se puede concluir que:",
+        "options": [
+            "El consumo electrónico tendrá un incremento muy significativo en los próximos años.",
+            "La posición tradicionalista, en ambos, todavía representa un porcentaje mayoritario.",
+            "Las tecnologías cumplen un rol relevante en las características que este posee.",
+            "Los estudios conceden gran importancia a la compra de determinados productos."
+        ]
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 4",
+        "label": "Lee el siguiente texto y responde las preguntas 16-20",
+        "content": "Para llevarse bien con la gente hace falta un mínimo de sentido del humor. Hay situaciones que únicamente se superan por elevación: desdramatizando. No es bueno tomarse excesivamente en serio los asuntos que nos conciernen, porque terminarían con nosotros. La flexibilidad propia del humor da a nuestra vida un tono amable, sobre todo en una sociedad en la que abundan las cosas importantes. Sin un poco de humor, la vida pesa demasiado porque, sin duda, en nosotros anidan penas y tristezas que nos acompañan siempre. Necesariamente hemos de contraponer a ese lado oscuro de nuestra alma el de la alegría, para hacer más llevaderas –más divertidas– nuestras relaciones con los demás. El humor no está reñido con la madurez (que algunos confunden con la seriedad). Cuando se ha tomado la medida a la vida, y se conoce lo que esta puede dar de sí, el humor surge solo; ya que dramatizar ciertas situaciones resulta ridículo. A lo que hay que tener miedo es a que el humor se convierta en ironía.\nLa ironía desune porque es enmascaradamente agresiva: se ha convertido en el cáncer de las relaciones sociales. Pero el buen humor es otra cosa, responde más bien a una bocanada de aire fresco que oxigena el alma. Reír será siempre la mejor terapia para el espíritu. Si nuestra disposición interior es buena en todo momento, hay motivos para ver el lado bonito de las cosas.\nPara tener buen humor no es necesario que todo nos salga bien, el deseo de hacer felices a los demás es realmente el verdadero motor que mueve a poner la nota simpática. Porque si alguno piensa que lo normal es almacenar buenas noticias, para no perder el sentido del humor, no ha alcanzado el estado de madurez: la vida está confeccionada con penas y alegrías y, a pesar de todo, hay que dar la talla procurando no manchar a los otros con las salpicaduras de las nuestras, estas tienen otros cauces por donde discurrir en los que, no cabe duda, estarán presentes algunas personas muy concretas. Las relaciones sociales a veces tan farragosas y protocolarias solo son llevaderas si las aderezamos con el sentido del humor. En ninguna relación social debe faltar el toque humano y divertido que disipe el cansancio o la tensión.",
+        "referencia": "Extraído de: Martí, Miguel-Ángel (2001), La madurez, Madrid."
+    },    
+    {
+        "type": "question",
+        "number": 16,
+        "category": "Razonamiento Verbal",
+        "text": "¿Cuál es el tema central del texto?",
+        "options": [
+            "La salud y el sentido del humor en la sociedad.",
+            "Beneficios de reírse a carcajadas todos los días.",
+            "El humor presente en la vida de las personas.",
+            "La importancia del sentido del humor en la vida."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 17,
+        "category": "Razonamiento Verbal",
+        "text": "El término 'FARRAGOSA' está más cerca del significado de:",
+        "options": [
+            "Confusa.",
+            "Fluida.",
+            "Libertina.",
+            "Áspera."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 18,
+        "category": "Razonamiento Verbal",
+        "text": "Podemos colegir que una persona con gran sentido del humor:",
+        "options": [
+            "Evita el contacto social de modos claro.",
+            "Ha tenido una infancia sin problemas.",
+            "Tiene una actitud edificante en la vida.",
+            "Conoce muy bien los protocolos sociales."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 19,
+        "category": "Razonamiento Verbal",
+        "text": "Determine cuáles de los siguientes enunciados son incompatibles con el desarrollo textual:\nI. Una persona madura puede alcanzar sentido del humor.\nII. La ironía es el paso previo a adquirir el sentido del humor.\nIII. Las personas con sentido del humor nunca tienen penas.\nIV. Una persona flexible es posible que también tenga humor.\nV. Un factor importante en nuestras relaciones sociales es el humor.",
+        "options": [
+            "II y IV",
+            "II y III",
+            "I, III y IV",
+            "II, III y IV"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 20,
+        "category": "Razonamiento Verbal",
+        "text": "Si una persona no cultivara el sentido del humor, entonces:",
+        "options": [
+            "Se caracterizaría por dramatizar todo evento de su vida.",
+            "Definitivamente se convertiría en una persona pesimista.",
+            "Podría tener dificultad en sus relaciones interpersonales.",
+            "Nunca podría ser capaz de vivir en paz consigo misma."
+        ]
+    },  
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 5",
+        "label": "Lee el siguiente texto y responde las preguntas 21-25",
+        "content": "Ley que regula el uso del plástico ya es una realidad y plazos corren desde mañana.\nEsta norma fue firmada por el presidente Vizcarra y fija límites para el consumo de bolsas y sorbetes. Este será el último verano en el que los peruanos usaremos bolsas plásticas, sorbetes y envases de tecnopor en los balnearios de nuestro litoral.\nLa norma, que busca regular el uso desmedido de los plásticos desechables, establece plazos concretos para su cumplimiento, con un periodo máximo de años que culminará con el cese de la fabricación, importación, distribución, comercialización y uso de las bolsas no reutilizables, sorbetes y envases de base plástica que no sean reciclables, incluyendo los de poliestireno extendido, conocidos como tecnopor.\nLa primera medida que se aplicará a nivel nacional será la prohibición de la compra, uso y venta de los elementos plásticos antes mencionados en las playas del litoral y de la Amazonía peruana. Esta restricción deberá cumplirse a partir del cuarto mes de vigencia. En el mismo plazo quedará prohibida la entrega de bolsas o envoltorios plásticos en publicidad impresa, diarios, cronogramas de pago, información dirigida a consumidores, entre otros documentos.\nEn tanto, al año estará restringida la fabricación, importación, distribución, entrega y comercialización de bolsas de \"base polimérica\" de menos de centímetros por lado y cincuenta micras de grosor. Estas bolsas se rompen fácilmente y, al ser desechadas, tardan más de cien años en degradarse, contaminan las fuentes de agua y ponen en riesgo la vida de las especies.\nLa norma, que fue aprobada en el Congreso el de diciembre último, también establece el cobro de un impuesto para quienes, a partir del próximo año, compren una bolsa de plástico.",
+        "image": "",
+        "referencia": "Extraído de: La República. Lima, 21 de diciembre de 2018."
+    },    
+    {
+        "type": "question",
+        "number": 21,
+        "category": "Razonamiento Verbal",
+        "text": "El tema central del texto se enfoca en la:",
+        "options": [
+            "Costumbre de uso de bolsas, sorbetes y envases.",
+            "Regulación del uso de tecnopor y envases plásticos.",
+            "Legislación que protege y cuida el medio ambiente.",
+            "Norma que regula el uso del plástico en el Perú."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 22,
+        "category": "Razonamiento Verbal",
+        "text": "En el texto, el vocablo 'CONCRETOS' tiene el significado preciso de:",
+        "options": [
+            "Manifiestos.",
+            "Específicos.",
+            "Objetivos.",
+            "Sólidos."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 23,
+        "category": "Razonamiento Verbal",
+        "text": "El título de la infografía destaca:",
+        "options": [
+            "Los plazos fijados para acabar con el plástico.",
+            "El cobro de impuestos para quienes usen el plástico.",
+            "La expectativa ciudadana por erradicar el plástico.",
+            "La necesidad de una ley de urgencia ecológica."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 24,
+        "category": "Razonamiento Verbal",
+        "text": "Se desprende del texto que esta ley distingue, con fines ecológicos y sanitarios, el plástico:",
+        "options": [
+            "Desechable del reciclable.",
+            "Reciclable del biodegradable.",
+            "De un solo uso del desechable.",
+            "Reutilizable del biodegradable."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 25,
+        "category": "Razonamiento Verbal",
+        "text": "Es incompatible con la información proporcionada afirmar que:",
+        "options": [
+            "La ley aprobada en el Congreso responde a una preocupación por el medio ambiente, con la firma del presidente Vizcarra.",
+            "Está prohibida la producción de plástico de un solo uso en nuestro país desde la aprobación de la presente ley.",
+            "El impuesto establecido al consumo del plástico busca desalentar su uso paulatinamente hasta ya no requerirlo.",
+            "Se busca fomentar una producción de utensilios biodegradables que reemplace el uso de tecnopor desechable."
+        ]
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 6",
+        "label": "Lee el siguiente texto y responde las preguntas 26-28",
+        "content": "Los griegos tienen tres nombres para el amor: eros, philia y agapé. Eros es la pasión amorosa, la necesidad de lo que nos falta, el objeto del deseo y del amor; lo que se quiere poseer, lo que nos hace sufrir; es el secreto de la pasión. Pero el amor también es philia, es decir, lo que no nos falta, lo que gozamos con alegría, el secreto de la felicidad. Philia es el amor de la amistad, o sea, amar al otro por el bien del otro, el secreto de las parejas felices. Agapé es la caridad, es el amor al prójimo, a todos aquellos que no nos hacen falta ni que nos hacen bien, que no son nuestros amigos ni de quienes no estamos enamorados; pero que están allí y tenemos que amarlos sin pedirles nada a cambio, aunque sean nuestros enemigos. Este es el amor que enseñaba Jesucristo, tan difícil de comprender; es el secreto de la santidad. Agapé es el amor universal, libre del ego, del egoísmo, de todo. Si Dios existe, ese sería su amor hacia nosotros y si Dios no existe, es lo que más acerca al hombre a ser como Él.",
+        "referencia": "Extraído de: Academia ADUNI, Anual San Marcos (2015) Texto número 1. Página 8 – Teoría del texto II."
+    },
+    {
+        "type": "question",
+        "number": 26,
+        "category": "Razonamiento Verbal",
+        "text": "Según el texto, el amor es, principalmente:",
+        "options": [
+            "Pasión, amistad y caridad.",
+            "Deseo, sufrimiento y pasión.",
+            "Alegría, secreto y felicidad.",
+            "Amistad, sexo y sacrificio."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 27,
+        "category": "Razonamiento Verbal",
+        "text": "Según el autor del texto, el amor al prójimo:",
+        "options": [
+            "Surge de la amistad.",
+            "Expresa pasión y deseo.",
+            "Solo es de Jesucristo.",
+            "Debe ser desinteresado."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 28,
+        "category": "Razonamiento Verbal",
+        "text": "Según lo leído, entre dos amigos verdaderos existe:",
+        "options": [
+            "Eros.",
+            "Agapé.",
+            "Pasión.",
+            "Philia."
+        ]
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 7",
+        "label": "Lee el siguiente texto y responde las preguntas 29-30",
+        "content": "Un reciente estudio revela que, por lo menos, el 50% de los colegiales de todo el país es víctima del bullying (acoso escolar), y la mayoría de ellos indica que los apodos e insultos son las formas más comunes de esa agresión.\nEl informe −elaborado por la Universidad Nacional Mayor de San Marcos (UNMSM) entre el 2007 y el 2010 en colegios de la costa, sierra y selva− detalla que las víctimas reportaron otros seis tipos de bullying: violencia física, acoso, escupitajos, discriminación, robo de algún objeto, acusaciones de homosexualidad y ataques vía correo electrónico.\n\"Un gran problema que genera el bullying es que los agredidos se vuelven personas depresivas e inseguras, con baja autoestima, especialmente en la secundaria, porque atraviesan la etapa de la adolescencia\", dijo María Ramos, titular de la Dirección de Tutoría y Orientación Escolar (Ditoe).",
+        "referencia": "Extraído de: Academia ADUNI, Anual San Marcos (2015) Texto número 2. Página 8 – Teoría del texto II."
+    },    
+    {
+        "type": "question",
+        "number": 29,
+        "category": "Razonamiento Verbal",
+        "text": "El bullying en los colegios se manifiesta comúnmente con:",
+        "options": [
+            "Apodos inocuos.",
+            "Apodos e insultos.",
+            "Apodos y peleas.",
+            "Actos de venganza."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 30,
+        "category": "Razonamiento Verbal",
+        "text": "Según el contenido del texto, el bullying:",
+        "options": [
+            "Se practica especialmente en la UNMSM.",
+            "Solo se manifiesta con palabras soeces.",
+            "Afecta la autoestima de las víctimas.",
+            "Deprime sobre todo a los agresores."
+        ]
+    },
+    {
+        "type": "question",
+        "number": 31,
+        "category": "Razonamiento Matemático",
+        "text": "¿Cuántos números de 4 cifras mayores que 5000 tales que sus 4 cifras sean pares existen?",
+        "options": [
+            "200",
+            "250",
+            "128",
+            "256"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 32,
+        "category": "Razonamiento Matemático",
+        "text": "Dada la función:\n\\[\n\\frac{\\frac{1}{4} + \\frac{2}{7} + \\frac{7}{2}}{1\\frac{6}{9} \\times \\frac{6}{7} \\times \\frac{15}{12}}\n\\]",
+        "options": [
+            "\\frac{113}{32}",
+            "\\frac{113}{16}",
+            "\\frac{125}{12}",
+            "\\frac{109}{32}"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 33,
+        "category": "Razonamiento Matemático",
+        "text": "Si para abrir una caja fuerte se tiene que girar un seguro que tiene 4 dígitos. Los números que tiene cada ranura van del 0 al 5. ¿Cuántas combinaciones erróneas existen?",
+        "options": [
+            "625",
+            "1295",
+            "624",
+            "1"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 34,
+        "category": "Razonamiento Matemático",
+        "options": [
+            "25555",
+            "17775",
+            "2577",
+            "27775"
+            ]
+    },
+    {
+        "type": "question",
+        "number": 35,
+        "category": "Razonamiento Matemático",
+        "text": "Hallar cuántos números de la forma <span style=\"text-decoration: overline;\">a(a+5)b(b-6)</span> existen.",
+        "options": [
+            "400",
+            "256",
+            "20",
+            "16"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 36,
+        "category": "Razonamiento Matemático",
+        "text": "Juan tiene 48 canicas. Su hermano le quita la tercera parte, su mamá le regala la mitad de lo que le había quedado, y luego apostando con sus amigos logra ganar \\( \\frac{8}{3} \\) de lo que tenía hasta entonces. ¿Cuántas canicas tiene ahora Juan?",
+        "options": [
+            "72",
+            "128",
+            "176",
+            "240"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 37,
+        "category": "Razonamiento Matemático",
+        "text": "Si un número entero positivo es divisible entre 2 y 3, entonces también es divisible entre:",
+        "options": [
+            "4",
+            "5",
+            "6",
+            "9"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 38,
+        "category": "Razonamiento Matemático",
+        "text": "Un granjero tiene gallinas y conejos. Si en total hay 40 cabezas y 100 patas, ¿cuántas gallinas tiene el granjero?",
+        "options": [
+            "10",
+            "15",
+            "20",
+            "25"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 39,
+        "category": "Razonamiento Matemático",
+        "text": "El doble de un número aumentado en 5 es igual a 29. ¿Cuál es el número?",
+        "options": [
+            "10",
+            "11",
+            "12",
+            "15"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 40,
+        "category": "Razonamiento Matemático",
+        "text": "Si la suma de tres números consecutivos es 90, ¿cuál es el mayor de los tres?",
+        "options": [
+            "29",
+            "30",
+            "31",
+            "32"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 41,
+        "category": "Razonamiento Matemático",
+        "text": "Simplifica la siguiente expresión:\n\\[\n\\Large \\frac{64^{m+1} - 8^{2m+1}}{64^{m+\\frac{1}{2}} \\div 8^2}\n\\]",
+        "options": [
+            "294",
+            "324",
+            "448",
+            "298"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 42,
+        "category": "Razonamiento Matemático",
+        "text": "Reduce la expresión:\n\\[\nP = \\frac{\\sqrt{x^3 \\sqrt{x^3}}}{\\sqrt[3]{x^2 \\sqrt[3]{x^2}}}\n\\]",
+        "options": [
+            "x\\sqrt[36]{x^{13}}",
+            "x\\sqrt[36]{x^{15}}",
+            "x\\sqrt[36]{x^{10}}",
+            "x^{36}"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 43,
+        "category": "Razonamiento Matemático",
+        "text": "Encuentra el valor de \\( x \\) en:\n\\[\n16^{32^{(x-2)}} = 2^{2^{(x+2)}}\n\\]",
+        "options": [
+            "\\frac{2}{5}",
+            "\\frac{5}{2}",
+            "\\frac{4}{3}",
+            "\\frac{3}{5}"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 44,
+        "category": "Razonamiento Matemático",
+        "text": "Halla el grado absoluto del monomio:\n\\[\nM(x) = \\frac{x^{1/b}}{x^{1/a}}\n\\]\nSi se cumple: \\( a - b = 8 \\) y \\( ab = 4 \\).",
+        "options": [
+            "1",
+            "\\frac{1}{2}",
+            "-2",
+            "2"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 45,
+        "category": "Razonamiento Matemático",
+        "text": "Calcula:\n\\[\n    E = (x+6)(x+4)-(x+8)(x+2)\n\\]",
+        "options": [
+            "8",
+            "6",
+            "4",
+            "5"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 46,
+        "category": "Razonamiento Matemático",
+        "text": "Si el monomio:\n\\[\nM(x;y) = (n^3 - 27) x^{3n+2} y^{8-n}\n\\]\nposee un coeficiente igual a 98, calcula \\( GA(M) + GR(y) \\).",
+        "options": [
+            "22",
+            "23",
+            "24",
+            "25"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 47,
+        "category": "Razonamiento Matemático",
+        "text": "Sea el polinomio:\n\\[\nP(x) = (3x - 1)^n + 5x + 1\n\\]\ndonde la suma de coeficientes es 70. Halla \\( n + 2 \\).",
+        "options": [
+            "6",
+            "4",
+            "10",
+            "8"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 48,
+        "category": "Razonamiento Matemático",
+        "text": "Si:\n\\[\nP(x) = x^{a-4} + x^{2a-3} - x^{2a-4}\n\\]\nes de tercer grado, calcula \\( (a+3)^2 \\).",
+        "options": [
+            "49",
+            "100",
+            "36",
+            "64"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 49,
+        "category": "Razonamiento Matemático",
+        "text": "Si \\( x + y = 5 \\) y \\( xy = 3 \\), halla:\n\\[\nx^3 + y^3\n\\]",
+        "options": [
+            "100",
+            "80",
+            "125",
+            "96"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 50,
+        "category": "Razonamiento Matemático",
+        "text": "Efectúa:\n\\[\nA = (x+1)(x^2+x+1)(x-1)(x^2-x+1)\n\\]",
+        "options": [
+            "x^6 - 1",
+            "x^6",
+            "x^6 + 1",
+            "2x^6"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 51,
+        "category": "Razonamiento Matemático",
+        "text": "Los ángulos \\( AOB \\), \\( BOC \\) y \\( COD \\) son consecutivos, de modo que: \\( m∠AOC + m∠BOD = 140° \\) y \\( \\overrightarrow{OA} \\) es perpendicular a \\( \\overrightarrow{OD} \\). Halla \\( m∠BOC \\).",
+        "options": [
+            "60°",
+            "50°",
+            "40°",
+            "45°"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 52,
+        "category": "Razonamiento Matemático",
+        "text": "Si \\( \\overline{AB} \\parallel \\overline{CD} \\), calcula: \\( \\alpha - \\beta \\).",
+        "image": "",
+        "options": [
+            "30°",
+            "15°",
+            "20°",
+            "45°"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 53,
+        "category": "Razonamiento Matemático",
+        "text": "Si \\( \\overleftrightarrow{L_1} \\parallel \\overleftrightarrow{L_2} \\), halla el valor de \\( x \\).",
+        "image": "",
+        "options": [
+            "40°",
+            "30°",
+            "45°",
+            "50°"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 54,
+        "category": "Razonamiento Matemático",
+        "text": "Calcula \\( x \\).",
+        "image": "",
+        "options": [
+            "58°",
+            "38°",
+            "60°",
+            "50°"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 55,
+        "category": "Razonamiento Matemático",
+        "text": "En un triángulo \\( ABC \\), la diferencia de las medidas de los ángulos \\( A \\) y \\( C \\) es 80°. Calcula la medida del ángulo que forman la bisectriz interior y la altura trazada desde el mismo vértice \\( B \\).",
+        "options": [
+            "30°",
+            "40°",
+            "50°",
+            "60°"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 56,
+        "category": "Razonamiento Matemático",
+        "text": "Dado un triángulo isósceles \\( ABC \\) con \\( AB = BC \\), en \\( \\overline{BC} \\) se ubica el punto \\( D \\) tal que \\( AD = AC \\). Halla la medida del \\( \\angle ABC \\) si \\( m∠BAD = 15° \\).",
+        "options": [
+            "30°",
+            "40°",
+            "45°",
+            "50°"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 57,
+        "category": "Razonamiento Matemático",
+        "text": "En el lado \\( AC \\) de un triángulo \\( ABC \\) se ubica el punto \\( E \\), de modo que \\( AB = AE = EC \\). Calcula \\( m∠C \\), si \\( m∠BAC = 60° \\).",
+        "options": [
+            "24°",
+            "25°",
+            "30°",
+            "36°"
+        ]
+    },    
+    {
+        "type": "question",
+        "number": 58,
+        "category": "Razonamiento Matemático",
+        "text": "Calcula \\( x \\), si \\( AB = BC = CD \\).",
+        "image": "",
+        "options": [
+            "30°",
+            "45°",
+            "60°",
+            "37°"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 59,
+        "category": "Razonamiento Matemático",
+        "text": "En un triángulo \\( ABC \\), calcula la medida del ángulo que forman las bisectrices exteriores de \\( A \\) y \\( C \\) si se cumple que: \\( m∠A + 2m∠B + m∠C = 236° \\).",
+        "options": [
+            "56°",
+            "62°",
+            "72°",
+            "74°"
+        ]
+    },
+    {
+        "type": "question",
+        "number": 60,
+        "category": "Razonamiento Matemático",
+        "text": "Del gráfico, calcula \\( x \\) si \\( I \\) es el incentro del triángulo \\( ABC \\).",
+        "image": "",
+        "options": [
+            "30°",
+            "45°",
+            "40°",
+            "60°"
+        ]
+    }
+]

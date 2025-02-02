@@ -146,7 +146,8 @@
 
         <div id="registration-modal" class="modal-overlay">
             <div class="modal-content">
-                <h2>Registro para el Simulacro</h2>
+                <h2>Construye Tu Camino a la Beca 18</h2>
+                <p>Rellena con tus datos para recibir tu resultado, análisis y asesoría personalizada.</p>
                 <form id="registration-form">
                     <label for="name">Nombre:</label>
                     <input type="text" id="name" name="name" placeholder="Ejemplo: José" required>
@@ -163,13 +164,22 @@
                     <label for="age">Edad:</label>
                     <input type="number" id="age" name="age" placeholder="Ejemplo: 18" min="1" required>
         
+
+                    <!-- Agregar exámenes/simulacro en JSON -->
+                    <label for="exam">Selecciona tu Examen:</label>
+                    <select id="exam" class="modal-select" name="exam" required>
+                        <option value="data/examenPrueba.json">Examen 1</option>
+                        <option value="data/examenPrueba2.json">Examen 2</option>
+                        <option value="data/examenPrueba3.json">Examen 3</option>
+                    </select>
+        
                     <div class="modal-buttons">
                         <button type="submit" class="btn-confirm">CONTINUAR</button>
                         <button type="button" class="btn-cancel" id="cancel-btn">CANCELAR</button>
                     </div>
                 </form>
             </div>
-        </div>        
+        </div>       
         
         <footer class="footer" id="footer">
             <div class="footer-container">
@@ -266,6 +276,23 @@
                 modal.style.display = 'none';
                 window.location.href = "./pages/test.html"; 
             });
-        </script>        
+        </script>  
+        
+        <!-- Script seleccionar examen -->
+        <script>
+            document.getElementById('registration-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                const selectedExam = document.getElementById('exam').value;
+        
+                localStorage.setItem('selectedExam', selectedExam);
+        
+                window.location.href = 'pages/test.html';
+            });
+        
+            document.getElementById('cancel-btn').addEventListener('click', function() {
+                document.getElementById('registration-modal').style.display = 'none';
+            });
+        </script>
     </body>
 </html>

@@ -1,4 +1,10 @@
-fetch('../js/content.json')
+const selectedExam = localStorage.getItem('selectedExam') || '../data/examenPrueba.json';
+
+if (!selectedExam || !selectedExam.endsWith('.json')) {
+    selectedExam = 'data/examenPrueba.json';
+}
+
+fetch(`../${selectedExam}`)
     .then(response => response.json())
     .then(data => {
         const content = data;
@@ -16,6 +22,16 @@ fetch('../js/content.json')
                     </div>
                     <div class="text-body">
                         <p>${item.content}</p>
+                        ${
+                            item.image
+                                ? `
+                                    <figure>
+                                        <img src="${item.image}" alt="Imagen relacionada con el texto" class="graphic-img">
+                                        ${item.caption ? `<figcaption>${item.caption}</figcaption>` : ""}
+                                    </figure>
+                                `
+                                : ""
+                        }
                     </div>
                 `;
                 questionsArea.appendChild(textCard);
@@ -30,86 +46,31 @@ fetch('../js/content.json')
                     <div class="question-body">
                         <p class="question-text">${item.text}</p>
                         <div class="question-options">
-                            ${item.options
-                                .map(
-                                    (option, index) => `
-                                    <label>
-                                        <input type="radio" name="question${item.number}" value="${String.fromCharCode(65 + index)}">
-                                        ${String.fromCharCode(65 + index)}. ${option}
-                                    </label>
-                                `
-                                )
-                                .join('')}
+                            ${item.options.map((option, index) => `
+                                <label>
+                                    <input type="radio" name="question${item.number}" value="${String.fromCharCode(65 + index)}">
+                                    ${String.fromCharCode(65 + index)}. ${option}
+                                </label>
+                            `).join('')}
                         </div>
+                    </div>
+                    <div class="question-footer">
+                        <a href="#" class="report-link">Reportar pregunta</a>
                     </div>
                 `;
                 questionsArea.appendChild(questionCard);
             }
         });
-    })
-    .catch(error => console.error('Error cargando el JSON:', error));
 
-const questionsArea = document.querySelector('.questions-area'); 
+        // Agregar funcionalidad para los enlaces de "Reportar pregunta"
+        document.querySelectorAll('.report-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showReportModal();
+            });
+        });
+}).catch(error => console.error('Error cargando el JSON:', error));
 
-content.forEach((item) => {
-    if (item.type === "text-card") {
-        const textCard = document.createElement('div');
-        textCard.classList.add('text-card');
-        textCard.setAttribute('data-category', item.category); // Agrega la categoría al atributo personalizado
-        textCard.innerHTML = `
-            <div class="text-header">
-                <span class="text-title">${item.title}:</span>
-                <span class="text-label">${item.label}</span>
-            </div>
-            <div class="text-body">
-                <p>${item.content}</p>
-                ${
-                    item.image
-                        ? `
-                            <figure>
-                                <img src="${item.image}" alt="Imagen relacionada con el texto" class="graphic-img">
-                                ${
-                                    item.caption
-                                        ? `<figcaption>${item.caption}</figcaption>`
-                                        : ""
-                                }
-                            </figure>
-                        `
-                        : ""
-                }
-            </div>
-        `;
-        questionsArea.appendChild(textCard);
-    } else if (item.type === "question") {
-        const questionCard = document.createElement('div');
-        questionCard.classList.add('question-card');
-        questionCard.innerHTML = `
-            <div class="question-header">
-                <span class="question-number">Pregunta ${item.number}</span>
-                <span class="question-category">${item.category}</span>
-            </div>
-            <div class="question-body">
-                <p class="question-text">${item.text}</p>
-                <div class="question-options">
-                    ${item.options
-                        .map(
-                            (option, index) => `
-                            <label>
-                                <input type="radio" name="question${item.number}" value="${String.fromCharCode(65 + index)}">
-                                ${String.fromCharCode(65 + index)}. ${option}
-                            </label>
-                        `
-                        )
-                        .join('')}
-                </div>
-            </div>
-            <div class="question-footer">
-                <a href="#" class="report-link">Reportar pregunta</a>
-            </div>
-        `;
-        questionsArea.appendChild(questionCard);
-    }
-});
 
 
 // Seleccionar todos los enlaces "Reportar pregunta"
