@@ -67,7 +67,8 @@
     }
 
     .modal-body p {
-        font-size: 0.9rem; /* Reducir el texto */
+        font-size: 1.1rem; /* Reducir el texto */
+        margin-bottom: 10px;
     }
 
     .modal-actions {
@@ -117,7 +118,7 @@
     }
 
     .modal-body p {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 
     .btn-finish-modal, .btn-cancel-modal {

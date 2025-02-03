@@ -377,7 +377,7 @@ figcaption {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999;
     animation: fadeIn 0.3s ease-in-out; /* Animación de aparición */
 }
 
@@ -414,7 +414,7 @@ figcaption {
 .modal-body p {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--color-negro);
-    font-size: 1rem;
+    font-size: 1.2rem;
     width: 80%;
     margin: 0 auto 20px;
     line-height: 1.6;
@@ -478,7 +478,7 @@ figcaption {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999;
     animation: fadeIn 0.3s ease-in-out; /* Animación de aparición */
 }
 
@@ -542,6 +542,12 @@ figcaption {
     transform: scale(1.05); /* Agregar efecto de escala */
 }
 
+.btn-finish:hover {
+    background-color: #be0606;  /* Un rojo más oscuro */
+    color: white;               /* Asegura que el texto siga siendo blanco */
+    transform: scale(1.05);     /* Efecto de escala para dar feedback visual */
+}
+
 .btn-cancel-modal {
     background-color: var(--color-amarillo);
     color: var(--color-negro);
@@ -584,7 +590,7 @@ figcaption {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999;
     animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -609,8 +615,8 @@ figcaption {
 .modal-body p {
     font-family: 'Josefin Sans', sans-serif;
     color: var(--color-negro);
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 0px;
     line-height: 1.6;
 }
 
@@ -668,11 +674,6 @@ textarea:focus {
     flex: 1;
     max-width: 45%;
     box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
-}
-
-.btn-finish-modal:hover {
-    background-color: #be0606;
-    transform: scale(1.05);
 }
 
 .btn-cancel-modal {

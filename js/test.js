@@ -40,6 +40,7 @@ fetch(`../${selectedExam}`)
             } else if (item.type === "question") {
                 const questionCard = document.createElement('div');
                 questionCard.classList.add('question-card');
+                questionCard.setAttribute('data-category', item.category);
                 questionCard.innerHTML = `
                     <div class="question-header">
                         <span class="question-number">Pregunta ${item.number}</span>
@@ -69,7 +70,9 @@ fetch(`../${selectedExam}`)
             }            
         });
 
-        attachProgressEvent(); // Asegurarse de que los eventos se asignan después de generar las preguntas
+        attachProgressEvent();
+        attachFilterEvent();
+        attachFinishEvent();
 
         document.querySelectorAll('.report-link').forEach((link) => {
             link.addEventListener('click', (e) => {
@@ -83,6 +86,7 @@ fetch(`../${selectedExam}`)
         });
 
         updateProgress();
+        filterContent('all');
     })
     .catch(error => console.error('Error cargando el JSON:', error));
 
@@ -113,7 +117,6 @@ function showReportModal() {
     }
 }
 
-// Función para ocultar el modal
 function hideReportModal() {
     const reportModal = document.getElementById('reportModal');
     if (reportModal) {
@@ -121,13 +124,11 @@ function hideReportModal() {
     }
 }
 
-// Evento para cerrar el modal con el botón de cancelar
 const cancelReportButton = document.getElementById('cancelReport');
 if (cancelReportButton) {
     cancelReportButton.addEventListener('click', hideReportModal);
 }
 
-// Enviar reporte
 const submitReportButton = document.getElementById('submitReport');
 if (submitReportButton) {
     submitReportButton.addEventListener('click', () => {
@@ -177,15 +178,16 @@ function attachProgressEvent() {
     });
 }
 
-// Variable global para temporizador
+// Temporizador
 let totalTimeInMinutes = 10; 
 let remainingTimeInSeconds = totalTimeInMinutes * 60;
-
 let timerStopped = false; 
 
 function showTimeUpModal() {
     const modal = document.getElementById('timeUpModal');
-    modal.style.display = 'flex';
+    if (modal) {
+        modal.style.display = 'flex';
+    }
     document.querySelector('.timer').textContent = "00:00:00";
     timerStopped = true;
 }
@@ -218,77 +220,81 @@ function updateTimer() {
 const timerInterval = setInterval(updateTimer, 1000);
 updateTimer();
 
-
-
-document.querySelectorAll('input[name="course-filter"]').forEach((radio) => {
-    radio.addEventListener('change', () => {
-        const selectedCategory = document.querySelector('input[name="course-filter"]:checked').value;
-        filterContent(selectedCategory);
-    });
-});
-
-function filterContent(category) {
-    const questionCards = document.querySelectorAll('.question-card');
-    const textCards = document.querySelectorAll('.text-card');
-
-    questionCards.forEach((card) => {
-        const cardCategory = card.querySelector('.question-category').textContent.trim();
-        card.style.display = category === 'all' || cardCategory === category ? 'block' : 'none';
-    });
-
-    textCards.forEach((card) => {
-        const cardCategory = card.getAttribute('data-category');
-        card.style.display = category === 'all' || cardCategory === category ? 'block' : 'none';
+// Filtrado de Preguntas
+function attachFilterEvent() {
+    document.querySelectorAll('input[name="course-filter"]').forEach((radio) => {
+        radio.addEventListener('change', () => {
+            const selectedCategory = document.querySelector('input[name="course-filter"]:checked').value;
+            filterContent(selectedCategory);
+        });
     });
 }
 
+function filterContent(category) {
+    const allCards = document.querySelectorAll('.question-card, .text-card');
+
+    allCards.forEach((card) => {
+        const cardCategory = card.getAttribute('data-category');
+        card.style.display = (category === 'all' || cardCategory === category) ? 'block' : 'none';
+    });
+}
+
+attachFilterEvent();
 filterContent('all');
 
 
-let userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
+// Finalización del Examen
+function attachFinishEvent() {
+    let userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
 
-const confirmationModal = document.getElementById("confirmationModal");
-const timeUpModal = document.getElementById("timeUpModal");
-const remainingTimeElement = document.getElementById("remaining-time");
-const unansweredQuestionsElement = document.getElementById("unanswered-questions");
-const confirmFinishButton = document.getElementById("confirmFinish");
-const cancelFinishButton = document.getElementById("cancelFinish");
+    const confirmationModal = document.getElementById("confirmationModal");
+    const timeUpModal = document.getElementById("timeUpModal");
+    const remainingTimeElement = document.getElementById("remaining-time");
+    const unansweredQuestionsElement = document.getElementById("unanswered-questions");
+    const confirmFinishButton = document.getElementById("confirmFinish");
+    const cancelFinishButton = document.getElementById("cancelFinish");
 
-const finishButton = document.querySelector(".btn-finish");
+    const finishButton = document.querySelector(".btn-finish");
 
-function showConfirmationModal() {
-    const minutes = Math.floor(remainingTimeInSeconds / 60);
-    const seconds = remainingTimeInSeconds % 60;
-    const formattedTime = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-    remainingTimeElement.textContent = formattedTime;
+    finishButton.addEventListener("click", showConfirmationModal);
+    confirmFinishButton.addEventListener("click", confirmFinish);
+    cancelFinishButton.addEventListener("click", hideConfirmationModal);
 
-    const unansweredQuestions = totalQuestions - Object.keys(userAnswers).length;
-    unansweredQuestionsElement.textContent = unansweredQuestions;
-
-    confirmationModal.style.display = "flex";
-}
-
-function hideConfirmationModal() {
-    confirmationModal.style.display = "none";
-}
-
-function confirmFinish() {
-    hideConfirmationModal();
-    showTimeUpModal(); 
-}
-
-finishButton.addEventListener("click", showConfirmationModal);
-confirmFinishButton.addEventListener("click", confirmFinish);
-cancelFinishButton.addEventListener("click", hideConfirmationModal);
-
-document.querySelectorAll('.question-options input[type="radio"]').forEach((input) => {
-    input.addEventListener('change', (e) => {
-        const questionNumber = e.target.name.replace('question', ''); // Obtener el número de la pregunta
-        userAnswers[questionNumber] = e.target.value; // Guardar respuesta seleccionada
-        localStorage.setItem('userAnswers', JSON.stringify(userAnswers)); // Guardar en localStorage
+    document.querySelectorAll('.question-options input[type="radio"]').forEach((input) => {
+        input.addEventListener('change', (e) => {
+            const questionNumber = e.target.name.replace('question', '');
+            userAnswers[questionNumber] = e.target.value;
+            localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+        });
     });
-});
 
+    function showConfirmationModal() {
+        updateConfirmationTime();
+        confirmationTimerInterval = setInterval(updateConfirmationTime, 1000);
+
+        const unansweredQuestions = totalQuestions - Object.keys(userAnswers).length;
+        unansweredQuestionsElement.textContent = unansweredQuestions;
+
+        confirmationModal.style.display = "flex";
+    }
+
+    function hideConfirmationModal() {
+        confirmationModal.style.display = "none";
+        clearInterval(confirmationTimerInterval);
+    }
+
+    function updateConfirmationTime() {
+        const minutes = Math.floor(remainingTimeInSeconds / 60);
+        const seconds = remainingTimeInSeconds % 60;
+        const formattedTime = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+        remainingTimeElement.textContent = formattedTime;
+    }
+
+    function confirmFinish() {
+        hideConfirmationModal();
+        showTimeUpModal(); 
+    }
+}
 
 
 const header = document.querySelector('.header');
