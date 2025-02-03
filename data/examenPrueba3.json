@@ -141,7 +141,7 @@
         "title": "Texto 3",
         "label": "Lee el siguiente texto y responde las preguntas 11-15",
         "content": "A diferencia de hace unos años, el consumidor de hoy no se mantiene fiel a una marca. Hay tanta variedad y tantas maneras de enterarse de las novedades, que no vale la pena cerrarse a la posibilidad de una nueva experiencia.\nEl Índice de Satisfacción del Consumidor Peruano, presentado el último año por Indecopi, Centrum Católica y Arellano Marketing, reveló que los consumidores no se encuentran fidelizados. Esto lo comprueba un estudio del 2014 aplicado por Arellano Marketing, que indica que el 62% de los peruanos usa diferentes marcas, 7% más que en el 2007. Además, el 64% de los consultados sostiene que reclama más. Sobre este último punto, Carla Bernuy, docente de la carrera de Administración y Marketing de la Universidad ESAN, explica que el comprador de hoy conoce todos sus derechos y, al usar las redes sociales, las aprovecha para hacer reclamos. El consumidor de hoy \"trata de que la mayor cantidad de personas conozca su mala experiencia con determinada marca, dependiendo del nivel de indignación o malestar que tenga\".\n\n[Ver gráfico en la imagen adjunta]\n\nDe los datos presentados, se concluye que las formas de compra están modificándose, que en el perfil del nuevo consumidor está emplear la nueva tecnología ya sea para exigir una mejor atención, proponer una demanda o comprar un determinado artículo. No tomar en cuenta estas nuevas características podría ocasionar un severo revés a cualquier empresa.",
-        "image": "../media/Preguntas/grafico_1_tb.jpg",
+        "image": "../data/examenPrueba3_images/texto3.jpg",
         "referencia": "Extraído de: https://larepublica.pe/impresa/economia/887669-ecommerce-perfil-del-consumidor-peruano."
     },    
     {
@@ -278,7 +278,7 @@
         "title": "Texto 5",
         "label": "Lee el siguiente texto y responde las preguntas 21-25",
         "content": "Ley que regula el uso del plástico ya es una realidad y plazos corren desde mañana.\nEsta norma fue firmada por el presidente Vizcarra y fija límites para el consumo de bolsas y sorbetes. Este será el último verano en el que los peruanos usaremos bolsas plásticas, sorbetes y envases de tecnopor en los balnearios de nuestro litoral.\nLa norma, que busca regular el uso desmedido de los plásticos desechables, establece plazos concretos para su cumplimiento, con un periodo máximo de años que culminará con el cese de la fabricación, importación, distribución, comercialización y uso de las bolsas no reutilizables, sorbetes y envases de base plástica que no sean reciclables, incluyendo los de poliestireno extendido, conocidos como tecnopor.\nLa primera medida que se aplicará a nivel nacional será la prohibición de la compra, uso y venta de los elementos plásticos antes mencionados en las playas del litoral y de la Amazonía peruana. Esta restricción deberá cumplirse a partir del cuarto mes de vigencia. En el mismo plazo quedará prohibida la entrega de bolsas o envoltorios plásticos en publicidad impresa, diarios, cronogramas de pago, información dirigida a consumidores, entre otros documentos.\nEn tanto, al año estará restringida la fabricación, importación, distribución, entrega y comercialización de bolsas de \"base polimérica\" de menos de centímetros por lado y cincuenta micras de grosor. Estas bolsas se rompen fácilmente y, al ser desechadas, tardan más de cien años en degradarse, contaminan las fuentes de agua y ponen en riesgo la vida de las especies.\nLa norma, que fue aprobada en el Congreso el de diciembre último, también establece el cobro de un impuesto para quienes, a partir del próximo año, compren una bolsa de plástico.",
-        "image": "",
+        "image": "../data/examenPrueba3_images/texto5.jpg",
         "referencia": "Extraído de: La República. Lima, 21 de diciembre de 2018."
     },    
     {
@@ -433,14 +433,14 @@
         "type": "question",
         "number": 32,
         "category": "Razonamiento Matemático",
-        "text": "Dada la función:\n\\[\n\\frac{\\frac{1}{4} + \\frac{2}{7} + \\frac{7}{2}}{1\\frac{6}{9} \\times \\frac{6}{7} \\times \\frac{15}{12}}\n\\]",
+        "text": "Dada la función:\n\\[\n\\Large \\frac{\\frac{1}{4} + \\frac{2}{7} + \\frac{7}{2}}{\\left(1 + \\frac{6}{9}\\right) \\times \\frac{6}{7} \\times \\frac{15}{12}}\n\\]",
         "options": [
-            "\\frac{113}{32}",
-            "\\frac{113}{16}",
-            "\\frac{125}{12}",
-            "\\frac{109}{32}"
+            "\\( \\Large \\frac{113}{32} \\)",
+            "\\( \\Large \\frac{113}{16} \\)",
+            "\\( \\Large \\frac{125}{12} \\)",
+            "\\( \\Large \\frac{109}{32} \\)"
         ]
-    },    
+    },       
     {
         "type": "question",
         "number": 33,
@@ -457,6 +457,7 @@
         "type": "question",
         "number": 34,
         "category": "Razonamiento Matemático",
+        "text": "Si: &nbsp;&nbsp;\\( \\Large a + b + c + d = 25 \\),&nbsp;&nbsp; calcular la suma de:&nbsp;&nbsp; \\( \\Large \\overline{bcda} + \\overline{cdab} + \\overline{dabc} + \\overline{abcd} \\)",
         "options": [
             "25555",
             "17775",
@@ -480,7 +481,7 @@
         "type": "question",
         "number": 36,
         "category": "Razonamiento Matemático",
-        "text": "Juan tiene 48 canicas. Su hermano le quita la tercera parte, su mamá le regala la mitad de lo que le había quedado, y luego apostando con sus amigos logra ganar \\( \\frac{8}{3} \\) de lo que tenía hasta entonces. ¿Cuántas canicas tiene ahora Juan?",
+        "text": "Juan tiene 48 canicas. Su hermano le quita la tercera parte, su mamá le regala la mitad de lo que le había quedado, y luego apostando con sus amigos logra ganar \\( \\Large \\frac{8}{3} \\) de lo que tenía hasta entonces. ¿Cuántas canicas tiene ahora Juan?",
         "options": [
             "72",
             "128",
@@ -552,34 +553,34 @@
         "type": "question",
         "number": 42,
         "category": "Razonamiento Matemático",
-        "text": "Reduce la expresión:\n\\[\nP = \\frac{\\sqrt{x^3 \\sqrt{x^3}}}{\\sqrt[3]{x^2 \\sqrt[3]{x^2}}}\n\\]",
+        "text": "Reduce la expresión:\n\\[\n\\Large P = \\frac{\\sqrt{x^3 \\sqrt{x^3}}}{\\sqrt[3]{x^2 \\sqrt[3]{x^2}}}\n\\]",
         "options": [
-            "x\\sqrt[36]{x^{13}}",
-            "x\\sqrt[36]{x^{15}}",
-            "x\\sqrt[36]{x^{10}}",
-            "x^{36}"
+            "\\( \\Large x \\sqrt[36]{x^{13}} \\)",
+            "\\( \\Large x \\sqrt[36]{x^{15}} \\)",
+            "\\( \\Large x \\sqrt[36]{x^{10}} \\)",
+            "\\( \\Large x^{36} \\)"
         ]
-    },    
+    },       
     {
         "type": "question",
         "number": 43,
         "category": "Razonamiento Matemático",
-        "text": "Encuentra el valor de \\( x \\) en:\n\\[\n16^{32^{(x-2)}} = 2^{2^{(x+2)}}\n\\]",
+        "text": "Encuentra el valor de \\( \\Large x \\) en:\n\\[\n\\Large 16^{32^{(x-2)}} = 2^{2^{(x+2)}}\n\\]",
         "options": [
-            "\\frac{2}{5}",
-            "\\frac{5}{2}",
-            "\\frac{4}{3}",
-            "\\frac{3}{5}"
+            "\\( \\Large \\frac{2}{5} \\)",
+            "\\( \\Large \\frac{5}{2} \\)",
+            "\\( \\Large \\frac{4}{3} \\)",
+            "\\( \\Large \\frac{3}{5} \\)"
         ]
     },    
     {
         "type": "question",
         "number": 44,
         "category": "Razonamiento Matemático",
-        "text": "Halla el grado absoluto del monomio:\n\\[\nM(x) = \\frac{x^{1/b}}{x^{1/a}}\n\\]\nSi se cumple: \\( a - b = 8 \\) y \\( ab = 4 \\).",
+        "text": "Halla el grado absoluto del monomio:\n\\[\n\\Large M(x) = \\frac{x^{1/b}}{x^{1/a}}\n\\]\nSi se cumple: \\( \\Large a - b = 8 \\) y \\( \\Large ab = 4 \\).",
         "options": [
             "1",
-            "\\frac{1}{2}",
+            "\\( \\Large \\frac{1}{2} \\)",
             "-2",
             "2"
         ]
@@ -588,7 +589,7 @@
         "type": "question",
         "number": 45,
         "category": "Razonamiento Matemático",
-        "text": "Calcula:\n\\[\n    E = (x+6)(x+4)-(x+8)(x+2)\n\\]",
+        "text": "Calcula:\n\\[\n\\Large E = (x+6)(x+4)-(x+8)(x+2)\n\\]",
         "options": [
             "8",
             "6",
@@ -600,7 +601,7 @@
         "type": "question",
         "number": 46,
         "category": "Razonamiento Matemático",
-        "text": "Si el monomio:\n\\[\nM(x;y) = (n^3 - 27) x^{3n+2} y^{8-n}\n\\]\nposee un coeficiente igual a 98, calcula \\( GA(M) + GR(y) \\).",
+        "text": "Si el monomio:\n\\[\n\\Large M(x;y) = (n^3 - 27) x^{3n+2} y^{8-n}\n\\]\nposee un coeficiente igual a 98, calcula \\( GA(M) + GR(y) \\).",
         "options": [
             "22",
             "23",
@@ -612,7 +613,7 @@
         "type": "question",
         "number": 47,
         "category": "Razonamiento Matemático",
-        "text": "Sea el polinomio:\n\\[\nP(x) = (3x - 1)^n + 5x + 1\n\\]\ndonde la suma de coeficientes es 70. Halla \\( n + 2 \\).",
+        "text": "Sea el polinomio:\n\\[\n\\Large P(x) = (3x - 1)^n + 5x + 1\n\\]\ndonde la suma de coeficientes es 70. Halla \\( \\Large n + 2 \\).",
         "options": [
             "6",
             "4",
@@ -624,7 +625,7 @@
         "type": "question",
         "number": 48,
         "category": "Razonamiento Matemático",
-        "text": "Si:\n\\[\nP(x) = x^{a-4} + x^{2a-3} - x^{2a-4}\n\\]\nes de tercer grado, calcula \\( (a+3)^2 \\).",
+        "text": "Si:\n\\[\n\\Large P(x) = x^{a-4} + x^{2a-3} - x^{2a-4}\n\\]\nes de tercer grado, calcula \\( \\Large (a+3)^2 \\).",
         "options": [
             "49",
             "100",
@@ -636,7 +637,7 @@
         "type": "question",
         "number": 49,
         "category": "Razonamiento Matemático",
-        "text": "Si \\( x + y = 5 \\) y \\( xy = 3 \\), halla:\n\\[\nx^3 + y^3\n\\]",
+        "text": "Si \\( \\Large x + y = 5 \\) y \\( \\Large xy = 3 \\), halla:\n\\[\n\\Large x^3 + y^3\n\\]",
         "options": [
             "100",
             "80",
@@ -648,7 +649,7 @@
         "type": "question",
         "number": 50,
         "category": "Razonamiento Matemático",
-        "text": "Efectúa:\n\\[\nA = (x+1)(x^2+x+1)(x-1)(x^2-x+1)\n\\]",
+        "text": "Efectúa:\n\\[\n\\Large A = (x+1)(x^2+x+1)(x-1)(x^2-x+1)\n\\]",
         "options": [
             "x^6 - 1",
             "x^6",
@@ -672,8 +673,8 @@
         "type": "question",
         "number": 52,
         "category": "Razonamiento Matemático",
-        "text": "Si \\( \\overline{AB} \\parallel \\overline{CD} \\), calcula: \\( \\alpha - \\beta \\).",
-        "image": "",
+        "text": "Si \\( \\overline{AB} \\parallel \\overline{CD} \\), calcula: \\( \\Large \\alpha - \\beta \\).",
+        "image": "../data/examenPrueba3_images/52.png",
         "options": [
             "30°",
             "15°",
@@ -685,8 +686,8 @@
         "type": "question",
         "number": 53,
         "category": "Razonamiento Matemático",
-        "text": "Si \\( \\overleftrightarrow{L_1} \\parallel \\overleftrightarrow{L_2} \\), halla el valor de \\( x \\).",
-        "image": "",
+        "text": "Si \\( \\overleftrightarrow{L_1} \\parallel \\overleftrightarrow{L_2} \\), halla el valor de \\( \\Large x \\).",
+        "image": "../data/examenPrueba3_images/53.png",
         "options": [
             "40°",
             "30°",
@@ -698,8 +699,8 @@
         "type": "question",
         "number": 54,
         "category": "Razonamiento Matemático",
-        "text": "Calcula \\( x \\).",
-        "image": "",
+        "text": "Calcula \\( \\Large x \\).",
+        "image": "../data/examenPrueba3_images/54.png",
         "options": [
             "58°",
             "38°",
@@ -747,8 +748,8 @@
         "type": "question",
         "number": 58,
         "category": "Razonamiento Matemático",
-        "text": "Calcula \\( x \\), si \\( AB = BC = CD \\).",
-        "image": "",
+        "text": "Calcula \\( \\Large x \\), si \\( AB = BC = CD \\).",
+        "image": "../data/examenPrueba3_images/58.png",
         "options": [
             "30°",
             "45°",
@@ -772,8 +773,8 @@
         "type": "question",
         "number": 60,
         "category": "Razonamiento Matemático",
-        "text": "Del gráfico, calcula \\( x \\) si \\( I \\) es el incentro del triángulo \\( ABC \\).",
-        "image": "",
+        "text": "Del gráfico, calcula \\( \\Large x \\) si \\( I \\) es el incentro del triángulo \\( ABC \\).",
+        "image": "../data/examenPrueba3_images/60.png",
         "options": [
             "30°",
             "45°",

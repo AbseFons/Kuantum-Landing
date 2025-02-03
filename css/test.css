@@ -276,6 +276,14 @@
     opacity: 1;
 }
 
+.question-img {
+    max-width: 300px;   
+    width: 100%;        
+    height: auto;      
+    display: block;
+    margin: 10px auto; 
+}
+
 /* Tarjeta de texto para comprensión lectora */
 .text-card {
     width: 80%;

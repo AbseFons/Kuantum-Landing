@@ -45,6 +45,14 @@ fetch(`../${selectedExam}`)
                     </div>
                     <div class="question-body">
                         <p class="question-text">${item.text}</p>
+                        
+                        <!-- Agregar la imagen si existe -->
+                        ${item.image ? `
+                            <figure>
+                                <img src="${item.image}" alt="Imagen de la pregunta ${item.number}" class="question-img">
+                            </figure>
+                        ` : ''}
+            
                         <div class="question-options">
                             ${item.options.map((option, index) => `
                                 <label>
@@ -59,7 +67,7 @@ fetch(`../${selectedExam}`)
                     </div>
                 `;
                 questionsArea.appendChild(questionCard);
-            }
+            }            
         });
 
         // Agregar funcionalidad para los enlaces de "Reportar pregunta"
@@ -76,8 +84,15 @@ fetch(`../${selectedExam}`)
 // Seleccionar todos los enlaces "Reportar pregunta"
 document.querySelectorAll('.report-link').forEach((link) => {
     link.addEventListener('click', (e) => {
-        e.preventDefault(); // Evitar comportamiento predeterminado del enlace
-        showReportModal(); // Mostrar el modal de reporte
+        e.preventDefault();
+        
+        // Obtener el número de la pregunta a reportar desde el atributo personalizado
+        const questionNumber = e.target.closest('.question-card').querySelector('.question-number').textContent.replace('Pregunta ', '');
+        
+        // Guardar la pregunta en el modal para referencia
+        document.getElementById('reportForm').dataset.questionNumber = questionNumber;
+        
+        showReportModal();
     });
 });
 
@@ -85,7 +100,7 @@ document.querySelectorAll('.report-link').forEach((link) => {
 function showReportModal() {
     const reportModal = document.getElementById('reportModal');
     if (reportModal) {
-        reportModal.style.display = 'flex'; // Mostrar el modal
+        reportModal.style.display = 'flex';
     } else {
         console.error('Modal de reporte no encontrado.');
     }
@@ -95,14 +110,46 @@ function showReportModal() {
 function hideReportModal() {
     const reportModal = document.getElementById('reportModal');
     if (reportModal) {
-        reportModal.style.display = 'none'; // Ocultar el modal
+        reportModal.style.display = 'none';
     }
 }
 
-// Agregar evento para cerrar el modal con un botón
+// Evento para cerrar el modal con el botón de cancelar
 const cancelReportButton = document.getElementById('cancelReport');
 if (cancelReportButton) {
     cancelReportButton.addEventListener('click', hideReportModal);
+}
+
+// Enviar reporte
+const submitReportButton = document.getElementById('submitReport');
+if (submitReportButton) {
+    submitReportButton.addEventListener('click', () => {
+        const reportForm = document.getElementById('reportForm');
+        const reason = document.querySelector('input[name="report-reason"]:checked')?.value;
+        const details = document.getElementById('report-details').value;
+        const questionNumber = reportForm.dataset.questionNumber;
+
+        if (reason) {
+            const reportData = {
+                questionNumber,
+                reason,
+                details
+            };
+
+            console.log('Reporte enviado:', reportData);
+
+            // Aquí podrías enviar los datos a un servidor o guardarlos localmente
+            // Ejemplo de almacenamiento local:
+            let reports = JSON.parse(localStorage.getItem('reports')) || [];
+            reports.push(reportData);
+            localStorage.setItem('reports', JSON.stringify(reports));
+
+            hideReportModal();
+            alert(`Reporte de la Pregunta ${questionNumber} enviado exitosamente.`);
+        } else {
+            alert('Por favor selecciona un motivo para el reporte.');
+        }
+    });
 }
 
 

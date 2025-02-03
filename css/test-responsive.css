@@ -161,7 +161,8 @@
     .header-img {
         height: 32px;
     }
-    .text-card {
+    .text-card,
+    .question-card {
         padding: 25px;
     }
     .text-header,
@@ -266,7 +267,9 @@
     }
     .text-body p,
     .question-options label,
-    .question-body .question-text {
+    .question-body .question-text,
+    .question-category,
+    .report-link {
         font-size: 0.65rem;
     }
 }
