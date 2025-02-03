@@ -63,17 +63,20 @@ fetch(`../${selectedExam}`)
                         </div>
                     </div>
                     <div class="question-footer">
-                        <a href="#" class="report-link">Reportar pregunta</a>
+                        <a href="#" class="report-link" data-question-number="${item.number}">Reportar pregunta</a>
                     </div>
                 `;
                 questionsArea.appendChild(questionCard);
             }            
         });
 
-        // Agregar funcionalidad para los enlaces de "Reportar pregunta"
-        document.querySelectorAll('.report-link').forEach(link => {
+        document.querySelectorAll('.report-link').forEach((link) => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
+
+                const questionNumber = e.target.dataset.questionNumber;
+
+                document.getElementById('reportForm').dataset.questionNumber = questionNumber;
                 showReportModal();
             });
         });
@@ -85,16 +88,18 @@ fetch(`../${selectedExam}`)
 document.querySelectorAll('.report-link').forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        
-        // Obtener el número de la pregunta a reportar desde el atributo personalizado
-        const questionNumber = e.target.closest('.question-card').querySelector('.question-number').textContent.replace('Pregunta ', '');
-        
-        // Guardar la pregunta en el modal para referencia
+
+        // Obtener el número de la pregunta directamente desde el atributo data
+        const questionNumber = e.target.dataset.questionNumber;
+        console.log('Número de la pregunta:', questionNumber);  // Verificar el número
+
+        // Guardar el número de la pregunta en el formulario del modal
         document.getElementById('reportForm').dataset.questionNumber = questionNumber;
-        
+
         showReportModal();
     });
 });
+
 
 // Función para mostrar el modal
 function showReportModal() {
