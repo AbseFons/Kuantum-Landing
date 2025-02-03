@@ -10,6 +10,8 @@ fetch(`../${selectedExam}`)
         const content = data;
         const questionsArea = document.querySelector('.questions-area');
 
+        totalQuestions = content.filter(item => item.type === "question").length;
+
         content.forEach((item) => {
             if (item.type === "text-card") {
                 const textCard = document.createElement('div');
@@ -45,14 +47,11 @@ fetch(`../${selectedExam}`)
                     </div>
                     <div class="question-body">
                         <p class="question-text">${item.text}</p>
-                        
-                        <!-- Agregar la imagen si existe -->
                         ${item.image ? `
                             <figure>
                                 <img src="${item.image}" alt="Imagen de la pregunta ${item.number}" class="question-img">
                             </figure>
                         ` : ''}
-            
                         <div class="question-options">
                             ${item.options.map((option, index) => `
                                 <label>
@@ -70,6 +69,8 @@ fetch(`../${selectedExam}`)
             }            
         });
 
+        attachProgressEvent(); // Asegurarse de que los eventos se asignan después de generar las preguntas
+
         document.querySelectorAll('.report-link').forEach((link) => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -80,9 +81,10 @@ fetch(`../${selectedExam}`)
                 showReportModal();
             });
         });
-}).catch(error => console.error('Error cargando el JSON:', error));
 
-
+        updateProgress();
+    })
+    .catch(error => console.error('Error cargando el JSON:', error));
 
 // Seleccionar todos los enlaces "Reportar pregunta"
 document.querySelectorAll('.report-link').forEach((link) => {
@@ -157,9 +159,8 @@ if (submitReportButton) {
     });
 }
 
-
 // Barra de Progreso
-const totalQuestions = content.filter(item => item.type === "question").length;
+let totalQuestions = 0;
 let answeredQuestions = 0;
 
 function updateProgress() {
@@ -170,11 +171,11 @@ function updateProgress() {
     document.querySelector('.progress-section p').textContent = `${answeredQuestions} de ${totalQuestions} preguntas resueltas`;
 }
 
-document.querySelectorAll('.question-options input[type="radio"]').forEach(input => {
-    input.addEventListener('change', updateProgress);
-});
-
-updateProgress();
+function attachProgressEvent() {
+    document.querySelectorAll('.question-options input[type="radio"]').forEach(input => {
+        input.addEventListener('change', updateProgress);
+    });
+}
 
 // Variable global para temporizador
 let totalTimeInMinutes = 10; 
