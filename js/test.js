@@ -107,7 +107,7 @@ document.querySelectorAll('.report-link').forEach((link) => {
 });
 
 
-// Función para mostrar el modal
+// Función para mostrar el modal Reporte
 function showReportModal() {
     const reportModal = document.getElementById('reportModal');
     if (reportModal) {
