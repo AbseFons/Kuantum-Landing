@@ -855,4 +855,44 @@ body {
     object-fit: contain; 
 }
 
+#exam {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    font-size: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    color: var(--color-azul);
+    background-color: var(--color-blanco);
+    border: 2px solid var(--color-azul);
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Cambios cuando pasas el cursor */
+#exam:hover {
+    border-color: var(--color-amarillo);
+}
+
+/* Cuando el usuario hace clic en el combobox */
+#exam:focus {
+    border-color: var(--color-rojo);
+    box-shadow: 0 0 8px rgba(239, 84, 84, 0.5);
+}
+
+/* Estilo para las opciones del combobox */
+#exam option {
+    font-size: 1rem;
+    background-color: var(--color-blanco);
+    color: var(--color-azul);
+    padding: 10px;
+}
+
+/* Efecto cuando seleccionas una opción */
+#exam option:checked {
+    background-color: var(--color-amarillo);
+    color: var(--color-blanco);
+}
 
