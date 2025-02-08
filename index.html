@@ -279,6 +279,26 @@
             });
         </script>  
         
+        <script>
+            document.getElementById('registration-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                const selectedExam = document.getElementById('exam').value;
+                const nombre = document.getElementById('name').value;
+                const apellido = document.getElementById('lastname').value;
+        
+                // Guardar nombre, apellido y examen en localStorage
+                localStorage.setItem('selectedExam', selectedExam);
+                localStorage.setItem('nombreAlumno', `${nombre} ${apellido}`);
+        
+                window.location.href = 'pages/test.html';
+            });
+        
+            document.getElementById('cancel-btn').addEventListener('click', function() {
+                document.getElementById('registration-modal').style.display = 'none';
+            });
+        </script>        
+        
         <!-- Script seleccionar examen -->
         <script>
             document.getElementById('registration-form').addEventListener('submit', function(event) {

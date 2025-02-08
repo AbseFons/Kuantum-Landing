@@ -193,7 +193,7 @@ function showTimeUpModal() {
 }
 
 function goToResults() {
-    window.location.href = "resultados.html"; 
+    window.location.href = "reporte.html"; 
 }
 
 function updateTimer() {
