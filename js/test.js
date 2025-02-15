@@ -24,16 +24,13 @@ fetch(`../${selectedExam}`)
                     </div>
                     <div class="text-body">
                         <p>${item.content}</p>
-                        ${
-                            item.image
-                                ? `
-                                    <figure>
-                                        <img src="${item.image}" alt="Imagen relacionada con el texto" class="graphic-img">
-                                        ${item.caption ? `<figcaption>${item.caption}</figcaption>` : ""}
-                                    </figure>
-                                `
-                                : ""
-                        }
+                        ${item.image ? `
+                            <figure>
+                                <img src="${item.image}" alt="Imagen relacionada con el texto" class="graphic-img">
+                                ${item.caption ? `<figcaption>${item.caption}</figcaption>` : ""}
+                            </figure>
+                        ` : ""}
+                        ${item.content_after_image ? `<p>${item.content_after_image}</p>` : ""}
                     </div>
                 `;
                 questionsArea.appendChild(textCard);
@@ -77,9 +74,7 @@ fetch(`../${selectedExam}`)
         document.querySelectorAll('.report-link').forEach((link) => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-
                 const questionNumber = e.target.dataset.questionNumber;
-
                 document.getElementById('reportForm').dataset.questionNumber = questionNumber;
                 showReportModal();
             });
