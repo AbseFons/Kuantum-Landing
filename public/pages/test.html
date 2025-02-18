@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beca 18 Simulacro</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/test.css">
+    <link rel="stylesheet" href="../css/test-responsive.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-logo">
+                <a href="#" id="logo-link">
+                    <img src="../media/variable_amarillo.png" alt="Variable Amarillo" class="header-img">
+                </a>    
+            </div>            
+            <div class="header-title">
+                <h2 id="exam-title">Examen Beca 18 N° 1</h2>
+            </div>
+            <div class="header-user">
+                <p>¡Suerte, <span id="student-name"></span>!</p>
+            </div>
+        </div>
+    </header>    
+    <aside class="sidebar">
+        <div class="progress-section">
+            <p>1 de 30 preguntas resueltas</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 5%;"></div>
+            </div>
+        </div>
+        <div class="timer-section">
+            <p class="timer">02:53:12</p>
+        </div>
+        <div class="filter-header">
+            <h3>Filtrar Examen</h3>
+        </div>
+        <div class="filter-section">
+            <h3>Filtrar por curso:</h3>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="course-filter" value="all" checked>
+                    Todos los cursos
+                </label>
+                <label>
+                    <input type="radio" name="course-filter" value="Razonamiento Verbal">
+                    Razonamiento Verbal
+                </label>
+                <label>
+                    <input type="radio" name="course-filter" value="Razonamiento Matemático">
+                    Razonamiento Matemático
+                </label>
+            </div>
+            <div class="finish-section">
+                <button class="btn-finish">Finalizar</button>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="timeUpModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>¡El simulacro ha terminado!⏰</h2>
+                </div>
+                <div class="modal-body">
+                    <p>La prueba ha finalizado. Haz clic en el botón para ver tus resultados y evaluar tu desempeño.</p>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-results" onclick="goToResults()">Ver Resultados</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="confirmationModal" class="modal-overlay" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>¿Está seguro que desea terminar la prueba?</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Tiempo restante: <span id="remaining-time">--:--</span></p>
+                    <p>Preguntas sin contestar: <span id="unanswered-questions">--</span></p>
+                </div>
+                <div class="modal-actions">
+                    <button id="confirmFinish" class="btn-finish-modal">Finalizar</button>
+                    <button id="cancelFinish" class="btn-cancel-modal">Regresar</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+        
+    <main class="questions-area">
+    </main>  
+
+    <div id="modal-confirmation" class="modal-overlay">
+        <div class="modal-content">
+            <h2>¿Estás seguro de volver a la página principal?</h2>
+            <p>Si vuelves a la página principal, podrías perder el progreso actual.</p>
+            <div class="modal-buttons">
+                <button id="confirm-return" class="btn-confirm">Sí, volver</button>
+                <button id="cancel-return" class="btn-cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="reportModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reportar Pregunta</h2>
+            </div>
+            <div class="modal-body">
+                <p>Selecciona el motivo por el cual deseas reportar esta pregunta:</p>
+                <form id="reportForm">
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" name="report-reason" value="Error en el enunciado" required>
+                            Error en el enunciado
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" name="report-reason" value="Opciones incorrectas" required>
+                            Opciones incorrectas
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" name="report-reason" value="Otra razón" required>
+                            Otra razón
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="report-details">Descripción (opcional):</label>
+                        <textarea id="report-details" rows="4" placeholder="Escribe más información aquí..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-actions">
+                <button id="submitReport" class="btn-finish-modal">Enviar</button>
+                <button id="cancelReport" class="btn-cancel-modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/test.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    
+</body>
+</html>

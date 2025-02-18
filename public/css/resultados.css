@@ -1,0 +1,230 @@
+:root {
+    --color-azul: #015989;
+    --color-amarillo: #F9B52B;
+    --color-amarillo-opaco: #f8a90b;
+    --color-rojo: #E64F41;
+    --color-gris: #E8E8E8;
+    --color-blanco: #FFFFFF;
+    --color-negro: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.header {
+    background-color: var(--color-azul);
+    padding: 20px 30px;
+    color: var(--color-blanco);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw; /* Asegura que el ancho sea igual al ancho total de la ventana */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+.header img {
+    height: 100px;
+    margin-bottom: 10px;
+    transition: height 0.3s ease-in-out;
+}
+
+.header h1 {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.header p {
+    font-size: 1.2rem;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.results-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--color-gris);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.results-container h2 {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.8rem;
+    color: var(--color-azul);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.results-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.results-details div {
+    font-size: 1.2rem;
+}
+
+.results-summary {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.results-summary span {
+    color: var(--color-amarillo);
+}
+
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.details-table th,
+.details-table td {
+    border: 1px solid var(--color-azul);
+    padding: 10px;
+    text-align: center;
+}
+
+.details-table th {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+}
+
+.details-table tr:nth-child(even) {
+    background-color: var(--color-blanco);
+}
+
+.details-table tr:nth-child(odd) {
+    background-color: var(--color-gris);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 30px;
+}
+
+.btn-retry {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    padding: 12px 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-retry:hover {
+    background-color: #002a4e;
+    transform: scale(1.05);
+}
+
+/* Botón de "Descargar PDF" */
+.btn-download {
+    background-color: var(--color-amarillo);
+    color: var(--color-negro);
+    font-size: 1rem;
+    padding: 12px 40px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-download:hover {
+    background-color: var(--color-amarillo-opaco);
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+    .header img {
+        height: 70px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem; 
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+    .results-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .results-details {
+        font-size: 1rem;
+        text-align: center;
+    }
+    .results-details div {
+        font-size: 1rem;
+    }
+
+    .results-summary {
+        font-size: 1.2rem;
+    }
+    .details-table {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .header img {
+        height: 50px; 
+    }
+
+    .header h1 {
+        font-size: 1.2rem;
+    }
+
+    .header p {
+        font-size: 0.9rem; 
+    }
+    .results-container h2 {
+        font-size: 1rem;
+    }
+
+    .results-details {
+        font-size: 10px;
+        text-align: center;
+    }
+    .results-details div {
+        font-size: 0.9rem;
+    }
+
+    .results-summary {
+        font-size: 1.2rem;
+    }
+    .details-table {
+        font-size: 0.8rem;
+    }
+    .btn-action {
+        font-size: 0.8rem;
+        padding: 10px 25px;
+        margin-bottom: 10px;
+    }
+}

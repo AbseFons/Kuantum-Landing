@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kuantum Simulacro</title>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet"> <!-- Lemon Milk Font -->
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/index-responsive.css">
+        
+        <!-- Firebase SDK -->
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+            import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+            // Configuración de Firebase (sustituye por tus credenciales)
+            const firebaseConfig = {
+                apiKey: "AIzaSyC0a0-T2xTVdNGMaD6WrE1-1-ywSkHmTQU",
+                authDomain: "kuantum-s.firebaseapp.com",
+                projectId: "kuantum-s",
+                storageBucket: "kuantum-s.firebasestorage.app",
+                messagingSenderId: "897082084969",
+                appId: "1:897082084969:web:50499e07dcb40c5a841cf8"
+            };
+
+            // Inicialización de Firebase y Firestore
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const modal = document.getElementById("registration-modal");
+                const simulationBtn = document.getElementById("simulation-btn");
+                const cancelBtn = document.getElementById("cancel-btn");
+                const form = document.getElementById("registration-form");
+
+                // Verificar si hay datos previos en localStorage
+                const existingExam = localStorage.getItem("selectedExam");
+                const existingName = localStorage.getItem("nombreAlumno");
+
+                simulationBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    if (existingExam && existingName) {
+                        console.log("Usuario ya registrado, redirigiendo a test...");
+                        window.location.href = "./pages/test.html"; // Solo redirige si hay datos guardados
+                    } else {
+                        modal.style.display = "flex"; // Si no hay datos, muestra el modal
+                    }
+                });
+
+                // Ocultar modal al hacer clic en "Cancelar"
+                cancelBtn.addEventListener("click", () => {
+                    modal.style.display = "none";
+                });
+
+                // Manejar el envío del formulario
+                form.addEventListener("submit", async function (event) {
+                    event.preventDefault();
+
+                    const submitButton = form.querySelector(".btn-confirm"); // Botón de continuar
+                    const cancelButton = form.querySelector(".btn-cancel"); // Botón de cancelar
+
+                    // Deshabilita botones y cambia su apariencia
+                    submitButton.disabled = true;
+                    cancelButton.disabled = true;
+                    submitButton.classList.add("btn-disabled");
+                    cancelButton.classList.add("btn-disabled");
+                    submitButton.textContent = "Procesando...";
+
+                    // Captura de datos del formulario
+                    const selectedExam = document.getElementById("exam").value;
+                    const nombre = document.getElementById("name").value.trim();
+                    const apellido = document.getElementById("lastname").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const phone = document.getElementById("phone").value.trim();
+                    const age = document.getElementById("age").value.trim();
+
+                    // Validación básica
+                    if (!nombre || !apellido || !email || !phone || !age || !selectedExam) {
+                        alert("Todos los campos son obligatorios.");
+
+                        // Restaurar botones si hay error
+                        submitButton.disabled = false;
+                        cancelButton.disabled = false;
+                        submitButton.classList.remove("btn-disabled");
+                        cancelButton.classList.remove("btn-disabled");
+                        submitButton.textContent = "CONTINUAR";
+                        return;
+                    }
+
+                    // Guardar en LocalStorage
+                    localStorage.setItem("selectedExam", selectedExam);
+                    localStorage.setItem("nombreAlumno", `${nombre} ${apellido}`);
+                    localStorage.setItem("email", email);
+                    localStorage.setItem("phone", phone);
+                    localStorage.setItem("age", age);
+
+                    console.log("Datos guardados en LocalStorage:", {
+                        selectedExam,
+                        nombre,
+                        apellido,
+                        email,
+                        phone,
+                        age
+                    });
+
+                    // Guardar en Firestore
+                    try {
+                        const docRef = await addDoc(collection(db, "usuarios"), {
+                            nombre,
+                            apellido,
+                            email,
+                            phone,
+                            age,
+                            selectedExam,
+                            timestamp: new Date(),
+                        });
+
+                        console.log("Registro exitoso en Firestore, ID:", docRef.id);
+
+                        // Redirigir después del registro exitoso
+                        window.location.href = "./pages/test.html"; 
+
+                    } catch (error) {
+                        console.error("Error al registrar en Firestore:", error);
+                        alert("No se pudo registrar en Firebase. Revisa los permisos y la conexión.");
+
+                        // Restaurar botones en caso de error
+                        submitButton.disabled = false;
+                        cancelButton.disabled = false;
+                        submitButton.classList.remove("btn-disabled");
+                        cancelButton.classList.remove("btn-disabled");
+                        submitButton.textContent = "CONTINUAR";
+                    }
+                });
+            });
+        </script>        
+    </head>
+
+    <body>
+        <header class="cabecera">
+            <div class="cabecera-contenido">
+                <div class="logo">
+                    <a href="#">
+                        <img src="./media/logo_secundario_normal.png" alt="Logo Cabecera">
+                    </a>
+                </div>
+
+                <nav>
+                    <ul class="menu">
+                        <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#benefits">Beneficios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#simulationExam">Simulacro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    </ul>
+                </nav>
+                
+                </nav>
+
+                <div class="btn-container">
+                    <a href="./pages/login.html" class="btn-cta">Iniciar Sesión</a>
+                </div>
+
+                <div class="menu-hamburguesa" onclick="toggleMenu()">
+                    ☰
+                </div>
+            </div>
+
+            <div class="off-canvas" id="offCanvas">
+                <div class="off-canvas-header">
+                    <img src="./media/isotipo_blanco.png" alt="Isotipo Blanco" class="off-canvas-logo">
+                    <div class="close-btn" onclick="toggleMenu()">ⓧ</div>
+                </div>
+            
+                <div class="off-canvas-content">
+                    <ul class="menu-offcanvas">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#benefits">Beneficios</a></li>
+                        <li><a href="#simulationExam">Simulacro Destacado</a></li>
+                        <li><a href="#blog">Blog & Consejos</a></li>
+                    </ul>
+                    <div class="off-canvas-cta">
+                        <a href="./pages/login.html" class="btn-cta">Iniciar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-section" id="home">
+            <div class="hero-content">
+                <h1 class="hero-title">Domina tu Examen de Beca 18 con <span>KUANTUM</span></h1>
+                <a href="#simulationExam" class="btn-cta-hero">Accede al Simulacro</a>
+            </div>
+        </section>
+
+        <section class="benefits-section" id="benefits">
+            <div class="benefits-header">
+                <h2 class="benefits-title">¿Por qué elegir Kuantum?</h2>
+                <p class="benefits-subtitle">Te preparamos para lograr resultados excepcionales con recursos diseñados para ti.</p>
+            </div>
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">Resultados Reales</h3>
+                    <p class="benefit-text">Simulacros que simulan fielmente el examen oficial.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3 class="benefit-title">Flexibilidad Total</h3>
+                    <p class="benefit-text">Accede a los simulacros desde cualquier dispositivo.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3 class="benefit-title">Siempre Contigo</h3>
+                    <p class="benefit-text">Recibe ayuda y tips personalizados para mejorar tu rendimiento.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📖</div>
+                    <h3 class="benefit-title">Preparación Integral</h3>
+                    <p class="benefit-text">No solo simulacros, también estrategias y contenido educativo.</p>
+                </div>
+            </div>
+        </section>        
+
+        <section class="featured-simulation" id="simulationExam">
+            <div class="simulation-image">
+                <img src="media/simulacro.jpg" alt="Simulacro en acción">
+            </div>
+            <div class="simulation-content">
+                <h2 class="simulation-title">¡Prepárate para el Éxito!</h2>
+                <p class="simulation-subtitle">Simulacro diseñado para maximizar tu rendimiento y lograr resultados excepcionales.</p>
+                <ul class="simulation-benefits">
+                    <li>
+                        <img src="./media/icons/objetivo_rojo.png" alt="Objetivo" class="benefit-list-icon">
+                        Preguntas alineadas con el examen oficial.
+                    </li>
+                    <li>
+                        <img src="./media/icons/barras_rojo.png" alt="Análisis" class="benefit-list-icon">
+                        Análisis detallado de tu rendimiento.
+                    </li>
+                    <li>
+                        <img src="./media/icons/pc_rojo.png" alt="Acceso desde cualquier dispositivo" class="benefit-list-icon">
+                        Accede desde cualquier dispositivo.
+                    </li>
+                </ul>
+                
+                <a href="#" class="btn-simulation" id="simulation-btn">¡Realiza el Simulacro Ahora!</a>
+            </div>
+        </section>        
+
+        <section class="blog-section" id="blog">
+            <div class="blog-layout">
+                <div class="blog-text">
+                    <h3 class="blog-subtitle">Descubre Nuestra Biblioteca</h3>
+                    <p class="blog-description">
+                        Aprende con nuestros videos educativos diseñados para ayudarte a dominar cada aspecto de tu examen. Con explicaciones claras y prácticas, podrás prepararte de manera eficiente. ¡Mira nuestro video destacado y explora más contenido en nuestro canal!
+                    </p>
+                    <a href="https://www.youtube.com/@Kuantumeduca" target="_blank" class="btn-channel">Visita nuestro canal</a>
+                </div>
+                <div class="blog-video">
+                    <iframe 
+                        src="https://www.youtube.com/embed/7-CMb7Q8pbU" 
+                        title="Desarrollo de un examen de Beca 18"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <div id="registration-modal" class="modal-overlay">
+            <div class="modal-content">
+                <h2>Construye Tu Camino a la Beca 18</h2>
+                <p>Rellena con tus datos para recibir tu resultado, análisis y asesoría personalizada.</p>
+                <form id="registration-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="Ejemplo: José" required>
+        
+                    <label for="lastname">Apellido:</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Ejemplo: Pérez" required>
+        
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="Ejemplo: joseperez@mail.com" required>
+        
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Ejemplo: 987654321" required>
+        
+                    <label for="age">Edad:</label>
+                    <input type="number" id="age" name="age" placeholder="Ejemplo: 18" min="1" required>
+        
+
+                    <!-- Agregar exámenes/simulacro en JSON -->
+                    <label for="exam">Selecciona tu Examen:</label>
+                    <select id="exam" name="exam" required>
+                        <option value="./data/examenPrueba.json">Examen 1</option>
+                        <option value="./data/examenPrueba2.json">Examen 2</option>
+                        <option value="./data/examenPrueba3.json">Examen 3</option>
+                    </select>
+                    <!----------------------------------------->
+
+                    <div class="modal-buttons">
+                        <button type="submit" class="btn-confirm">CONTINUAR</button>
+                        <button type="button" class="btn-cancel" id="cancel-btn">CANCELAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>       
+        
+        <footer class="footer" id="footer">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h4>Sobre Kuantum</h4>
+                    <p>
+                        En Kuantum te ayudamos a prepararte para tus metas académicas. Con recursos innovadores y un enfoque en tu desarrollo, estamos comprometidos con tu éxito en el examen Beca 18 y mucho más.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links útiles</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#simulationExam">Simulacro</a></li>
+                        <li><a href="#contact">Contáctanos</a></li>
+                        <li><a href="https://www.youtube.com/@Kuantumeduca" target="_blank">Canal de YouTube</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>
+                            <img src="./media/icons/pin_blanco.png" alt="Ubicación" class="contact-icon"> 
+                            Dirección: Av. Principal 123, Lima, Perú
+                        </li>
+                        <li>
+                            <img src="./media/icons/email_blanco.png" alt="Correo" class="contact-icon"> 
+                            Correo: <a href="mailto:contacto@kuantum.com"> contacto@kuantum.com</a>
+                        </li>
+                        <li>
+                            <img src="./media/icons/phone_blanco.png" alt="Teléfono" class="contact-icon"> 
+                            Teléfono: +51 987 654 321
+                        </li>
+                    </ul>
+                </div>
+                
+        
+                <div class="footer-socials">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><img src="./media/icons/facebook_blanco.png" alt="Facebook"></a>
+                        <a href="#" target="_blank"><img src="./media/icons/instagram_blanco.png" alt="Instagram"></a>
+                        <a href="#" target="_blank"><img src="./media/icons/tiktok_blanco.png" alt="TikTok"></a>
+                        <a href="https://wa.me/51987654321" target="_blank"><img src="./media/icons/whatsapp_blanco.png" alt="WhatsApp"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Kuantum. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        
+
+        <script>
+            function toggleMenu() {
+                const offCanvas = document.getElementById('offCanvas');
+                offCanvas.classList.toggle('show');
+            }
+
+            function closeMenuOnClickOutside(e) {
+                const offCanvas = document.getElementById('offCanvas');
+                const menuHamburguesa = document.querySelector('.menu-hamburguesa');
+                
+                if (!offCanvas.contains(e.target) && !menuHamburguesa.contains(e.target)) {
+                    offCanvas.classList.remove('show');
+                }
+            }
+
+            document.addEventListener('click', closeMenuOnClickOutside);
+            document.addEventListener('touchstart', closeMenuOnClickOutside);
+        </script>
+    </body>
+</html>

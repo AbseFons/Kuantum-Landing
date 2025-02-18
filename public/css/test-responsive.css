@@ -1,0 +1,276 @@
+@media (max-width:1200px){
+    .header-title h2 {
+        font-size: 1.2rem;
+    }
+    .sidebar {
+        width: 30%;
+    }
+    .questions-area {
+        margin-left: 30%;
+    }
+    .text-title {
+        font-size: 1rem;
+    }
+    .text-label {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 1000px) {
+    body {
+        display: flex;
+        flex-direction: column; 
+    }
+    .sidebar {
+        position: static; 
+        width: 100%;
+        padding: 20px; 
+        height: auto; 
+        box-shadow: none;
+        gap: 20px;
+    }
+    .filter-header {
+        margin-bottom: 20px;
+    }
+    .questions-area {
+        margin-left: 0; 
+        padding: 20px; 
+        width: 100%; 
+    }
+    .question-card {
+        width: 100%;
+        margin: 0;
+    }
+    .text-card {
+        width: 100%;
+        margin: 20px 0;
+    }
+    .text-body {
+        font-size: 1.2rem;
+    }
+    .filter-section{
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center; 
+    }
+    .radio-group {
+        flex-direction: initial;
+        gap: 25px;
+    }
+    .modal-content {
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.3rem; /* Reducir el tamaño del título */
+    }
+
+    .modal-body p {
+        font-size: 1.1rem; /* Reducir el texto */
+        margin-bottom: 10px;
+    }
+
+    .modal-actions {
+        flex-direction: column; /* Botones apilados */
+        gap: 10px; /* Espaciado más compacto */
+    }
+    .btn-finish {
+        display: flex;
+        margin: 40px auto 10px;
+        width: auto;
+    }
+    .btn-finish-modal, .btn-cancel-modal {
+        max-width: 100%; /* Ocupan todo el ancho */
+        flex: none;
+    }
+}
+@media (max-width: 770px) {
+    .header-user {
+        display: none;
+    }
+    .header-title {
+        position: static;  
+        left: auto;       
+        transform: none;   
+    }
+    .header-title h2 {
+        font-size: 1.1rem;
+    }
+    .progress-section {
+        margin-top: 10px;
+    }
+    .text-body p {
+        font-size: 1.05rem;
+    }
+    .text-title {
+        font-size: 0.9rem;
+        min-width: 61px;
+    }
+    .text-label {
+        font-size: 0.9rem;
+    }
+    .radio-group {
+        flex-direction: column;
+    }
+    .modal-header h2 {
+        font-size: 1.05rem;
+    }
+
+    .modal-body p {
+        font-size: 1rem;
+    }
+
+    .btn-finish-modal, .btn-cancel-modal {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+    .modal-content {
+        max-width: 80%;
+        padding: 20px;
+    }
+    .modal-content h2 {
+        margin: 20px 0px;
+    }
+    .modal-content p {
+        margin-top: -10px;
+        font-size: 1.1rem;
+    }
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-body p {
+        font-size: 0.9rem;
+        width: 90%;
+    }
+    .modal-buttons {
+        justify-content: space-evenly;
+        gap: 20%;
+        margin-top: 30px;
+    }
+
+    .btn-results {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 465px) {
+    .header-title h2 {
+        font-size: 0.8rem;
+    }
+    .header-img {
+        height: 32px;
+    }
+    .text-card,
+    .question-card {
+        padding: 25px;
+    }
+    .text-header,
+    .question-header {
+        gap: 10px;
+    }
+    .text-title,
+    .question-number {
+        font-size: 0.8rem;
+    }
+    .text-label {
+        font-size: 0.7rem;
+    }
+    .text-body p,
+    .question-options label,
+    .question-body .question-text {
+        font-size: 0.8rem;
+    }
+    .question-category {
+        font-size: 0.75rem;
+    }
+    .sidebar {
+        gap: 12px;
+    }
+
+    /*Filtro*/
+    .timer-section .timer{
+        font-size: 1.5rem;
+    }
+    .filter-header h3 {
+        font-size: 1rem;
+    }
+    .filter-section h3 {
+        font-size: 15px;
+    }
+    .radio-group label{
+        font-size: 0.8rem;
+    }
+    .btn-finish {
+        font-size: 12px;
+        margin-top: 30px;
+    }
+    .question-options label {
+        margin-left: 10px;
+    }
+    .report-link {
+        font-size: 0.75rem;
+    }
+    .modal-content {
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    .modal-header h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .modal-body p {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+    }
+
+    .btn-finish-modal, .btn-cancel-modal {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+
+    .modal-actions {
+        gap: 8px;
+    }
+    .modal-content {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .modal-body p {
+        font-size: 0.85rem;
+        width: 100%;
+    }
+
+    .btn-results {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}
+@media (max-width: 350px) {
+    .header-title h2 {
+        font-size: 0.7rem;
+        margin-right: -10px;
+    }
+    .header-img {
+        height: 30px;
+        margin-left: -10px;
+    }
+    .text-card {
+        padding: 15px;
+    }
+    .text-body p,
+    .question-options label,
+    .question-body .question-text,
+    .question-category,
+    .report-link {
+        font-size: 0.65rem;
+    }
+}

@@ -1,0 +1,706 @@
+:root {
+    --color-azul: #015989;
+    --color-amarillo: #F9B52B;
+    --color-amarillo-opaco: #f8a90b;
+    --color-rojo: #E64F41;
+    --color-gris: #E8E8E8;
+    --color-blanco: #FFFFFF;
+    --color-negro: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.header {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Necesario para centrar el título */
+}
+
+.header-logo {
+    flex: 0 0 auto; /* Mantiene el tamaño del logo */
+}
+
+.header-img {
+    height: 40px;
+    padding: 8px 0px 5px;
+    width: auto;
+}
+
+.header-title {
+    position: absolute;
+    left: 50%; /* Posición horizontal centrada */
+    transform: translateX(-50%); /* Compensar el ancho del div para centrarlo */
+    text-align: center;
+}
+
+.header-title h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.header-user {
+    flex: 0 0 auto; /* Mantiene el tamaño del saludo */
+    text-align: right;
+}
+
+.header-user p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.header-user span {
+    color: var(--color-amarillo);
+}
+
+/*Side Bar*/
+
+.sidebar {
+    width: 25%;
+    padding: 50px;
+    background-color: var(--color-blanco);
+    border-right: 1px solid var(--color-gris);
+    position: fixed; /* Mantiene el sidebar fijo en la ventana */
+    top: auto; /* Inicialmente no está fijado */
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease-in-out; /* Suaviza el movimiento */
+}
+
+
+.filter-header h3 {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-azul);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-section p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-negro);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--color-gris);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--color-amarillo);
+    width: 0%; 
+    transition: width 0.3s ease-in-out;
+}
+
+.timer-section .timer {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 2rem;
+    color: var(--color-azul);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-section {
+    padding: 0 15px;
+    background-color: var(--color-gris-claro);
+    border-radius: 8px;
+}
+
+.filter-section h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    color: var(--color-azul);
+    margin-bottom: 25px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.radio-group label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17px;
+    color: var(--color-negro);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 10px;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: var(--color-azul); 
+    transform: scale(1.2); 
+    cursor: pointer;
+}
+
+.btn-finish {
+    margin-top: 50px;
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    display: block;
+    margin: 60px auto;
+    width: 80%;
+}
+
+.btn-finish:hover {
+    background-color: var(--color-rojo-oscuro);
+}
+
+
+/* Área de preguntas */
+.questions-area {
+    padding: 30px;
+    margin-left: 25%; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question-card {
+    width: 80%;
+    background-color: var(--color-blanco);
+    border-top: 1px solid var(--color-gris);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    line-height: 1.7;
+    padding: 40px;
+    margin: 0 auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-azul);
+}
+
+.question-number {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+}
+
+.question-category {
+    font-size: 0.9rem;
+    color: var(--color-amarillo);
+    opacity: 1;
+}
+
+.question-body .question-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: var(--color-negro);
+    margin-bottom: 10px;
+}
+
+.question-options label {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: var(--color-negro);
+    cursor: pointer;
+}
+
+.question-options input[type="radio"],
+.question-options input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.question-footer {
+    text-align: right;
+}
+
+.report-link {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--color-rojo);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.report-link:hover {
+    color: var(--color-rojo);
+    opacity: 1;
+}
+
+.question-img {
+    max-width: 300px;   
+    width: 100%;        
+    height: auto;      
+    display: block;
+    margin: 10px auto; 
+}
+
+/* Tarjeta de texto para comprensión lectora */
+.text-card {
+    width: 80%;
+    background-color: var(--color-blanco);
+    border-top: 1px solid var(--color-gris);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    margin: 20px auto 20px; /* Centra horizontalmente con margin auto */
+    line-height: 1.7;
+}
+
+.text-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.text-title {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-azul);
+}
+
+.text-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    padding-top: 5px;
+    color: var(--color-azul);
+    opacity: 1;
+}
+
+.text-body {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    flex-direction: column; /* Para que texto e imagen se apilen */
+    min-height: 200px; /* Define una altura mínima para que funcione bien con imágenes pequeñas */
+    text-align: center; /* Centra el texto si es necesario */
+}
+
+.text-body p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: var(--color-negro);
+    text-align: justify;
+}
+
+/* Ajustes para imágenes en el texto */
+.text-body img {
+    max-width: 100%;
+    height: auto;
+    padding: 20px 20px 5px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-card figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.graphic-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--color-negro);
+    opacity: 0.6;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Modal Finalizar Prueba */
+
+.modal-content {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    max-width: 600px;
+    min-height: 220px;
+    line-height: 1.8;
+    width: 90%;
+    animation: slideIn 0.4s ease-in-out; /* Animación de entrada */
+}
+
+.modal-content h2 {
+    line-height: normal;
+    padding-bottom: 15px 0 20px;
+}
+
+.modal-header h2 {
+    font-family: 'Lemon Milk', sans-serif;
+    color: var(--color-rojo);
+    font-size: 1.5rem;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.modal-body {
+    padding: 15px 0 5px;
+}
+
+.modal-body p {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--color-negro);
+    font-size: 1.2rem;
+    width: 80%;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+.modal-actions {
+    margin-top: 20px;
+}
+
+.btn-results {
+    background-color: var(--color-amarillo);
+    color: var(--color-negro);
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.2);
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.btn-results:hover {
+    background-color: var(--color-amarillo-opaco);
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Modal de Confirmación */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-in-out; /* Animación de aparición */
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-header h2 {
+    font-family: 'Lemon Milk', sans-serif;
+    color: var(--color-azul);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between; /* Alineación más uniforme */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-finish-modal, .btn-cancel-modal {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease-in-out;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-finish-modal {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    flex: 1; /* Hacer que ambos botones tengan el mismo tamaño */
+    max-width: 45%;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+}
+
+.btn-finish-modal:hover {
+    background-color: #be0606;
+    transform: scale(1.05); /* Agregar efecto de escala */
+}
+
+.btn-finish:hover {
+    background-color: #be0606;  /* Un rojo más oscuro */
+    color: white;               /* Asegura que el texto siga siendo blanco */
+    transform: scale(1.05);     /* Efecto de escala para dar feedback visual */
+}
+
+.btn-cancel-modal {
+    background-color: var(--color-amarillo);
+    color: var(--color-negro);
+    flex: 1;
+    max-width: 45%;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.2);
+}
+
+.btn-cancel-modal:hover {
+    background-color: var(--color-amarillo-opaco);
+    transform: scale(1.05); /* Agregar efecto de escala */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: var(--color-blanco);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    animation: slideIn 0.4s ease-in-out;
+}
+
+.modal-header h2 {
+    font-family: 'Lemon Milk', sans-serif;
+    color: var(--color-rojo);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.modal-body p {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--color-negro);
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+    line-height: 1.6;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: var(--color-negro);
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    border: 1px solid var(--color-gris);
+    border-radius: 8px;
+    resize: none;
+}
+
+textarea:focus {
+    border-color: var(--color-azul);
+    outline: none;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.btn-finish-modal, .btn-cancel-modal {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease-in-out;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-finish-modal {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    flex: 1;
+    max-width: 45%;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+}
+
+.btn-cancel-modal {
+    background-color: var(--color-amarillo);
+    color: var(--color-negro);
+    flex: 1;
+    max-width: 45%;
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.2);
+}
+
+.btn-cancel-modal:hover {
+    background-color: var(--color-amarillo-opaco);
+    transform: scale(1.05);
+}
+
+/* Botones del Modal */
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-confirm, .btn-cancel {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-confirm {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-confirm:hover {
+    background-color: #be0606;
+}
+
+.btn-cancel {
+    background-color: var(--color-amarillo);
+    color: var(--color-blanco);
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-cancel:hover {
+    background-color: var(--color-amarillo-opaco);
+}
+
+.mjx-container {
+    z-index: 1 !important;
+    position: relative !important; /* Asegúrate de que no esté en fixed o absolute si no es necesario */
+}
+
+.mjx-math.MJX-TEX {
+    z-index: 1 !important;
+    position: relative !important;
+}

@@ -1,0 +1,859 @@
+[
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 1",
+        "label": "Lee el siguiente texto y responde las preguntas 1-5",
+        "content": "<p>El Instituto Geofísico del Perú (IGP) ya instaló los primeros equipos detectores de movimientos telúricos, los cuales, a través de sensores, emitirán alarmas y a su vez activarán bocinas en distintos puntos de Lima y Callao </p><p> «Hace dos meses iniciamos, en una primera etapa, la instalación de una estación de GPS y un acelerómetro en la isla San Lorenzo, ubicada a dos kilómetros de la costa de Lima, explica Hernando Tavera, jefe del IGP. El especialista señala que, cuanto más alejados estén los sensores de la costa, más segundos de «ganancia» tendrá el sistema de alerta temprana para emitir la señal a la ciudad, y permitir que la población se prepare y busque los lugares más seguros. <p>El IGP realiza el trabajo de instalación de los instrumentos en coordinación con la Dirección de Hidrografía y Navegación de la Marina de Guerra, porque se trata de un trabajo conjunto al que próximamente se sumará también el Instituto Nacional de Defensa Civil (INDECI). Ahora se preparan para la segunda fase del proceso de prevención.</p><p>Tavera recalca que cuando el sensor principal dé la alerta, lo hará 8 segundos después de su captación para la isla San Lorenzo y aunque probablemente la ciudad ya se encuentre en movimiento, el sistema de alerta temprana podrá avisar con mayor margen de tiempo a ciudades como Pisco, Ica, Arequipa, incluso Tacna y la zona del valle del Mantaro, o advertir a la inversa, es decir, a Lima si el evento ocurre en esas ciudades del <strong>interior</strong>.</p>",
+        "image": "../data/examenPrueba2_images/pregunta_1.jpg",
+        "caption": "(Gráfico 1)",
+        "content_after_image":"La etapa siguiente será cumplir con la instalación de las bocinas en puntos estratégicos de Lima y el Callao, y para ello será necesaria la colaboración del INDECI. Una vez que la señal esté disponible en el centro de monitoreo del IGP, se harán las pruebas para ver la recepción de esta y la respuesta de la población. Solo hasta julio de 2018 se registraron en el país más de 160 sismos de 6° a más según la escala de Richter.",
+	    "referencia": "Extraído de Examen UNMSM 2019-II, Texto 2. Consulta: 14 de noviembre del 2024."
+    },
+    {
+        "type": "question",
+        "number": 1,
+        "category": "Razonamiento Verbal",
+        "text": "¿Cuál de las alternativas presenta el mejor resumen del texto?",
+        "options": [
+            "La prevención de movimientos telúricos a través de sensores y bocinas por instituciones nacionales",
+            "La instalación de sensores y bocinas como sistema de alarma ante movimientos telúricos por parte del IGP",
+            "El trabajo en conjunto del sistema de alertas por parte del IGP, del INDECI y de la Marina de Guerra del Perú",
+            "La instalación de los sensores como parte del sistema de alertas financiado por el Instituto Geofísico del Perú"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 2,
+        "category": "Razonamiento Verbal",
+        "text": "Según el contexto oracional, el vocablo INTERIOR hace referencia a",
+        "options": [
+            "aquellas ciudades ubicadas en la sierra.",
+            "los departamentos ubicados en la costa y la sierra.",
+            "cualquier ciudad peruana distinta de Lima.",
+            "las poblaciones en las que puede ocurrir un tsunami."
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 3,
+        "category": "Razonamiento Verbal",
+        "text": "La secuencia temporal que se grafica en la infografía comprende los siguientes pasos:",
+        "options": [
+            "movimiento telúrico --- captación de la ocurrencia --- sensor recibe la alerta y la réplica.",
+            "terremoto --- sensor de la isla San Lorenzo --- réplica para todas las ciudades costeras.",
+            "movimiento de placas --- isla San Lorenzo capta el evento --- las ciudades se guarecen.",
+            "choque de placas --- alerta de la Isla San Lorenzo --- ocho segundos para protegerse."
+        ],
+        "answer": "D"
+    },
+    {
+        "type": "question",
+        "number": 4,
+        "category": "Razonamiento Verbal",
+        "text": "A partir de la actividad que ha iniciado el IGP, se deduce que",
+        "options": [
+            "la prevención requiere la participación de múltiples actores.",
+            "el Perú es un país situado en una zona altamente sísmica.",
+            "las autoridades han decidido combatir los siniestros naturales.",
+            "los ciudadanos están colaborando en el proceso de prevención."
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "question",
+        "number": 5,
+        "category": "Razonamiento Verbal",
+        "text": "De colocarse el sensor en la isla Hormigas, la población limeña",
+        "options": [
+            "dispondría de un tiempo considerable para ponerse a buen recaudo.",
+            "podría abandonar sus viviendas y refugiarse del tsunami o del mismo.",
+            "se beneficiaría, pues el tsunami tardaría en llegar unos cinco minutos.",
+            "comprendería la importancia de hacer simulacros de prevención."
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 2",
+        "label": "Lee el siguiente texto y responde las preguntas 6-10",
+        "content": "La celotipia se presenta como un delirio, es decir, una psicopatología que tiene como eje una idea falsa, sin ningún argumento lógico o prueba de realidad que lo demuestre. El celotípico desarrolla sentimientos de celos tan intensos que son el epicentro de su vida, de su forma de actuar y pensar. Se siente mal cuando ve o imagina a su pareja con otras personas. Experimenta ansiedad y nerviosismo cuando sucede. Es frecuente la comparación constante (“soy más bajo que...”, “soy menos simpático que...”), facilitando la minusvaloración y la necesidad de demostración de afecto por parte de la otra persona. Los comentarios y los gestos del otro son analizados exhaustivamente buscando indicios. Actúa motivado por la desconfianza, se niega a salir con otras personas y se enfada si su pareja comparte su tiempo con otros. El celotípico constantemente suele discutir con su pareja al intentar comprobar la infidelidad imaginada, pueden incurrir en acciones como <strong>coartar</strong> la libertad de su pareja (no les permiten salir de casa, hablar con los demás, arreglarse), espiarla, revisar su correspondencia, sus llamadas... Con el fin de asegurar la fidelidad o encontrar pruebas que demuestren una posible aventura o al supuesto amante. Pero a la larga los celotípicos tarde o temprano llegan a cansar a su pareja, la posibilidad de diálogo se esfuma y finalmente, el miedo a perder al otro, acaba llevando la relación a su fin. Sería la profecía auto cumplida. Sin embargo, en otros casos el celotípico no solo destruye la relación sino también a la pareja. Esta abandona sus actividades de ocio, sus amistades, se siente culpable por hacer todo aquello que genere malestar en el otro, e incluso acepta los insultos y los golpes.",
+	    "referencia": "'¿Son los celos una enfermedad?'. En blog Hoy Verde."
+    },
+    {
+        "type": "question",
+        "number": 6,
+        "category": "Razonamiento Verbal",
+        "text": "El texto explica principalmente",
+        "options": [
+            "la inseguridad afectiva e inmadurez del celotípico.",
+            "las causas de las enfermedades psicopatológicas.",
+            "la naturaleza, síntomas y secuelas de la celotipia.",
+            "el drama que padecen las parejas de los celotípicos."
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 7,
+        "category": "Razonamiento Verbal",
+        "text": "El mejor sinónimo contextual del término **coartar** es",
+        "options": [
+            "tolerar.",
+            "seccionar.",
+            "restringir.",
+            "atenuar."
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 8,
+        "category": "Razonamiento Verbal",
+        "text": "En virtud del contenido del texto es incoherente afirmar que el celotípico",
+        "options": [
+            "no resulta una persona feliz.",
+            "respeta la vida personal de su pareja.",
+            "es destructivo y autodestructivo.",
+            "actúa motivado por la desconfianza."
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 9,
+        "category": "Razonamiento Verbal",
+        "text": "Se puede inferir del texto que el celotípico",
+        "options": [
+            "padece de una psicosis.",
+            "tiene baja autoestima.",
+            "acecha siempre a sus amigos.",
+            "no necesita demostración de afecto."
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 10,
+        "category": "Razonamiento Verbal",
+        "text": "Si el celotípico observa sonreír a su pareja con las bromas de su amigo, probablemente",
+        "options": [
+            "experimentaría un deleite inexplicable.",
+            "asesinaría a su pareja alevosamente.",
+            "tomaría a mal la actitud de su amigo.",
+            "se retiraría raudamente de la escena."
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 3",
+        "label": "Lee el siguiente texto y responde las preguntas 11-13",
+        "content": "El hantavirus es como una neumonía que avanza rápidamente y es asociado a la gente del campo que estuvo en contacto con roedores. Esta enfermedad se puede confundir con tuberculosis o hasta con leptospirosis. Lamentablemente, todavía no hay vacunas ni antibióticos para tratar este virus, de allí que se deba tomar medidas preventivas para evitar contraer este mal, entre ellas, limpiar las casas y colocar raticidas en las zonas donde se hayan detectado casos, y evitar ir a zonas en riesgo o, de lo contrario, usar máscaras para protegerse, ya que esto evitará que se absorban las heces secas que se explayan como un aerosol.",
+	    "referencia": "Extraído de Simulacro Beca 18 2019, Texto VII. Consulta: 14 de noviembre del 2024."
+    },
+    {
+        "type": "question",
+        "number": 11,
+        "category": "Razonamiento Verbal",
+        "text": "¿Cuál es la tesis?",
+        "options": [
+            "Aún no se han descubierto vacunas ni antibióticos para tratar el hantavirus.",
+            "Es importante limpiar las casas y poner raticidas en zonas con hantavirus.",
+            "Hay que usar máscaras para protegerse si se va a viajar a una zona con hantavirus.",
+            "Se debe tomar medidas preventivas para evitar contraer el hantavirus."
+        ],
+        "answer": "D"
+    },
+    {
+        "type": "question",
+        "number": 12,
+        "category": "Razonamiento Verbal",
+        "text": "¿Cuál es el argumento central?",
+        "options": [
+            "Todavía no existen vacunas ni antibióticos para tratar el hantavirus.",
+            "Es necesario tomar medidas preventivas para evitar contraer el hantavirus.",
+            "EI hantavirus es un mal que avanza rápidamente y es asociado a la gente del campo.",
+            "EI hantavirus se puede confundir con tuberculosis o hasta con leptospirosis."
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 13,
+        "category": "Razonamiento Verbal",
+        "text": "¿Cuál de las siguientes alternativas presenta la síntesis de la argumentación del texto anterior?",
+        "options": [
+            "Aún no se han descubierto vacunas ni antibióticos para tratar el hantavirus, enfermedad que puede ser confundida con otras.",
+            "Para evitar que el hantavirus siga avanzando rápidamente, es importante limpiar las casas y poner raticidas en las zonas en riesgo.",
+            "Como aún no hay vacunas ni antibióticos para tratar el hantavirus, se debe tomar medidas preventivas para evitar contraer dicho mal.",
+            "Ya que no hay manera de prevenirlo, es mejor usar máscaras para protegerse si se va a viajar a una zona con hantavirus."
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 4",
+        "label": "Lee el siguiente texto y responde las preguntas 14-18",
+        "image": "../data/examenPrueba2_images/pregunta_2.jpg",
+        "caption": "(Gráfico 2)",
+        "content_after_image":"La vida marina se enfrenta a un «daño irreparable» por millones de toneladas de desechos plásticos que terminan en los océanos cada año, advirtió Naciones Unidas. Pero ¿cómo es que sucede esto?, ¿cuál es el sitio que está en mayor riesgo? y ¿qué daño hace el plástico realmente? Una de las grandes ventajas de los muchos tipos de plástico es que están diseñados para durar mucho tiempo. Por ello, de casi todo el plástico que se ha creado, todavía existen unos 6300 millones de toneladas que son residuos, y el 79% de ellos se encuentra en vertederos o en el entorno natural. En 2010, los científicos del Centro Nacional de Análisis y Síntesis Ecológicos de Estados Unidos y la Universidad de Giorgia, en Grecia, estimaron la cifra de plásticos desechados en 8 millones de toneladas, y que para 2015 aumentaría a 9,1 millones. El mismo estudio, publicado en la revista Science en 2015, encuestó a alrededor de 120 países costeros que inciden en el aumento de residuos plásticos oceánicos y descubrió que 13 de los 20 contaminadores más importantes son naciones asiáticas. Estados Unidos se ubicó entre los primeros 20 y es una de las naciones con mayor tasa de desperdicio por persona. La basura plástica se acumula en áreas del océano donde los vientos crean corrientes circulares, conocidas como giros, que absorben cualquier residuo flotante. Los cinco giros, señalados en el gráfico, tienen las concentraciones más altas de basura plástica comparadas con otros sectores de los océanos. Estos están formados por pequeños fragmentos de plástico que parecen colgar suspendidos debajo de la superficie, un fenómeno descrito como sopa de plástico. Además de tardarse cientos de años en biodegradarse, las bolsas de plástico no son distinguidas de las algas por animales, como las tortugas, que fas incluyen en su dieta.",
+	    "referencia": "Adaptado de El Comercio. “Cinco gráficos para entender el problema del plástico” (diciembre 11, 2017). El Comercio. Recuperado de https://elcomercio.peitecnologia/ciencias/cinco-graficos-entender-problema-delplastico-noticia-480508. Extraído de Examen UNMSM 2018-II, Texto 2. Consulta: 14 de noviembre del 2024."
+    },
+    {
+        "type": "question",
+        "number": 14,
+        "category": "Razonamiento Verbal",
+        "text": "El propósito central del texto es",
+        "options": [
+            "incentivar la conciencia ecológica de los lectores en el mundo.",
+            "reflexionar sobre los residuos contaminantes en los océanos.",
+            "brindar información sobre las botellas plásticas en los océanos.",
+            "destacar el efecto destructivo de los plásticos en los océanos."
+        ],
+        "answer": "D"
+    },
+    {
+        "type": "question",
+        "number": 15,
+        "category": "Razonamiento Verbal",
+        "text": "Del texto se infiere que Estados Unidos es uno de los países que más contamina porque",
+        "options": [
+            "carece de programas que difundan la conciencia ecológica.",
+            "consume mayor cantidad de productos asociados al plástico.",
+            "tiene la industria del plástico más desarrollada de la región.",
+            "se halla cerca de dos de los giros más grandes del mundo."
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 16,
+        "category": "Razonamiento Verbal",
+        "text": "De acuerdo con el gráfico, el continente a partir del cual se concentran mayores residuos de plástico mal administrados es",
+        "options": [
+            "Asia.",
+            "Oceanía.",
+            "América.",
+            "África."
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "question",
+        "number": 17,
+        "category": "Razonamiento Verbal",
+        "text": "A partir de lo afirmado en el texto, sabemos que los cinco giros se forman como consecuencia de",
+        "options": [
+            "la basura plástica acumulada en los océanos.",
+            "los vientos de zonas costeras contaminadas.",
+            "las corrientes de aire producidas en la atmósfera.",
+            "los abundantes desechos atrapados en sus aguas."
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 18,
+        "category": "Razonamiento Verbal",
+        "text": "<p>Según el gráfico, determine el valor de verdad (V o F) de los enunciados siguientes:</p><p>I. En relación con el continente americano, Canadá, Estados Unidos y México son los países que más contaminan con plásticos.</p><p>II. China y Rusia son países que contaminan de manera similar dada su cercanía a los fenómenos descritos como sopa de plástico. </p> <p>III. En el continente africano se observan más de diez países con escasa cantidad de residuos plásticos mal administrados. </p>",
+        "options": [
+            "FVF",
+            "VFV",
+            "FFV",
+            "FVV"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 5",
+        "label": "Lee el siguiente texto y responde las preguntas 19-21",
+        "content": "<p>En aquel pasaje de las Enéadas que quiere interrogar y definir la naturaleza del tiempo, se afirma que es indispensable conocer previamente la eternidad, que -según todos saben- es el modelo y arquetipo de aquel. Esa advertencia Iiminar, tanto más grave si la creemos sincera, parece aniquilar toda esperanza de entendernos con el hombre que la escribió. EI tiempo es un problema para nosotros, un tembloroso y exigente problema, acaso el más vital de la metafísica; la eternidad, un juego o una fatigada esperanza. Leemos en el Timeo de Platón que el tiempo es una imagen móvil de la eternidad; y ello es apenas un acorde que a ninguno distrae de la convicción de que la eternidad es una imagen hecha con sustancia de tiempo. Esa imagen, esa burda palabra enriquecida por los desacuerdos humanos es lo que me propongo historiar. </p><p>Invirtiendo el método de Plotino (única manera de aprovecharlo) empezaré por recordar las oscuridades inherentes al tiempo: misterio metafísico, natural, que debe preceder a la eternidad que es hija de los hombres. Una de esas oscuridades, no la más ardua pero no la menos hermosa, es la que nos impide precisar la dirección del tiempo. Que fluye del pasado hacia el porvenir es la creencia común, pero no es más ilógica la contraria, la fijada en verso español por Miguel de Unamuno:</p><p> Nocturno el río de las horas fluye desde su manantial que es el mañana eterno ... BORGES, Jorge Luis</p>",
+        "referencia": "Extraído de Simulacro Beca 18 2019, Texto X. Consulta: 14 de noviembre del 2024."
+    },
+    {
+        "type": "question",
+        "number": 19,
+        "category": "Razonamiento Verbal",
+        "text": "¿Cuál es un sinónimo de oscuridades en el contexto de la lectura?",
+        "options": [
+            "Misterios",
+            "Sombras",
+            "Creencias",
+            "Dolores"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "question",
+        "number": 20,
+        "category": "Razonamiento Verbal",
+        "text": "¿Cuál es una idea válida acerca de la eternidad?",
+        "options": [
+            "Está relacionada con el tiempo.",
+            "Es producto de algunos hombres.",
+            "Podría considerarse un juego.",
+            "EI autor tiene el objetivo de explicarla."
+        ],
+        "answer": "D"
+    },
+    {
+        "type": "question",
+        "number": 21,
+        "category": "Razonamiento Verbal",
+        "text": "¿Cuál podría ser el subtítulo del segundo párrafo?",
+        "options": [
+            "Una explicación del método de Plotino",
+            "Las características del tiempo",
+            "EI misterio de la dirección del tiempo",
+            "EI tiempo y Miguel de Unamuno"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 6",
+        "label": "Lee el siguiente texto y responde las preguntas 22-25",
+        "content": "Una primera dificultad para definir corrupción es la simple constatación histórica de que los límites y los ámbitos de esta cambian mucho de una cultura y una época histórica a otra. ¿Significa esto acaso que el concepto de corrupción es absolutamente relativo? Claramente no. Ciertas manifestaciones estándares de corrupción han sido rechazadas en culturas muy disímiles. Robar dinero público en beneficio personal, por ejemplo, ha sido considerado un crimen desde tiempos de Platón. Sin embargo, lo que se entiende por corrupción cambia. De hecho, muchos de los que han sido acusados de corrupción se defienden diciendo que ellos “simplemente hicieron lo que en otro tiempo todo el mundo hacía y toleraba como normal”. Los países experimentan periódicamente, no sin tensiones y cierto grado de sorpresa, cambios más o menos radicales respecto de lo que se considera aceptable o tolerable en materia de ética pública. Es cierto que existen ciertas conductas que universal e históricamente han sido rechazadas por corruptas. No obstante, es considerable el número de situaciones cuya frontera de licitud ética cambia no solo de cultura en cultura, sino también de tiempo en tiempo. Nuevos delitos de algunos países, como el tráfico de influencias o la recepción por parte de funcionarios públicos de regalos de particulares, son todavía práctica normal en muchos otros.",
+        "referencia": "Extraído de Examen UNI 2019-II, Texto 1. Consulta: 14 de noviembre del 2024."
+    },
+    {
+        "type": "question",
+        "number": 22,
+        "category": "Razonamiento Verbal",
+        "text": "El tema central del texto",
+        "options": [
+            "los aspectos que determinan los actos corruptos.",
+            "la variación cultural del concepto de corrupción.",
+            "las formas ocultas de corrupción en el mundo.",
+            "el robo como un caso aceptado de corrupción."
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 23,
+        "category": "Razonamiento Verbal",
+        "text": "Elija la idea principal que desarrolla el texto",
+        "options": [
+            "La corrupción es relativa según el nivel cultural de un país.",
+            "Hay casos de corrupción que forman patrones atemporales.",
+            "El concepto de corrupción varía según la cultura y el tiempo.",
+            "Una sociedad legitima con facilidad las formas de corrupción."
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 24,
+        "category": "Razonamiento Verbal",
+        "text": "Resulta incompatible, respecto de cómo se redefine el concepto de corrupción, afirmar que",
+        "options": [
+            "es claro que no se trata de un concepto absolutamente relativo.",
+            "este ha permanecido inalterable desde la Antigüedad.",
+            "involucra la comisión del delito de robar dinero público.",
+            "un acto corrupto podría dejar de serlo con el tiempo."
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 25,
+        "category": "Razonamiento Verbal",
+        "text": "Si, en un país, se acepta que los candidatos políticos regalen dinero y bienes durante las campañas políticas hasta un determinado monto, entonces",
+        "options": [
+            "habrá corrupción si los candidatos exceden el límite de gasto permitido.",
+            "la distribución desigual de los recursos será considerada corrupción.",
+            "las personas que no reciban dinero o regalos cometerán actos corruptos.",
+            "será más corrupto quien distribuya regalos más caros dentro del límite."
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "text-card",
+        "category": "Razonamiento Verbal",
+        "title": "Texto 7",
+        "label": "Lee el siguiente texto y responde las preguntas 26-30",
+        "content":"<p>Los tres hombres subían a gatas por una ladera resbalosa y empinada de <strong>Cusco, Perú</strong>. Era la mañana del 24 de julio de 1911 cuando <strong>Hiram Bingham III</strong> –entonces de 35 años y profesor asistente de historia latinoamericana en la Universidad de Yale– salió del campamento en el río Urubamba con sus dos acompañantes peruanos para investigar unas ruinas que, supuestamente, yacían en una cumbre altísima conocida como <strong>Machu Picchu</strong> (o “montaña vieja”, en lengua inca). Cuando Bingham finalmente llegó al sitio, miró con incredulidad la escena que se revelaba ante sus ojos. Un laberinto de terrazas y paredes asomaba entre la maleza abundante, como un fantasma inca que se hubiera ocultado del mundo exterior durante casi 400 años. “Parecía un sueño increíble. ¿Qué es este lugar?”.</p><p>Aunque después Bingham reconoció que no fue el primero en descubrir Machu Picchu, sí fue el primer científico que estudió el sitio, con el apoyo financiero de la Universidad de Yale y de la National Geographic Society, los equipos de Bingham retiraron la vegetación de la cumbre, trazaron planos y tomaron fotografías de las ruinas, y enviaron miles de artefactos al Museo Peabody de Historia Natural, en la Universidad de Yale.</p><p>Al conocerse la noticia de la “ciudad perdida”, muchos estudiosos trataron de desentrañar la naturaleza del lugar. ¿Sería una fortaleza? ¿Un sitio ceremonial? Durante muchos años, nadie pudo ofrecer una respuesta precisa; pero en los ochenta, los historiadores encontraron un documento legal vetusto datado en 1568, menos de 40 años después de la conquista de Perú. En una petición a la Corte española, los descendientes de Pachacútec Inca Yupanqui declaraban que su regio antepasado había sido hacendado de un lugar llamado Picchu, muy cerca del actual emplazamiento del sitio arqueológico.(Estudios posteriores de la arquitectura y los artefactos rescatados sugieren que Pachacútec vivió a cuerpo de rey en aquel retiro montañoso, donde comía en vajilla de plata, se aseaba en un baño de roca de carácter privado y se relajaba en un hermoso jardín perfumado de orquídeas." 
+    },
+    {
+        "type": "question",
+        "number": 26,
+        "category": "Razonamiento Verbal",
+        "text": "En el texto, el término DESENTRAÑAR significa",
+        "options": [
+            "despejar.",
+            "predecir.",
+            "comprender.",
+            "estudiar."
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 27,
+        "category": "Razonamiento Verbal",
+        "text": "El texto pretende, principalmente, dar respuesta a la siguiente pregunta:",
+        "options": [
+            "¿Qué fue Machu Picchu?",
+            "¿Quién fue el descubridor de Machu Picchu?",
+            "¿Qué significa el nombre Machu Picchu?",
+            "¿Qué valor tiene Machu Picchu?"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "question",
+        "number": 28,
+        "category": "Razonamiento Verbal",
+        "text": "Resulta incompatible con el texto afirmar que Hiram Bingham",
+        "options": [
+            "tenía algunos conocimientos sobre la historia andina.",
+            "desconocía la naturaleza de la ciudadela de Machu Picchu.",
+            "sabía que Machu Picchu era una morada de Pachacútec.",
+            "estudió las ruinas de Machu Picchu con espíritu científico."
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 29,
+        "category": "Razonamiento Verbal",
+        "text": "Se infiere del texto que incas como Pachacútec",
+        "options": [
+            "apoyaron con vigor un sistema político esclavista.",
+            "distribuían equitativamente todos sus excedentes.",
+            "lideraban empresas de descubrimiento arqueológico.",
+            "tenían una vida caracterizada por la opulencia."
+        ],
+        "answer": "D"
+    },
+    {
+        "type": "question",
+        "number": 30,
+        "category": "Razonamiento Verbal",
+        "text": "Si todavía no se hubiese descubierto el vetusto documento legal referido en el texto,",
+        "options": [
+            "Bingham no habría podido descubrir Machu Picchu en 1911.",
+            "la naturaleza de Machu Picchu seguiría siendo un enigma.",
+            "ya se sabría la naturaleza del lugar llamado Machu Picchu.",
+            "Pachacútec lnca Yupanqui habría quedado en el completo olvido."
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 31,
+        "category": "Razonamiento Matemático",
+        "text": "Una pared de 50x10 m² tiene 2 ventanas y una puerta. Si una ventana ocupa el 15% de la pared y la otra el 12%, mientras que la puerta ocupa el 17%, ¿qué área de la pared es de material noble?",
+        "options": [
+            "310 m²",
+            "280 m²",
+            "290 m²",
+            "300 m²"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 32,
+        "category": "Razonamiento Matemático",
+        "text": "La cantidad de copas que hay en una cristalería es tal que, si se cuenta de 15 en 15, de 30 en 30, o de 40 en 40 no sobra, ni falta ninguna. ¿Cuál es el menor número de vasos que puede haber en dicha cristalería?",
+        "options": [
+            "240",
+            "120",
+            "150",
+            "100"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 33,
+        "category": "Razonamiento Matemático",
+        "text": "Seis agricultores, trabajando ocho horas diarias, aran un terreno cuadrado de 480 m de lado, en seis días. ¿Cuántos días más requerirán ocho agricultores, que tienen la mitad de rendimiento que los anteriores, para arar un terreno cuadrado de 400 m de lado, trabajando cinco horas diarias?",
+        "options": [
+            "6",
+            "5",
+            "4",
+            "8"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 34,
+        "category": "Razonamiento Matemático",
+        "text": "Marcos visita a su abuela cada 2 días, pero su hermano Raúl la visita cada 5. Si el domingo 1 de mayo coincidieron en visitarla los dos. ¿Cuántas veces más coincidirán en sus visitas durante los meses de mayo y junio?",
+        "options": [
+            "10",
+            "5",
+            "6",
+            "8"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 35,
+        "category": "Razonamiento Matemático",
+        "text": "En la serie: \\( \\frac{a}{6} = \\frac{b}{7} = \\frac{c}{8} = \\frac{d}{3} \\). Se cumple: \\( ab + cd = 2376 \\). Calcular \\( a + b + c + d \\).",
+        "options": [
+            "72",
+            "140",
+            "144",
+            "145"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 36,
+        "category": "Razonamiento Matemático",
+        "text": "Una persona impuso el 30% de su capital al 25% de interés y el resto al 40% obteniendo una renta anual de 3550 soles. Hallar el capital.",
+        "options": [
+            "15000",
+            "10000",
+            "13000",
+            "12000"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 37,
+        "category": "Razonamiento Matemático",
+        "text": "En una fiesta \\( \\frac{1}{3} \\) del total eran varones y solo los \\( \\frac{8}{15} \\) de las damas bailaban, las 14 damas restantes descansaban. ¿Cuántos hombres asistieron a la fiesta?",
+        "options": [
+            "45",
+            "30",
+            "15",
+            "20"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "question",
+        "number": 38,
+        "category": "Razonamiento Matemático",
+        "text": "Juan quiere abrir un candado que tiene código, tiene un código de 4 números y estos pueden ir del 0 al 5. Si sabe que el último número es 2 o 3. ¿Cuántas posibles combinaciones para el candado tendría para probar Juan?",
+        "options": [
+            "432",
+            "430",
+            "216",
+            "1296"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 39,
+        "category": "Razonamiento Matemático",
+        "text": "Si se lanzan 2 dados, ¿Cuál es la probabilidad de que salgan 2 números consecutivos?",
+        "options": [
+            "\\(\\frac{5}{18})",
+            "\\frac{7}{18}",
+            "\\frac{5}{36}",
+            "\\frac{7}{36}"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "question",
+        "number": 40,
+        "category": "Razonamiento Matemático",
+        "text": "Una encuesta realizada muestra los siguientes datos.",
+        "table": {
+            "headers": ["N.º Mascotas", "N.º Familias"],
+            "rows": [
+                ["0", "1000"],
+                ["1", "1200"],
+                ["2", "800"],
+                ["3", "600"],
+                [">3", "100"]
+            ]
+        },
+        "text_after_table": "Analice la verdad o falsedad de las siguientes proposiciones:",
+        "options": [
+            "I. La cantidad total de familias encuestadas superan las 4000.",
+            "II. Menos del 10% del total de familias tiene más de 3 mascotas.",
+            "III. 2400 familias tienen 1 mascota o menos."
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 41,
+        "category": "Razonamiento Matemático",
+        "text": "Un comerciante tiene que pagar una deuda de 36000 soles en 30 pagos que forman un P.A. cuando ya había cancelado 20 pagos fallece, dejando la mitad sin pagar. Hallar el importe del primer pago.",
+        "options": [
+            "250",
+            "330",
+            "360",
+            "390"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 42,
+        "category": "Razonamiento Matemático",
+        "text": "Sean las funciones: \\( f(x) = 2x^{2} + bx + c \\) y \\( g(x) = bx^{2} + ax + a + b \\). Además: \\( f(0) = 5 \\) y \\( g(1) = 6 \\). Calcula el valor de: \\( g(2) \\).",
+        "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 43,
+        "category": "Razonamiento Matemático",
+        "text": "Dada la siguiente gráfica, indicar el mínimo valor de la función.",
+        "image": "../data/examenPrueba2_images/pregunta_43.png",
+        "content_after_image":"Indica el mínimo valor de la función",
+        "options": [
+            "-4",
+            "0",
+            "4",
+            "-8"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "question",
+        "number": 44,
+        "category": "Razonamiento Matemático",
+        "text": "Si \\( N \\) es el menor número entero que satisface la desigualdad \\( -x^{2} + 4x - \\frac{21}{4} < N, \\forall x \\in \\mathbb{R} \\), halle el valor de \\( N^{2} - 4N + 4 \\).",
+        "options": [
+            "3",
+            "6",
+            "9",
+            "12"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 45,
+        "category": "Razonamiento Matemático",
+        "text": "En un nuevo parque eólico, la cantidad de energía generada se describe mediante una función cuadrática del tiempo transcurrido en días. Si al cuarto día la cantidad de energía generada fue de 40 megavatios y al octavo día la cantidad fue de 240 megavatios, determina la cantidad de la energía generada en el décimo día.",
+        "options": [
+            "400",
+            "320",
+            "280",
+            "250"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "question",
+        "number": 46,
+        "category": "Razonamiento Matemático",
+        "text": "Si: \\( 6a - 3b = 9 \\), determina el valor de \\( \\frac{9^{a}}{3^{b}} \\).",
+        "options": [
+            "9",
+            "16",
+            "25",
+            "27"
+        ],
+        "answer": "D"
+    },
+    {
+        "type": "question",
+        "number": 47,
+        "category": "Razonamiento Matemático",
+        "text": "Un comerciante obtiene una ganancia de S/. 3.00 por cada caja de manzanas que vende y S/. 4.00 por cada caja de naranjas. Si el número de cajas de manzanas vendidas es un 20% más que el número de cajas de naranjas que vendió y si obtuvo una ganancia total de S/. 7600, ¿cuántas cajas de manzanas vendió?",
+        "options": [
+            "800",
+            "1000",
+            "1200",
+            "1800"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 48,
+        "category": "Razonamiento Matemático",
+        "text": "Simplificar: \\( N = \\left( \\frac{1}{2} \\right)^{- \\left( \\frac{1}{3} \\right)^{-1}} + \\left( \\frac{1}{3} \\right)^{- \\left( \\frac{1}{2} \\right)^{-1}} + \\left( \\frac{1}{5} \\right)^{-2} \\).",
+        "options": [
+            "24",
+            "32",
+            "36",
+            "42"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 49,
+        "category": "Razonamiento Matemático",
+        "text": "En una biblioteca se repartieron 630 libros entre un grupo de estudiantes de tal manera que el primer estudiante recibió 3 libros, el segundo recibió 6 libros, el tercero recibió 9 libros, el cuarto recibió 12 libros, y así sucesivamente. Si al final no sobraron ni faltaron libros, ¿cuántos estudiantes había en el grupo?",
+        "options": [
+            "18",
+            "20",
+            "24",
+            "28"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 50,
+        "category": "Razonamiento Matemático",
+        "text": "Si: \\( P(x + 2) = 3x^{2} + 4x + 1 \\), calcular el valor de: \\( P(5) \\).",
+        "options": [
+            "21",
+            "36",
+            "40",
+            "42"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 51,
+        "category": "Razonamiento Matemático",
+        "text": "En la figura, determina el valor de: \\( \\frac{20(x + y)}{3\\sqrt{3}xy} \\)",
+        "image": "../data/examenPrueba2_images/51.png",
+        "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 52,
+        "category": "Razonamiento Matemático",
+        "text": "Un cuadrado y un hexágono regular tienen ambos un perímetro de 48 cm. Calcular la relación de sus áreas.",
+        "options": [
+            "\\( \\sqrt{3} \\)",
+            "\\( \\frac{\\sqrt{3}}{2} \\)",
+            "\\( \\frac{3}{\\sqrt{3}} \\)",
+            "\\( \\frac{\\sqrt{3}}{4} \\)"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 53,
+        "category": "Razonamiento Matemático",
+        "text": "Una tubería debe atravesar diagonalmente un terreno de 48 \\( m^{2} \\) de área, cuyo largo es el triple de su ancho. Determine la longitud de la tubería.",
+        "options": [
+            "\\( 2\\sqrt{10} \\)",
+            "\\( 4\\sqrt{10} \\)",
+            "\\( 6\\sqrt{10} \\)",
+            "\\( 8\\sqrt{10} \\)"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 54,
+        "category": "Razonamiento Matemático",
+        "text": "Un edificio y un árbol están ubicados como se muestra en la figura. Si el árbol mide 6 \\( m \\), ¿cuál es la altura del edificio?",
+        "image": "../data/examenPrueba2_images/54.png",
+        "options": [
+            "48",
+            "50",
+            "60",
+            "72"
+        ],
+        "answer": "D"
+    },
+    {
+        "type": "question",
+        "number": 55,
+        "category": "Razonamiento Matemático",
+        "text": "Juan desea comprar una caja de madera en forma de un paralelepípedo, cuyas dimensiones son \\( 3\\ m \\times 4\\ m \\times 5\\ m \\). Si el metro cuadrado de madera cuesta 20 soles, ¿cuánto pagó Juan por dicha caja?",
+        "options": [
+            "S/. 1200",
+            "S/. 1680",
+            "S/. 1880",
+            "S/. 2220"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 56,
+        "category": "Razonamiento Matemático",
+        "text": "El chocolate sobrante de una chocolatada infantil es la mitad de la capacidad de una olla cilíndrica de 30 cm de diámetro por 24 cm de altura. Un integrante del comité organizador coloca el chocolate sobrante en una olla cilíndrica de 20 cm de diámetro. ¿Cuál es la diferencia de los niveles de altura que alcanzó el chocolate sobrante en ambas ollas?",
+        "options": [
+            "12 cm",
+            "15 cm",
+            "18 cm",
+            "20 cm"
+        ],
+        "answer": "C"
+    },
+    {
+        "type": "question",
+        "number": 57,
+        "category": "Razonamiento Matemático",
+        "text": "El piloto de un helicóptero en vuelo observa la cima del edificio de un hospital a 4 km de distancia con un ángulo de depresión de 30° (como se muestra en la figura). Si el edificio tiene una altura de 80 m, ¿a qué altura se encuentra el helicóptero en ese instante?",
+        "image": "../data/examenPrueba2_images/57.png",
+        "options": [
+            "1840 m",
+            "2080 m",
+            "2320 m",
+            "2640 m"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "question",
+        "number": 58,
+        "category": "Razonamiento Matemático",
+        "text": "En la figura mostrada, los puntos \\( A, M, B \\) y \\( C \\) están ubicados en una línea recta; el punto \\( M \\) es equidistante de los puntos \\( A \\) y \\( C \\). Si la diferencia de las longitudes de \\( \\overline{AB} \\) y \\( \\overline{BC} \\) es 28 m, calcule la longitud de \\( \\overline{MB} \\).",
+        "image": "../data/examenPrueba2_images/58.png",
+        "options": [
+            "14",
+            "16",
+            "18",
+            "20"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "question",
+        "number": 59,
+        "category": "Razonamiento Matemático",
+        "text": "Convertir \\( \\frac{18}{\\pi} \\) grados sexagesimales a radianes.",
+        "options": [
+            "\\( \\frac{1}{10} \\) rad",
+            "\\( \\frac{1}{20} \\) rad",
+            "\\( \\frac{1}{5} \\) rad",
+            "\\( \\frac{1}{4} \\) rad"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "question",
+        "number": 60,
+        "category": "Razonamiento Matemático",
+        "text": "En el gráfico, si \\( \\tan\\alpha = \\frac{1}{2} \\), y se cumple que \\( \\overline{BC} = \\frac{\\overline{AB}}{3} + 2 \\). Calcula \\( \\tan\\theta \\).",
+        "image": "../data/examenPrueba2_images/60.png",
+        "options": [
+            "\\( \\frac{5}{4} \\)",
+            "\\( \\frac{4}{5} \\)",
+            "\\( \\frac{2}{3} \\)",
+            "\\( \\frac{3}{4} \\)"
+        ],
+        "answer": "A"
+    }
+]
