@@ -299,3 +299,21 @@ th {
 #download-pdf:hover {
     background-color: #013f5e;
 }
+
+.correct-answer-green {
+    background-color: #d4edda !important; /* Verde claro */
+    color: #155724; /* Verde oscuro para mejor contraste */
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.incorrect-answer {
+    background-color: #dc3545 !important; /* Rojo para respuestas incorrectas */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+}

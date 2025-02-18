@@ -12,6 +12,8 @@ fetch(`../${selectedExam}`)
 
         totalQuestions = content.filter(item => item.type === "question").length;
 
+        localStorage.setItem('examQuestions', JSON.stringify(content));
+
         content.forEach((item) => {
             if (item.type === "text-card") {
                 const textCard = document.createElement('div');
@@ -49,7 +51,7 @@ fetch(`../${selectedExam}`)
                             <figure>
                                 <img src="${item.image}" alt="Imagen de la pregunta ${item.number}" class="question-img">
                             </figure>
-                        ` : ''}
+                        ` : ""}
                         <div class="question-options">
                             ${item.options.map((option, index) => `
                                 <label>
@@ -71,12 +73,14 @@ fetch(`../${selectedExam}`)
         attachFilterEvent();
         attachFinishEvent();
 
-        document.querySelectorAll('.report-link').forEach((link) => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const questionNumber = e.target.dataset.questionNumber;
-                document.getElementById('reportForm').dataset.questionNumber = questionNumber;
-                showReportModal();
+        document.querySelectorAll('.question-options input[type="radio"]').forEach((input) => {
+            input.addEventListener('change', (e) => {
+                const questionNumber = e.target.name.replace('question', '');
+                const selectedAnswer = e.target.value;
+
+                let userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
+                userAnswers[questionNumber] = selectedAnswer;
+                localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
             });
         });
 

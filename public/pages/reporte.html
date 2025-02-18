@@ -78,72 +78,79 @@
         </div>                       
     </main>    
 
-    <script>
-        // Obtener datos de localStorage del anterior HTML
-        const userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
-        const nombreAlumno = localStorage.getItem('nombreAlumno') || "Sin Nombre";
-        const correctAnswers = Array(30).fill("A");
-        let correctCount = 0;
-
-        correctAnswers.forEach((correctAnswer, index) => {
-            if (userAnswers[index + 1] === correctAnswer) {
-                correctCount++;
-            }
-        });
-
-        // Calcular puntaje
-        const puntajeTotal = correctCount * 2;
-
-        // Insertar datos en el HTML
-        document.getElementById("nombre-alumno").textContent = nombreAlumno;
-        document.getElementById("puntaje-total").textContent = `${puntajeTotal} de 120`;
-
-        // Formatear fecha actual para el reporte
-        const fechaActual = new Date();
-        const dia = String(fechaActual.getDate()).padStart(2, '0');
-        const mes = String(fechaActual.getMonth() + 1).padStart(2, '0');
-        document.getElementById("fecha-reporte").textContent = `${dia}/${mes}`;
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Obtener respuestas almacenadas
+            // 🔹 Obtener respuestas almacenadas y datos del usuario
             const userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
-            const correctAnswers = Array(30).fill("A");
-    
+            const nombreAlumno = localStorage.getItem('nombreAlumno') || "Sin Nombre";
+            const storedQuestions = JSON.parse(localStorage.getItem('examQuestions')) || [];
+            
+            let correctAnswers = {}; // Diccionario de respuestas correctas
+            
+            // 🔹 Extraer respuestas correctas desde el JSON del simulacro
+            storedQuestions.forEach((question) => {
+                correctAnswers[question.number] = question.answer; 
+            });
+
             let correctVerbal = 0;
             let correctMatematico = 0;
-    
-            correctAnswers.forEach((correctAnswer, index) => {
-                if (index < 15 && userAnswers[index + 1] === correctAnswer) {
-                    correctVerbal++;
-                } else if (index >= 15 && userAnswers[index + 1] === correctAnswer) {
-                    correctMatematico++;
+            let correctCount = 0;
+            let incorrectCount = 0;
+
+            // 🔹 Comparar respuestas del usuario con las correctas
+            Object.keys(userAnswers).forEach(questionNumber => {
+                if (userAnswers[questionNumber] === correctAnswers[questionNumber]) {
+                    correctCount++;
+                    
+                    if (questionNumber <= 30) {
+                        correctVerbal++;
+                    } else {
+                        correctMatematico++;
+                    }
                 }
             });
-    
-            // Calcular porcentaje de aciertos
-            const verbalPorcentaje = Math.round((correctVerbal / 15) * 100);
-            const matematicoPorcentaje = Math.round((correctMatematico / 15) * 100);
-    
-            // Datos ficticios de promedio grupal
-            const verbalGrupo = 57;
-            const matematicoGrupo = 65;
-    
-            // Calcular puntaje actual (2 puntos por respuesta correcta)
-            const puntajeActual = (correctVerbal + correctMatematico) * 2;
-    
-            // ------------------ GRÁFICO 1: BARRAS DE PROGRESO (NÚMERO DE ACIERTOS POR CURSO) ------------------
+
+            // 🔹 Calcular puntajes y porcentajes
+            const puntajeTotal = correctCount * 2;
+            const verbalPorcentaje = Math.round((correctVerbal / 30) * 100);
+            const matematicoPorcentaje = Math.round((correctMatematico / 30) * 100);
+            const verbalGrupo = 39; //Datos promedio
+            const matematicoGrupo = 48;
+
+            // 🔹 Función para generar recomendaciones según el porcentaje de aciertos
+            function obtenerRecomendacion(porcentaje) {
+                if (porcentaje >= 80) {
+                    return "¡Lo hiciste muy bien!";
+                } else if (porcentaje >= 50) {
+                    return "Bien, pero puedes mejorar.";
+                } else if (porcentaje >= 30) {
+                    return "Tienes que repasar un poco más.";
+                } else {
+                    return "¡Tienes que repasar con urgencia!";
+                }
+            }
+
+            // 🔹 Insertar datos en el HTML
+            document.getElementById("nombre-alumno").textContent = localStorage.getItem('nombreAlumno') || "Sin Nombre";
+            document.getElementById("puntaje-total").textContent = `${puntajeTotal} de 120`;
+            document.getElementById("reco-verbal").textContent = `Razonamiento Verbal: ${obtenerRecomendacion(verbalPorcentaje)}`;
+            document.getElementById("reco-matematico").textContent = `Razonamiento Matemático: ${obtenerRecomendacion(matematicoPorcentaje)}`;
+
+            // 🔹 Formatear fecha actual para el reporte
+            const fechaActual = new Date();
+            const dia = String(fechaActual.getDate()).padStart(2, '0');
+            const mes = String(fechaActual.getMonth() + 1).padStart(2, '0');
+            document.getElementById("fecha-reporte").textContent = `${dia}/${mes}`;
+
+            // ------------------ GRÁFICO 1: BARRAS DE PROGRESO ------------------
             document.getElementById("progress-verbal").style.width = verbalPorcentaje + "%";
             document.getElementById("progress-matematico").style.width = matematicoPorcentaje + "%";
-    
-            // Actualizar texto dentro de la barra amarilla
-            document.getElementById("verbal-text").textContent = `${correctVerbal} de 15`;
-            document.getElementById("matematico-text").textContent = `${correctMatematico} de 15`;
-    
-            // ------------------ GRÁFICO 2: PORCENTAJE DE ACIERTOS (BARRAS VERTICALES) ------------------
+            document.getElementById("verbal-text").textContent = `${correctVerbal} de 30`;
+            document.getElementById("matematico-text").textContent = `${correctMatematico} de 30`;
+
+            // ------------------ GRÁFICO 2: PORCENTAJE DE ACIERTOS ------------------
             const ctxBar = document.getElementById("barChartPorcentaje").getContext("2d");
-    
             new Chart(ctxBar, {
                 type: 'bar',
                 data: {
@@ -157,7 +164,7 @@
                             borderWidth: 1
                         },
                         {
-                            label: 'Grupal',
+                            label: 'Promedio',
                             data: [verbalGrupo, matematicoGrupo],
                             backgroundColor: 'rgba(249, 181, 43, 0.8)',
                             borderColor: 'rgba(249, 181, 43, 1)',
@@ -167,39 +174,24 @@
                 },
                 options: {
                     responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: (context) => `${context.dataset.label}: ${context.raw}%`
-                            }
-                        }
-                    },
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            title: {
-                                display: true,
-                                text: 'Porcentaje (%)'
-                            }
-                        }
+                        y: { beginAtZero: true, max: 100, title: { display: true, text: 'Porcentaje (%)' } }
                     }
                 }
             });
-    
-            // ------------------ GRÁFICO 3: EVOLUCIÓN DE NOTAS (LÍNEAS) ------------------
+
+            // ------------------ GRÁFICO 3: EVOLUCIÓN DE NOTAS ------------------
             const ctxLine = document.getElementById("lineChartEvolucion").getContext("2d");
-    
-            // Fechas simuladas de evaluaciones
-            const fechas = ["18/01/2024", "20/01/2024", "22/01/2024", "25/01/2024"];
-    
-            // Simulación de notas personales previas y del grupo
-            const notasPersonales = [36, 65, 64, puntajeActual]; // Último valor es el actual
-            const notasGrupo = [65, 66, 64, 67];
-    
+
+            const anio = fechaActual.getFullYear();
+            const fechaTest = `${dia}/${mes}/${anio}`;
+
+            const fechas = ["2023","2024","31/01/2025", fechaTest];
+
+            const notasPersonales = [0,0,0, puntajeTotal];
+            const notasGrupo = [40, 35, 55, 67]; 
+            const puntajeOptimo = [80, 80, 80, 80]; 
+
             new Chart(ctxLine, {
                 type: 'line',
                 data: {
@@ -214,7 +206,7 @@
                             fill: false
                         },
                         {
-                            label: 'Grupo',
+                            label: 'Promedio Grupal',
                             data: notasGrupo,
                             borderColor: 'rgba(249, 181, 43, 1)',
                             backgroundColor: 'rgba(249, 181, 43, 0.2)',
@@ -222,8 +214,8 @@
                             fill: false
                         },
                         {
-                            label: 'Línea de referencia (70 puntos)',
-                            data: [70, 70, 70, 70],
+                            label: 'Puntaje Óptimo',
+                            data: puntajeOptimo,
                             borderColor: 'rgba(255, 0, 0, 0.7)',
                             borderDash: [10, 5],
                             tension: 0,
@@ -233,40 +225,25 @@
                 },
                 options: {
                     responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: (context) => `${context.dataset.label}: ${context.raw} puntos`
-                            }
-                        }
-                    },
+                    maintainAspectRatio: false,
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            title: {
-                                display: true,
-                                text: 'Puntaje'
-                            }
+                        y: { 
+                            beginAtZero: true, 
+                            max: 100, 
+                            title: { display: true, text: 'Puntaje' } 
                         },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Fecha'
-                            }
+                        x: { 
+                            title: { display: true, text: 'Fecha' } 
                         }
                     }
                 }
             });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            // Obtener respuestas almacenadas
-            const userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
-            const correctAnswers = Array(30).fill("A"); // Todas las respuestas correctas son "A"
 
+            window.addEventListener("resize", function() {
+                lineChart.resize();
+            });
+
+            // ------------------ TABLA DE RESPUESTAS ------------------
             const tableHeader = document.getElementById("table-header");
             const tableBody = document.getElementById("table-body");
 
@@ -282,58 +259,22 @@
                 for (let i = 0; i < 4; i++) {
                     const questionNumber = row + 1 + i * 15;
                     const userAnswer = userAnswers[questionNumber] || "-"; // Si no hay respuesta, muestra "-"
-                    const correctAnswer = "A"; // Todas las respuestas correctas son "A"
+                    const correctAnswer = correctAnswers[questionNumber] || "-"; 
 
                     // Definir color según si la respuesta es correcta o incorrecta
-                    const cellClass = userAnswer === correctAnswer ? "correct-answer" : "incorrect-answer";
+                    let cellClass = "incorrect-answer"; // Por defecto, incorrecta en rojo
+                    if (userAnswer === correctAnswer) {
+                        cellClass = "correct-answer-green"; // Se aplica verde si es correcta
+                    }
 
                     rowHTML += `<td class="number-cell">${questionNumber}</td>
                                 <td class="${cellClass}">${userAnswer}</td>
-                                <td>${correctAnswer}</td>`;
+                                <td>${correctAnswer}</td>`; // Ahora se mostrará la respuesta correcta
                 }
 
                 rowHTML += "</tr>";
                 tableBody.innerHTML += rowHTML;
             }
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Obtener respuestas almacenadas
-            const userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
-            const correctAnswers = Array(30).fill("A");
-    
-            let correctVerbal = 0;
-            let correctMatematico = 0;
-    
-            correctAnswers.forEach((correctAnswer, index) => {
-                if (index < 15 && userAnswers[index + 1] === correctAnswer) {
-                    correctVerbal++;
-                } else if (index >= 15 && userAnswers[index + 1] === correctAnswer) {
-                    correctMatematico++;
-                }
-            });
-    
-            // Calcular porcentaje de aciertos
-            const verbalPorcentaje = Math.round((correctVerbal / 15) * 100);
-            const matematicoPorcentaje = Math.round((correctMatematico / 15) * 100);
-    
-            // Función para generar recomendaciones según el porcentaje de aciertos
-            function obtenerRecomendacion(porcentaje) {
-                if (porcentaje >= 80) {
-                    return "¡Lo hiciste muy bien!";
-                } else if (porcentaje >= 50) {
-                    return "Bien, pero puedes mejorar.";
-                } else if (porcentaje >= 30) {
-                    return "Tienes que repasar un poco más.";
-                } else {
-                    return "¡Tienes que repasar con urgencia!";
-                }
-            }
-    
-            // Insertar recomendaciones en la sección
-            document.getElementById("reco-verbal").textContent = `Razonamiento Verbal: ${obtenerRecomendacion(verbalPorcentaje)}`;
-            document.getElementById("reco-matematico").textContent = `Razonamiento Matemático: ${obtenerRecomendacion(matematicoPorcentaje)}`;
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -343,24 +284,20 @@
             const { jsPDF } = window.jspdf;
             const pdf = new jsPDF("p", "mm", "a4");
     
-            // Función para capturar imágenes y ajustar su escala
             async function captureAndScale(element) {
                 const canvas = await html2canvas(element, { scale: 2 });
                 const imgData = canvas.toDataURL("image/png");
     
-                // Dimensiones originales de la imagen
                 const imgWidth = canvas.width;
                 const imgHeight = canvas.height;
     
-                // Dimensiones del PDF
-                const pdfWidth = 190; // Margen de 10 mm a cada lado
-                const scaleFactor = pdfWidth / imgWidth; // Escalar sin deformar
-                const pdfHeight = imgHeight * scaleFactor; // Mantener proporción
+                const pdfWidth = 190;
+                const scaleFactor = pdfWidth / imgWidth;
+                const pdfHeight = imgHeight * scaleFactor; 
     
                 return { imgData, pdfHeight };
             }
     
-            // Capturar primera página (Gráficos y Recomendaciones)
             const chartsContainer = document.querySelector(".charts-container");
             const recommendations = document.querySelector(".recommendations");
     
@@ -370,7 +307,6 @@
             pdf.addImage(chartsImg, "PNG", 10, 10, 190, chartsHeight);
             pdf.addImage(recommendationsImg, "PNG", 10, chartsHeight + 15, 190, recoHeight);
  
-            // Descargar el PDF
             pdf.save("Reporte_Semanal.pdf");
         });
     </script>  
