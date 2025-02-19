@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "kuantum-s"
-  }
+    "default": "kuantum-s",
+    "produccion": "kuantum-server"
+  },
+  "targets": {},
+  "etags": {}
 }

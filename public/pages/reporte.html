@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet">
     <link rel="stylesheet" href="../css/reporte.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
 </head>
 
 <body>
@@ -79,13 +80,25 @@
     </main>    
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
+    <script type="module">
+        import { db, collection, addDoc, serverTimestamp } from "../js/firebase-config.js";
         document.addEventListener("DOMContentLoaded", function () {
+            calcularResultados();
+            const examSent = localStorage.getItem('examSent');
+            if (!examSent) {
+                enviarResultadosAFirestore();
+            }
+        });
+
+        function calcularResultados(){
             // 🔹 Obtener respuestas almacenadas y datos del usuario
             const userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
             const nombreAlumno = localStorage.getItem('nombreAlumno') || "Sin Nombre";
-            const storedQuestions = JSON.parse(localStorage.getItem('examQuestions')) || [];
+            const email = localStorage.getItem('email') || "No registrado";
+            const phone = localStorage.getItem('phone') || "No registrado";
+            const selectedExam = localStorage.getItem('selectedExam') || "Examen Desconocido";
             
+            const storedQuestions = JSON.parse(localStorage.getItem('examQuestions')) || [];        
             let correctAnswers = {}; // Diccionario de respuestas correctas
             
             // 🔹 Extraer respuestas correctas desde el JSON del simulacro
@@ -97,17 +110,24 @@
             let correctMatematico = 0;
             let correctCount = 0;
             let incorrectCount = 0;
+            let unansweredCount = 0;
 
             // 🔹 Comparar respuestas del usuario con las correctas
-            Object.keys(userAnswers).forEach(questionNumber => {
-                if (userAnswers[questionNumber] === correctAnswers[questionNumber]) {
+            storedQuestions.forEach((question) => {
+                const questionNumber = question.number;
+                const userAnswer = userAnswers[questionNumber];
+
+                if (userAnswer === undefined) {
+                    unansweredCount++;
+                } else if (userAnswer === correctAnswers[questionNumber]) {
                     correctCount++;
-                    
                     if (questionNumber <= 30) {
                         correctVerbal++;
                     } else {
                         correctMatematico++;
                     }
+                } else {
+                    incorrectCount++;
                 }
             });
 
@@ -120,162 +140,205 @@
 
             // 🔹 Función para generar recomendaciones según el porcentaje de aciertos
             function obtenerRecomendacion(porcentaje) {
-                if (porcentaje >= 80) {
-                    return "¡Lo hiciste muy bien!";
-                } else if (porcentaje >= 50) {
-                    return "Bien, pero puedes mejorar.";
-                } else if (porcentaje >= 30) {
-                    return "Tienes que repasar un poco más.";
-                } else {
-                    return "¡Tienes que repasar con urgencia!";
-                }
+                    if (porcentaje >= 80) {
+                        return "¡Lo hiciste muy bien!";
+                    } else if (porcentaje >= 50) {
+                        return "Bien, pero puedes mejorar.";
+                    } else if (porcentaje >= 30) {
+                        return "Tienes que repasar un poco más.";
+                    } else {
+                        return "¡Tienes que repasar con urgencia!";
+                    }
             }
 
-            // 🔹 Insertar datos en el HTML
+                // 🔹 Insertar datos en el HTML
             document.getElementById("nombre-alumno").textContent = localStorage.getItem('nombreAlumno') || "Sin Nombre";
             document.getElementById("puntaje-total").textContent = `${puntajeTotal} de 120`;
             document.getElementById("reco-verbal").textContent = `Razonamiento Verbal: ${obtenerRecomendacion(verbalPorcentaje)}`;
             document.getElementById("reco-matematico").textContent = `Razonamiento Matemático: ${obtenerRecomendacion(matematicoPorcentaje)}`;
 
-            // 🔹 Formatear fecha actual para el reporte
-            const fechaActual = new Date();
-            const dia = String(fechaActual.getDate()).padStart(2, '0');
-            const mes = String(fechaActual.getMonth() + 1).padStart(2, '0');
-            document.getElementById("fecha-reporte").textContent = `${dia}/${mes}`;
+                // 🔹 Formatear fecha actual para el reporte
+                const fechaActual = new Date();
+                const dia = String(fechaActual.getDate()).padStart(2, '0');
+                const mes = String(fechaActual.getMonth() + 1).padStart(2, '0');
+                document.getElementById("fecha-reporte").textContent = `${dia}/${mes}`;
 
-            // ------------------ GRÁFICO 1: BARRAS DE PROGRESO ------------------
-            document.getElementById("progress-verbal").style.width = verbalPorcentaje + "%";
-            document.getElementById("progress-matematico").style.width = matematicoPorcentaje + "%";
-            document.getElementById("verbal-text").textContent = `${correctVerbal} de 30`;
-            document.getElementById("matematico-text").textContent = `${correctMatematico} de 30`;
+                // ------------------ GRÁFICO 1: BARRAS DE PROGRESO ------------------
+                document.getElementById("progress-verbal").style.width = verbalPorcentaje + "%";
+                document.getElementById("progress-matematico").style.width = matematicoPorcentaje + "%";
+                document.getElementById("verbal-text").textContent = `${correctVerbal} de 30`;
+                document.getElementById("matematico-text").textContent = `${correctMatematico} de 30`;
 
-            // ------------------ GRÁFICO 2: PORCENTAJE DE ACIERTOS ------------------
-            const ctxBar = document.getElementById("barChartPorcentaje").getContext("2d");
-            new Chart(ctxBar, {
-                type: 'bar',
-                data: {
-                    labels: ['Razonamiento Verbal', 'Razonamiento Matemático'],
-                    datasets: [
-                        {
-                            label: 'Personal',
-                            data: [verbalPorcentaje, matematicoPorcentaje],
-                            backgroundColor: 'rgba(1, 89, 137, 0.8)',
-                            borderColor: 'rgba(1, 89, 137, 1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Promedio',
-                            data: [verbalGrupo, matematicoGrupo],
-                            backgroundColor: 'rgba(249, 181, 43, 0.8)',
-                            borderColor: 'rgba(249, 181, 43, 1)',
-                            borderWidth: 1
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: { beginAtZero: true, max: 100, title: { display: true, text: 'Porcentaje (%)' } }
-                    }
-                }
-            });
-
-            // ------------------ GRÁFICO 3: EVOLUCIÓN DE NOTAS ------------------
-            const ctxLine = document.getElementById("lineChartEvolucion").getContext("2d");
-
-            const anio = fechaActual.getFullYear();
-            const fechaTest = `${dia}/${mes}/${anio}`;
-
-            const fechas = ["2023","2024","31/01/2025", fechaTest];
-
-            const notasPersonales = [0,0,0, puntajeTotal];
-            const notasGrupo = [40, 35, 55, 67]; 
-            const puntajeOptimo = [80, 80, 80, 80]; 
-
-            new Chart(ctxLine, {
-                type: 'line',
-                data: {
-                    labels: fechas,
-                    datasets: [
-                        {
-                            label: 'Individual',
-                            data: notasPersonales,
-                            borderColor: 'rgba(1, 89, 137, 1)',
-                            backgroundColor: 'rgba(1, 89, 137, 0.2)',
-                            tension: 0.3,
-                            fill: false
-                        },
-                        {
-                            label: 'Promedio Grupal',
-                            data: notasGrupo,
-                            borderColor: 'rgba(249, 181, 43, 1)',
-                            backgroundColor: 'rgba(249, 181, 43, 0.2)',
-                            tension: 0.3,
-                            fill: false
-                        },
-                        {
-                            label: 'Puntaje Óptimo',
-                            data: puntajeOptimo,
-                            borderColor: 'rgba(255, 0, 0, 0.7)',
-                            borderDash: [10, 5],
-                            tension: 0,
-                            fill: false
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: { 
-                            beginAtZero: true, 
-                            max: 100, 
-                            title: { display: true, text: 'Puntaje' } 
-                        },
-                        x: { 
-                            title: { display: true, text: 'Fecha' } 
+                // ------------------ GRÁFICO 2: PORCENTAJE DE ACIERTOS ------------------
+                const ctxBar = document.getElementById("barChartPorcentaje").getContext("2d");
+                new Chart(ctxBar, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Razonamiento Verbal', 'Razonamiento Matemático'],
+                        datasets: [
+                            {
+                                label: 'Personal',
+                                data: [verbalPorcentaje, matematicoPorcentaje],
+                                backgroundColor: 'rgba(1, 89, 137, 0.8)',
+                                borderColor: 'rgba(1, 89, 137, 1)',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Promedio',
+                                data: [verbalGrupo, matematicoGrupo],
+                                backgroundColor: 'rgba(249, 181, 43, 0.8)',
+                                borderColor: 'rgba(249, 181, 43, 1)',
+                                borderWidth: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true, max: 100, title: { display: true, text: 'Porcentaje (%)' } }
                         }
                     }
-                }
-            });
+                });
 
-            window.addEventListener("resize", function() {
-                lineChart.resize();
-            });
+                // ------------------ GRÁFICO 3: EVOLUCIÓN DE NOTAS ------------------
+                const ctxLine = document.getElementById("lineChartEvolucion").getContext("2d");
 
-            // ------------------ TABLA DE RESPUESTAS ------------------
-            const tableHeader = document.getElementById("table-header");
-            const tableBody = document.getElementById("table-body");
+                const anio = fechaActual.getFullYear();
+                const fechaTest = `${dia}/${mes}/${anio}`;
 
-            // Encabezado dinámico (se repite 4 veces)
-            for (let i = 0; i < 4; i++) {
-                tableHeader.innerHTML += `<th>#</th><th>Tú</th><th>Clave</th>`;
-            }
+                const fechas = ["2023","2024","31/01/2025", fechaTest];
 
-            // Generar filas (15 preguntas por fila)
-            for (let row = 0; row < 15; row++) {
-                let rowHTML = "<tr>";
+                const notasPersonales = [0,0,0, puntajeTotal];
+                const notasGrupo = [40, 35, 55, 67]; 
+                const puntajeOptimo = [80, 80, 80, 80]; 
 
+                new Chart(ctxLine, {
+                    type: 'line',
+                    data: {
+                        labels: fechas,
+                        datasets: [
+                            {
+                                label: 'Individual',
+                                data: notasPersonales,
+                                borderColor: 'rgba(1, 89, 137, 1)',
+                                backgroundColor: 'rgba(1, 89, 137, 0.2)',
+                                tension: 0.3,
+                                fill: false
+                            },
+                            {
+                                label: 'Promedio Grupal',
+                                data: notasGrupo,
+                                borderColor: 'rgba(249, 181, 43, 1)',
+                                backgroundColor: 'rgba(249, 181, 43, 0.2)',
+                                tension: 0.3,
+                                fill: false
+                            },
+                            {
+                                label: 'Puntaje Óptimo',
+                                data: puntajeOptimo,
+                                borderColor: 'rgba(255, 0, 0, 0.7)',
+                                borderDash: [10, 5],
+                                tension: 0,
+                                fill: false
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: { 
+                                beginAtZero: true, 
+                                max: 100, 
+                                title: { display: true, text: 'Puntaje' } 
+                            },
+                            x: { 
+                                title: { display: true, text: 'Fecha' } 
+                            }
+                        }
+                    }
+                });
+
+                window.addEventListener("resize", function() {
+                    lineChart.resize();
+                });
+
+                // ------------------ TABLA DE RESPUESTAS ------------------
+                const tableHeader = document.getElementById("table-header");
+                const tableBody = document.getElementById("table-body");
+
+                // Encabezado dinámico (se repite 4 veces)
                 for (let i = 0; i < 4; i++) {
-                    const questionNumber = row + 1 + i * 15;
-                    const userAnswer = userAnswers[questionNumber] || "-"; // Si no hay respuesta, muestra "-"
-                    const correctAnswer = correctAnswers[questionNumber] || "-"; 
-
-                    // Definir color según si la respuesta es correcta o incorrecta
-                    let cellClass = "incorrect-answer"; // Por defecto, incorrecta en rojo
-                    if (userAnswer === correctAnswer) {
-                        cellClass = "correct-answer-green"; // Se aplica verde si es correcta
-                    }
-
-                    rowHTML += `<td class="number-cell">${questionNumber}</td>
-                                <td class="${cellClass}">${userAnswer}</td>
-                                <td>${correctAnswer}</td>`; // Ahora se mostrará la respuesta correcta
+                    tableHeader.innerHTML += `<th>#</th><th>Tú</th><th>Clave</th>`;
                 }
 
-                rowHTML += "</tr>";
-                tableBody.innerHTML += rowHTML;
+                // Generar filas (15 preguntas por fila)
+                for (let row = 0; row < 15; row++) {
+                    let rowHTML = "<tr>";
+
+                    for (let i = 0; i < 4; i++) {
+                        const questionNumber = row + 1 + i * 15;
+                        const userAnswer = userAnswers[questionNumber] || "-"; // Si no hay respuesta, muestra "-"
+                        const correctAnswer = correctAnswers[questionNumber] || "-"; 
+
+                        // Definir color según si la respuesta es correcta o incorrecta
+                        let cellClass = "incorrect-answer"; // Por defecto, incorrecta en rojo
+                        if (userAnswer === correctAnswer) {
+                            cellClass = "correct-answer-green"; // Se aplica verde si es correcta
+                        }
+
+                        rowHTML += `<td class="number-cell">${questionNumber}</td>
+                                    <td class="${cellClass}">${userAnswer}</td>
+                                    <td>${correctAnswer}</td>`; // Ahora se mostrará la respuesta correcta
+                    }
+
+                    rowHTML += "</tr>";
+                    tableBody.innerHTML += rowHTML;
+                }
+                const examResults = {
+                    nombreAlumno,
+                    email,
+                    phone,
+                    selectedExam,
+                    puntajeTotal,
+                    correctCount,
+                    incorrectCount,
+                    unansweredCount,
+                    correctVerbal,
+                    correctMatematico
+                };
+                localStorage.setItem('examResults', JSON.stringify(examResults));
+        }    
+            
+        async function enviarResultadosAFirestore() {
+            const examResults = JSON.parse(localStorage.getItem('examResults')) || {};
+
+            if (!examResults.nombreAlumno) {
+                alert("Los resultados no están listos. Calcula primero.");
+                return;
             }
-        });
+
+            try {
+                const docRef = await addDoc(collection(db, "examenes"), {
+                    nombre: examResults.nombreAlumno || "Sin Nombre",
+                    email: examResults.email || "No registrado",
+                    telefono: examResults.phone || "No registrado",
+                    examen: examResults.selectedExam || "Examen Desconocido",
+                    fecha: serverTimestamp(), // ✅ Usa el timestamp de Firestore
+                    puntajeTotal: examResults.puntajeTotal || 0,
+                    correctas: examResults.correctCount || 0,
+                    incorrectas: examResults.incorrectCount || 0,
+                    enBlanco: examResults.unansweredCount || 0,
+                    correctasVerbal: examResults.correctVerbal || 0,
+                    correctasMatematicas: examResults.correctMatematico || 0
+                });
+                console.log("✅ Datos guardados en Firestore con ID:", docRef.id);
+                localStorage.setItem('examSent', 'true');
+            } catch (error) {
+                console.error("❌ Error al guardar en Firestore:", error);
+                alert("No se pudo registrar en Firebase. Revisa la conexión.");
+            }
+        }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>                 

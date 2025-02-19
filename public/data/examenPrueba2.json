@@ -559,10 +559,10 @@
         "category": "Razonamiento Matemático",
         "text": "Si se lanzan 2 dados, ¿Cuál es la probabilidad de que salgan 2 números consecutivos?",
         "options": [
-            "\\(\\frac{5}{18})",
-            "\\frac{7}{18}",
-            "\\frac{5}{36}",
-            "\\frac{7}{36}"
+            "\\(\\frac{5}{18}\\)",
+            "\\(\\frac{7}{18}\\)",
+            "\\(\\frac{5}{36}\\)",
+            "\\(\\frac{7}{36}\\)"
         ],
         "answer": "A"
     },

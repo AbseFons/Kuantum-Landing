@@ -699,9 +699,11 @@ body {
 
 /* Footer general */
 .footer {
-    background-color: var(--color-azul); /* Fondo amarillo */
-    color: var(--color-blanco); /* Texto blanco */
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
     padding: 40px 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .footer-container {
@@ -729,38 +731,6 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-}
-
-/* Links útiles */
-.footer-links {
-    flex: 1 1 20%;
-}
-
-.footer-links h4 {
-    font-family: 'Lemon Milk', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: var(--color-blanco);
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1rem;
-    transition: color 0.3s ease-in-out;
-}
-
-.footer-links a:hover {
-    color: var(--color-azul);
 }
 
 /* Contacto */
@@ -793,6 +763,37 @@ body {
 
 .footer-contact a:hover {
     color: var(--color-azul);
+}
+
+/* Libro de Reclamaciones */
+.footer-claims {
+    flex: 1 1 20%;
+    text-align: center;
+}
+
+.footer-claims h4 {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.claims-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-blanco);
+    transition: color 0.3s ease-in-out;
+}
+
+.claims-icon {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.claims-link:hover {
+    color: var(--color-amarillo);
 }
 
 /* Redes sociales */
