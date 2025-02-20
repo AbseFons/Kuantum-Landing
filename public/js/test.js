@@ -69,6 +69,19 @@ fetch(`../${selectedExam}`)
             }            
         });
 
+        document.querySelectorAll('.report-link').forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+        
+                const questionNumber = e.target.dataset.questionNumber;
+                console.log('Número de la pregunta:', questionNumber);  // Verificar el número
+        
+                document.getElementById('reportForm').dataset.questionNumber = questionNumber;
+        
+                showReportModal();
+            });
+        });
+
         attachProgressEvent();
         attachFilterEvent();
         attachFinishEvent();
@@ -88,19 +101,6 @@ fetch(`../${selectedExam}`)
         filterContent('all');
     })
     .catch(error => console.error('Error cargando el JSON:', error));
-
-document.querySelectorAll('.report-link').forEach((link) => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        const questionNumber = e.target.dataset.questionNumber;
-        console.log('Número de la pregunta:', questionNumber);  // Verificar el número
-
-        document.getElementById('reportForm').dataset.questionNumber = questionNumber;
-
-        showReportModal();
-    });
-});
 
 document.addEventListener("DOMContentLoaded", function() {
     const nombreAlumno = localStorage.getItem("nombreAlumno") || "Estudiante";
