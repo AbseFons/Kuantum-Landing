@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro de Reclamaciones</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/reclamos.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="cabecera-contenido">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../media/logo_secundario_normal.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="reclamos-container">
+        <h1>Libro de Reclamaciones</h1>
+        
+        <section class="info-empresa">
+            <p><strong>Mainframe S.A.C ("MFR")</strong>, identificada con RUC N° 20606475757, con domicilio en Av. Javier Prado Oeste N° 2021, San Isidro, Lima, Perú.</p>
+            <p>De conformidad con el Código de Protección al Consumidor - Ley N° 29571 y el Reglamento del Libro de Reclamaciones - Decreto Supremo N° 011-2011-PCM, el Sitio Web cuenta con un Libro de Reclamaciones de naturaleza virtual.</p>
+        </section>
+
+        <section class="formulario-reclamo">
+            <h2>1. Datos del reclamante</h2>
+            <form id="reclamo-form">
+                <label for="tipo-documento">Tipo de documento:</label>
+                <select id="tipo-documento">
+                    <option value="DNI">DNI</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                </select>
+                
+                <label for="num-documento">Número de documento:</label>
+                <input type="text" id="num-documento" placeholder="Ingrese número">
+                
+                <label for="nombre">Apellidos y Nombres:</label>
+                <input type="text" id="nombre" placeholder="Ingrese nombre completo">
+  
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" placeholder="Ingrese teléfono">
+
+                <label for="departamento">Departamento:</label>
+                <select id="departamento">
+                    <option value="" selected disabled>Seleccionar</option>
+                    <option value="Amazonas">Amazonas</option>
+                    <option value="Áncash">Áncash</option>
+                    <option value="Apurímac">Apurímac</option>
+                    <option value="Arequipa">Arequipa</option>
+                    <option value="Ayacucho">Ayacucho</option>
+                    <option value="Cajamarca">Cajamarca</option>
+                    <option value="Callao">Callao</option>
+                    <option value="Cusco">Cusco</option>
+                    <option value="Huancavelica">Huancavelica</option>
+                    <option value="Huánuco">Huánuco</option>
+                    <option value="Ica">Ica</option>
+                    <option value="Junín">Junín</option>
+                    <option value="La Libertad">La Libertad</option>
+                    <option value="Lambayeque">Lambayeque</option>
+                    <option value="Lima">Lima</option>
+                    <option value="Loreto">Loreto</option>
+                    <option value="Madre de Dios">Madre de Dios</option>
+                    <option value="Moquegua">Moquegua</option>
+                    <option value="Pasco">Pasco</option>
+                    <option value="Piura">Piura</option>
+                    <option value="Puno">Puno</option>
+                    <option value="San Martín">San Martín</option>
+                    <option value="Tacna">Tacna</option>
+                    <option value="Tumbes">Tumbes</option>
+                    <option value="Ucayali">Ucayali</option>
+                </select>
+                
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" placeholder="Ingrese dirección">
+                
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" placeholder="Ingrese correo electrónico">
+                <div class="aviso-reclamo">
+                    <label>*En caso se trate de un menor de edad, se consignan los datos del apoderado.</label>
+                </div>
+            </form>
+        </section>
+
+        <section class="info-reclamo">
+            <h2>2. Información del Reclamo</h2>
+            <label for="fecha">Fecha de reclamo o queja:</label>
+            <input type="date" id="fecha">
+            
+            <label for="orden">Orden de compra/identificación del producto:</label>
+            <input type="text" id="orden" placeholder="Ingrese número">
+            
+            <label for="monto">Monto del producto/servicio:</label>
+            <input type="text" id="monto" placeholder="Ingrese monto">
+            
+            <label for="moneda">Moneda:</label>
+            <select id="moneda">
+                <option value="PEN">Soles (PEN)</option>
+                <option value="USD">Dólares (USD)</option>
+            </select>
+            
+            <label for="detalle">Detalle de la reclamación o queja:</label>
+            <textarea id="detalle" rows="4" placeholder="Ingrese detalles"></textarea>
+        </section>
+
+        <div class="confirmacion">
+            <input type="checkbox" id="aceptar-politica">
+            <label for="aceptar-politica">
+                *Al enviar este formulario acepto la 
+                <a href="#" id="politica-link">Política de Privacidad y Tratamiento de Datos Personales</a> del Sitio Web.
+            </label>
+        </div>
+        
+        <div id="modal-politica" class="modal-overlay">
+            <div class="modal-content">
+                <h2>Política de Privacidad y Tratamiento de Datos</h2>
+                <p>
+                    En <b>Kuantum</b>, nos comprometemos a proteger la privacidad y seguridad de tus datos personales. 
+                    Al completar este formulario, aceptas que la información proporcionada será utilizada exclusivamente 
+                    para gestionar tu reclamo y mejorar nuestros servicios, conforme a la legislación vigente en Perú.
+                </p>
+                <p>
+                    Los datos personales que recopilamos incluyen <b>nombre, apellido, correo electrónico, teléfono y edad</b>. 
+                    Esta información se empleará únicamente para los fines mencionados y será tratada con estrictas medidas de seguridad 
+                    para evitar accesos no autorizados, alteraciones o divulgaciones indebidas.
+                </p>
+                <p>
+                    La información proporcionada será procesada de acuerdo con la <b>Ley N° 29733 - Ley de Protección de Datos Personales</b> 
+                    y su reglamento (<b></b>Decreto Supremo N° 003-2013-JUS</b>), los cuales establecen principios y derechos para garantizar 
+                    el adecuado manejo de los datos personales en el país.
+                </p>
+                <p>
+                    Como usuario, tienes derecho a acceder, actualizar, rectificar y solicitar la eliminación de tus datos personales
+                    en cualquier momento. Para ejercer estos derechos, puedes contactarnos a través de:
+                </p>
+                <p>
+                    ✉️ Correo: <a href="mailto:contacto@kuantum.com">contacto@kuantum.com</a>
+                </p>
+                <p>
+                    Los datos serán almacenados en servidores seguros y conservados únicamente durante el tiempo necesario para cumplir 
+                    con los propósitos establecidos o según lo exija la normativa aplicable. No compartimos ni vendemos datos personales 
+                    a terceros sin tu consentimiento, salvo en los casos requeridos por ley.
+                </p>
+                <p>
+                    Esta política podrá ser actualizada periódicamente para reflejar cambios en la normativa o mejoras en nuestros procesos. 
+                    Se recomienda a los usuarios revisar esta sección regularmente para estar informados sobre cualquier modificación.
+                </p>
+                <div class="modal-buttons">
+                    <button class="btn-close" id="cerrar-politica">Cerrar</button>
+                </div>
+            </div>
+        </div>
+        
+        <button id="enviar-reclamo" class="btn-cta">Enviar Reclamo</button>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Kuantum. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById("enviar-reclamo").addEventListener("click", function () {
+            const aceptoPolitica = document.getElementById("aceptar-politica").checked;
+            if (!aceptoPolitica) {
+                alert("Debe aceptar la Política de Privacidad para enviar el reclamo.");
+                return;
+            }
+    
+            alert("✅ Reclamo enviado con éxito. Serás redirigido a la página principal.");
+    
+            const boton = document.getElementById("enviar-reclamo");
+            boton.style.cursor = "not-allowed";
+            boton.disabled = true;
+            window.location.href = "../index.html";
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const politicaLink = document.getElementById("politica-link");
+        const modalPolitica = document.getElementById("modal-politica");
+        const cerrarPolitica = document.getElementById("cerrar-politica");
+
+        politicaLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            modalPolitica.classList.add("show"); 
+        });
+
+        cerrarPolitica.addEventListener("click", function() {
+            modalPolitica.classList.remove("show"); 
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.reclamos-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+h1 {
+    text-align: center;
+    color: #015989;
+    margin-bottom: 30px;
+    margin-top: -20px;
+}
+
+/* Secciones de formulario */
+.info-empresa, .formulario-reclamo, .info-reclamo, .confirmacion {
+    background: white;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 20px;
+}
+
+h2 {
+    color: #015989;
+    border-bottom: 2px solid #f9a825;
+    padding-bottom: 5px;
+}
+
+/* Formulario */
+form label,
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #015989;
+    box-shadow: 0 0 8px rgba(1, 89, 137, 0.2);
+}
+
+textarea {
+    resize: none;
+}
+
+.aviso-reclamo {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+/* Confirmación */
+.confirmacion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.confirmacion input {
+    width: auto;
+    transform: scale(1.2);
+}
+
+/* Botón */
+.btn-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #015989;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-cta:hover {
+    background: #013e63;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: #015989;
+    color: white;
+    margin-top: 30px;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Estilo para el enlace de la política */
+.confirmacion a {
+    color: var(--color-azul);
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.confirmacion a:hover {
+    color: var(--color-rojo);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0; /* Inicialmente invisible */
+    visibility: hidden; /* Evita interacciones cuando está oculto */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Contenido del Modal */
+.modal-content {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 15px;
+    width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transform: scale(0.8); /* Inicia con un tamaño reducido */
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-azul);
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--color-negro);
+    line-height: 1.6;
+    margin-bottom: 0px;
+    text-align: justify; 
+}
+
+.modal-content a {
+    color: var(--color-azul);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-close {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-close:hover {
+    background-color: #be0606;
+}
+
+/* Mostrar modal con animación */
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay.show .modal-content {
+    transform: scale(1);
+}
+
+/* 📌 Ajustes para tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .reclamos-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .info-empresa, .formulario-reclamo, .info-reclamo, .confirmacion {
+        padding: 30px;
+    }
+
+    .modal-content {
+        width: 500px;
+    }
+
+    .aviso-reclamo {
+        font-size: 0.65rem;
+        opacity: 0.7;
+    }
+}
+
+/* 📌 Ajustes para pantallas pequeñas (móviles grandes) */
+@media (max-width: 768px) {
+    .reclamos-container {
+        width: 98%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .aviso-reclamo label {
+        font-size: 0.65rem;
+        opacity: 0.7;
+    }
+
+    .info-empresa, .formulario-reclamo, .info-reclamo, .confirmacion {
+        padding: 25px;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input, select, textarea {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .btn-cta {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 450px;
+    }
+}
+
+/* 📌 Ajustes para móviles pequeños (menor a 480px) */
+@media (max-width: 480px) {
+    .reclamos-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    p {
+       font-size: 0.8em; 
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .aviso-reclamo label {
+        font-size: 0.55rem;
+        opacity: 0.7;
+        line-height: 15px;
+    }
+
+    .info-empresa, .formulario-reclamo, .info-reclamo, .confirmacion {
+        padding: 30px;
+    }
+
+    .confirmacion {
+        padding: 5px 10px;
+    }
+
+    label {
+        font-size: 0.75rem;
+    }
+
+    input, select, textarea {
+        font-size: 0.75rem;
+        padding: 7px;
+    }
+
+    .btn-cta {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    /* 📌 Ajuste para el modal en móviles */
+    .modal-content {
+        width: 95%;
+        max-width: 400px;
+        padding: 20px;
+        height: 60%;
+    }
+
+    .modal-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .modal-content p {
+        font-size: 0.65rem;
+    }
+
+    .btn-close {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
